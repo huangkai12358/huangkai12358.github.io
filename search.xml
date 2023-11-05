@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>西厢月</title>
+      <link href="/posts/8bff/"/>
+      <url>/posts/8bff/</url>
+      
+        <content type="html"><![CDATA[<p>2022.11.21</p><p><img src="/posts/8bff/e91c6fb53da0d372fd4228ed0911c24.jpg" alt="e91c6fb53da0d372fd4228ed0911c24"></p><p>2022.12.1</p><p><img src="/posts/8bff/48a9b295f56a4de192e4390bdf280e7.jpg" alt="48a9b295f56a4de192e4390bdf280e7"></p><p>2023.10.25</p><p><img src="/posts/8bff/b5ae0e0714d8eb5983cc9bef28ba3fa.jpg" alt="b5ae0e0714d8eb5983cc9bef28ba3fa"></p><p>2023.10.26</p><p><img src="/posts/8bff/8bd23cc6cccdf90a773fdcfd8e5893e.jpg" alt="8bd23cc6cccdf90a773fdcfd8e5893e"></p><p>2023.10.30</p><p><img src="/posts/8bff/45bc46ef69b0529dcebbd29a58a0991.jpg" alt="45bc46ef69b0529dcebbd29a58a0991"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 专栏 </category>
+          
+          <category> 西厢月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> to be continued </tag>
+            
+            <tag> 西厢月 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Lab4</title>
       <link href="/posts/f96f/"/>
       <url>/posts/f96f/</url>
@@ -13,7 +42,9 @@
       
       <categories>
           
-          <category> 作业 </category>
+          <category> 大学课程 </category>
+          
+          <category> 问题求解与程序设计 </category>
           
       </categories>
       
@@ -190,6 +221,20 @@
         <content type="html"><![CDATA[<h1 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h1><p>渗透模型用<strong>Monto Carlo模拟法</strong>计算出概率阈值p，并用图形化显示形象展现这一结果</p><h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="计算"><a href="#计算" class="headerlink" title="计算"></a>计算</h2><ol><li><p>使用<strong>加权快速联合算法（加权quick-union）</strong>快速判断两个节点是否连通</p><p>所用的函数：</p><ul><li><code>void init()</code></li><li><code>int find(int p)</code></li><li><code>void weighted_QU(int p, int q)</code></li><li><code>bool isUnion(int p, int q)</code></li></ul></li><li><p>构造<strong>渗透类（<code>Percolation</code>）</strong>，建立n*n网格</p><blockquote><p>使用并查集来维护每个格子的连通性。我们可以将每个格子看作一个节点，并将相邻的格子连接起来。如果一个格子与顶部相连，则它是满的。我们可以使用一个虚拟节点来表示顶部，将所有顶部的节点连接到这个虚拟节点上。如果虚拟节点与底部相连，则整个系统渗透。</p></blockquote><p>所用的函数：</p><ul><li><code>void open(int row, int col)</code></li><li><code>bool isOpen(int row, int col)</code></li><li><code>bool isFull(int row, int col)</code></li><li><code>int numberOfOpenSites()</code></li><li><code>bool percolates()</code></li></ul></li><li><p>开始模拟，随机打开格子，直到渗透为止，则此时打开的格子数&#x2F;总格子数即为p</p><p>所用的函数：</p><ul><li><code>rand()</code></li></ul></li></ol><h2 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h2><ol><li><p>在<code>gridLayout</code>里绘制n*n的<code>label</code>，根据该格子的状态给<code>label</code>绘制不同的颜色，黑色表示未连通，白色表示连通，蓝色表示<code>full</code></p><p>所用的函数：</p><ul><li><code>void setAlignment(Qt::Alignment)</code>    &#x2F;&#x2F;设置对齐方式</li><li><code>void setStyleSheet(const QString&amp; styleSheet)</code>    &#x2F;&#x2F;设置标签样式</li><li><code>inline void addWidget(QWidget *w)</code></li><li><code>void setLayout(QLayout *)</code></li></ul></li><li><p>清除所有<code>label</code>以便下次模拟</p></li></ol><h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><h2 id="不勾选图形化显示时"><a href="#不勾选图形化显示时" class="headerlink" title="不勾选图形化显示时"></a>不勾选图形化显示时</h2><p><img src="/posts/3b2e/1.png" alt="不勾选图形化显示时"></p><hr><h2 id="勾选图形化显示时"><a href="#勾选图形化显示时" class="headerlink" title="勾选图形化显示时"></a>勾选图形化显示时</h2><p><img src="/posts/3b2e/2.png" alt="勾选图形化显示时"></p>]]></content>
       
       
+      <categories>
+          
+          <category> 大学课程 </category>
+          
+          <category> 问题求解与程序设计 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 作业 </tag>
+            
+        </tags>
       
     </entry>
     
