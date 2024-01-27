@@ -8,7 +8,7 @@
       <link href="/posts/f9eb/"/>
       <url>/posts/f9eb/</url>
       
-        <content type="html"><![CDATA[<div class="note primary no-icon flat"><h1 id="击哔你！"><a href="#击哔你！" class="headerlink" title="击哔你！"></a>击哔你！</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">👉</span></span></p></div><div class="note primary no-icon flat"><h1 id="我锤死你！"><a href="#我锤死你！" class="headerlink" title="我锤死你！"></a>我锤死你！</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">👊</span></span></p></div>]]></content>
+        <content type="html"><![CDATA[<div class="note primary no-icon flat"><h1 id="击哔你！"><a href="#击哔你！" class="headerlink" title="击哔你！"></a>击哔你！</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">👉</span></span></p></div><div class="note primary no-icon flat"><h1 id="我锤死你！"><a href="#我锤死你！" class="headerlink" title="我锤死你！"></a>我锤死你！</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">👊</span></span></p></div><div class="note info no-icon flat"><h1 id="少点欲望"><a href="#少点欲望" class="headerlink" title="少点欲望"></a>少点欲望</h1></div><div class="note info no-icon flat"><h1 id="尽力就好"><a href="#尽力就好" class="headerlink" title="尽力就好"></a>尽力就好</h1></div>]]></content>
       
       
       <categories>
@@ -35,7 +35,7 @@
       <link href="/posts/8c24/"/>
       <url>/posts/8c24/</url>
       
-        <content type="html"><![CDATA[<h1 id="小鸡1号"><a href="#小鸡1号" class="headerlink" title="小鸡1号"></a>小鸡1号</h1><p><img src="https://cache.ymjrhk.com/img/%E5%B0%8F%E9%B8%A11.jpg" alt="小鸡1"></p><h1 id="小鸡2号"><a href="#小鸡2号" class="headerlink" title="小鸡2号"></a>小鸡2号</h1><p><img src="https://cache.ymjrhk.com/img/%E5%B0%8F%E9%B8%A12.jpg" alt="小鸡2"></p><h1 id="小鸡3号"><a href="#小鸡3号" class="headerlink" title="小鸡3号"></a>小鸡3号</h1><p><img src="https://cache.ymjrhk.com/img/%E5%B0%8F%E9%B8%A13.jpg" alt="小鸡3"></p><h1 id="小鸡头子"><a href="#小鸡头子" class="headerlink" title="小鸡头子"></a>小鸡头子</h1><p><img src="https://cache.ymjrhk.com/img/%E5%B0%8F%E9%B8%A1%E5%A4%B4%E5%AD%90.jpg" alt="小鸡头子"></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="小鸡1号"><a href="#小鸡1号" class="headerlink" title="小鸡1号"></a>小鸡1号</h1><p><img src="https://cache.ymjrhk.com/img/%E5%B0%8F%E9%B8%A11.jpg" alt="小鸡1"></p><h1 id="小鸡2号"><a href="#小鸡2号" class="headerlink" title="小鸡2号"></a>小鸡2号</h1><p><img src="https://cache.ymjrhk.com/img/%E5%B0%8F%E9%B8%A12.jpg" alt="小鸡2"></p><h1 id="小鸡3号"><a href="#小鸡3号" class="headerlink" title="小鸡3号"></a>小鸡3号</h1><p><img src="https://cache.ymjrhk.com/img/%E5%B0%8F%E9%B8%A13.jpg" alt="小鸡3"></p><h1 id="小鸡头子"><a href="#小鸡头子" class="headerlink" title="小鸡头子"></a>小鸡头子</h1><p><img src="https://cache.ymjrhk.com/img/%E5%B0%8F%E9%B8%A1%E5%A4%B4%E5%AD%90.jpg" alt="小鸡头子"></p><h1 id="小鸡4号"><a href="#小鸡4号" class="headerlink" title="小鸡4号"></a>小鸡4号</h1><p><img src="https://cache.ymjrhk.com/img/%E5%B0%8F%E9%B8%A14.jpg" alt="小鸡4号"></p>]]></content>
       
       
       <categories>
@@ -482,7 +482,7 @@
       <link href="/posts/f83c/"/>
       <url>/posts/f83c/</url>
       
-        <content type="html"><![CDATA[<ol><li>g++, gcc到底是怎么编译和构建的，尝试手动输入指令来运行一个程序 <code>30min</code></li><li>VSCode中4个json文件含义 <code>1h</code></li><li>练习使用多个.cpp和.h文件运行一个程序 <code>30min</code></li><li>c++中类的简单使用 <code>30min</code></li><li>qt如何组织代码，修改与不修改main.cpp <code>2h</code></li></ol>]]></content>
+        <content type="html"><![CDATA[<ol><li><del>g++, gcc到底是怎么编译和构建的，尝试手动输入指令来运行一个程序 <code>30min</code></del></li><li><del>VSCode中4个json文件含义 <code>1h</code></del></li><li>练习使用多个.cpp和.h文件运行一个程序 <code>30min</code></li><li>c++中类的简单使用 <code>30min</code></li><li>qt如何组织代码，修改与不修改main.cpp <code>2h</code></li></ol>]]></content>
       
       
       <categories>
