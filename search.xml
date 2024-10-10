@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>记视频自动生成字幕的一晚上</title>
+      <link href="/posts/c7f2/"/>
+      <url>/posts/c7f2/</url>
+      
+        <content type="html"><![CDATA[<p>起因是b站的一个网课视频没有字幕功能，3倍速有时候听不清</p><ol><li><p>省心方案：<strong>百度云</strong><br>上传到百度云网盘在线观看，开svip享受ai字幕功能<br><img src="https://cache.ymjrhk.com/img/ae5e636b8b662fa37b878ca4b836c0a.jpg" alt="ae5e636b8b662fa37b878ca4b836c0a"><br>缺点：一天只能生成10次，导出的字幕为docx</p></li><li><p>使用openai的<strong>whisper</strong>跑本地模型<br>用了桌面端<strong>Buzz</strong>，用Medium模型速度：15分钟视频需要10分钟<br>注意模型移动到C:\Users<username>\AppData\Local\Buzz\Buzz\Cache\models\whisper 或 C:&#x2F;Users<username>&#x2F;.cache&#x2F;whisper</p><p><a href="https://www.bilibili.com/read/cv23995720/">https://www.bilibili.com/read/cv23995720/</a><br><a href="https://www.bilibili.com/video/BV15c411j789/?vd_source=2e2950ffb6b9eff2b1e600206af0494e">https://www.bilibili.com/video/BV15c411j789/?vd_source=2e2950ffb6b9eff2b1e600206af0494e</a><br><a href="https://blog.csdn.net/oXiaoWeiWuDi/article/details/128925672">https://blog.csdn.net/oXiaoWeiWuDi/article/details/128925672</a></p></li><li><p>github上的VideoSrt，还未用，因为要用到阿里云、腾讯、百度的语音引擎服务<br><a href="https://github.com/wxbool/video-srt-windows">https://github.com/wxbool/video-srt-windows</a><br><a href="https://www.yuque.com/viggo-t7cdi/videosrt">https://www.yuque.com/viggo-t7cdi/videosrt</a><br><a href="https://www.yuque.com/viggo-t7cdi/videosrt-pro">https://www.yuque.com/viggo-t7cdi/videosrt-pro</a></p></li><li><p>使用剪映或必剪，嫌麻烦就没用</p></li><li><p>Win11自带ai字幕<br>Win+Ctrl+L启动！</p><p><img src="https://cache.ymjrhk.com/img/Snipaste_2024-10-10_20-37-04.png" alt="Snipaste_2024-10-10_20-37-04"><br><a href="https://support.microsoft.com/zh-cn/windows/%E4%BD%BF%E7%94%A8%E5%AE%9E%E6%97%B6%E5%AD%97%E5%B9%95%E6%9B%B4%E5%A5%BD%E5%9C%B0%E4%BA%86%E8%A7%A3%E9%9F%B3%E9%A2%91-b52da59c-14b8-4031-aeeb-f6a47e6055df">https://support.microsoft.com/zh-cn/windows/%E4%BD%BF%E7%94%A8%E5%AE%9E%E6%97%B6%E5%AD%97%E5%B9%95%E6%9B%B4%E5%A5%BD%E5%9C%B0%E4%BA%86%E8%A7%A3%E9%9F%B3%E9%A2%91-b52da59c-14b8-4031-aeeb-f6a47e6055df</a></p></li><li><p>通义——实时语音转文字</p><p>缺点是只有文字没有时间戳<br><a href="https://tingwu.aliyun.com/home">https://tingwu.aliyun.com/home</a><br><a href="https://tongyi.aliyun.com/efficiency/">https://tongyi.aliyun.com/efficiency/</a></p></li><li><p>各种在线字幕生成工具（要钱）<br><a href="https://www.zimujiang.com/aff?code=aannv4os">https://www.zimujiang.com/aff?code=aannv4os</a></p></li></ol><p>额外：<strong>bilidown</strong>——b站视频音频下载工具，好用<br><a href="https://zhouql.vip/bilibili/">https://zhouql.vip/bilibili/</a><br><a href="https://zhouql.vip/bilibili/pc/">https://zhouql.vip/bilibili/pc/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>九月关键词</title>
       <link href="/posts/e5c6/"/>
       <url>/posts/e5c6/</url>
