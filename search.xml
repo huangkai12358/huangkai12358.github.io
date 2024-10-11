@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>好厉害啊python+chatGPT</title>
+      <link href="/posts/2107/"/>
+      <url>/posts/2107/</url>
+      
+        <content type="html"><![CDATA[<p>问：</p><p>5.1.5 系统结构中的并行性开发及计算机系统的分类 (transcribed on 10-Oct-2024 23-10-44).srt<br>6.1.31 计算机系统的软、硬件取舍及定量设计原理(一) (transcribed on 10-Oct-2024 23-21-36).srt<br>7.1.32 计算机系统的软、硬件取舍及定量设计原理(二) (transcribed on 10-Oct-2024 23-40-49).srt<br>如何批量去除一个文件夹中所有srt文件的文件名中的 (transcribed on 10-Oct-2024 23-40-49)</p><p>答：</p><p>你可以使用Python批量修改文件名，去除SRT文件名中的 “(transcribed on …)” 这部分。下面是一个简单的Python脚本示例，可以在指定的文件夹中修改所有<code>.srt</code>文件的文件名，去除括号及其内容：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定要处理的文件夹路径</span></span><br><span class="line">folder_path = <span class="string">&#x27;path/to/your/folder&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 遍历文件夹中的所有文件</span></span><br><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> os.listdir(folder_path):</span><br><span class="line">    <span class="comment"># 只处理以 .srt 结尾的文件</span></span><br><span class="line">    <span class="keyword">if</span> filename.endswith(<span class="string">&quot;.srt&quot;</span>):</span><br><span class="line">        <span class="comment"># 使用正则表达式去除文件名中的括号及其内容</span></span><br><span class="line">        new_filename = re.sub(<span class="string">r&#x27;\s*\(transcribed on.*\)&#x27;</span>, <span class="string">&#x27;&#x27;</span>, filename)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 获取完整的旧文件路径和新文件路径</span></span><br><span class="line">        old_file = os.path.join(folder_path, filename)</span><br><span class="line">        new_file = os.path.join(folder_path, new_filename)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 重命名文件</span></span><br><span class="line">        os.rename(old_file, new_file)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;Renamed: <span class="subst">&#123;old_file&#125;</span> -&gt; <span class="subst">&#123;new_file&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;所有文件重命名完成！&quot;</span>)</span><br></pre></td></tr></table></figure><p><strong>脚本说明：</strong></p><ol><li><code>folder_path</code>：指定包含SRT文件的文件夹路径。</li><li><code>re.sub(r&#39;\s*\(transcribed on.*\)&#39;, &#39;&#39;, filename)</code>：使用正则表达式匹配并去除文件名中 “(transcribed on …)” 部分。</li><li><code>os.rename()</code>：用来重命名文件。</li><li>该脚本会遍历文件夹中的所有<code>.srt</code>文件，去除文件名中不需要的部分，并进行重命名。</li></ol><p>运行此脚本时，将自动处理所有符合条件的SRT文件。如果有大量文件，修改速度也会很快。</p><p><strong>注意事项：</strong></p><ul><li>运行脚本前确保 <code>folder_path</code> 路径正确。</li><li>请先备份文件，避免误操作。</li></ul><p>如图：</p><p><img src="https://cache.ymjrhk.com/img/image-20241011151602496.png" alt="image-20241011151602496"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>记视频自动生成字幕的一晚上</title>
       <link href="/posts/c7f2/"/>
       <url>/posts/c7f2/</url>
