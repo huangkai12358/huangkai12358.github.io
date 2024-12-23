@@ -4,11 +4,38 @@
   
     
     <entry>
+      <title>源源需求及解答</title>
+      <link href="/posts/fa3b/"/>
+      <url>/posts/fa3b/</url>
+      
+        <content type="html"><![CDATA[<h2 id="B站、小红书视频下载"><a href="#B站、小红书视频下载" class="headerlink" title="B站、小红书视频下载"></a>B站、小红书视频下载</h2><p>视频解析：<a href="https://www.xiazaitool.com/blbl">https://www.xiazaitool.com/blbl</a></p><h2 id="音乐下载"><a href="#音乐下载" class="headerlink" title="音乐下载"></a>音乐下载</h2><p>使用 Python 的 Music-dl：<a href="https://github.com/0xHJK/music-dl">https://github.com/0xHJK/music-dl</a></p><h2 id="必应每日壁纸下载"><a href="#必应每日壁纸下载" class="headerlink" title="必应每日壁纸下载"></a>必应每日壁纸下载</h2><p>油猴插件：<a href="https://greasyfork.org/zh-CN/scripts/35070-bing-image-download-button">https://greasyfork.org/zh-CN/scripts/35070-bing-image-download-button</a></p><h2 id="腾讯视频下载"><a href="#腾讯视频下载" class="headerlink" title="腾讯视频下载"></a>腾讯视频下载</h2><p>参考：<a href="https://www.youtube.com/watch?v=z2ja7bEz9is">https://www.youtube.com/watch?v=z2ja7bEz9is</a></p><p>使用手机 ALOOK 浏览器，打开<a href="https://v.wkvip.net/">我看VIP</a>解析视频，点击下载即可</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+            <tag> to be continued </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Windows 中 MinGW-W64 的下载、安装与配置</title>
       <link href="/posts/1096/"/>
       <url>/posts/1096/</url>
       
-        <content type="html"><![CDATA[<p>本文将介绍 GNU、GCC、MinGW 等相关概念，并着重介绍 Windows 中 MinGW-w64 的下载、安装与配置。MinGW-w64 的安装方式有两种：安装程序安装、压缩包安装，压缩包既可在 <a href="http://sourceforge.net/projects/mingw-w64/files/mingw-w64/mingw-w64-release/">SourceForge</a> 上下载，也可在 <a href="https://github.com/niXman/mingw-builds-binaries/releases">GitHub</a> 上下载。本文介绍 GitHub 下载。</p><h2 id="前导概念"><a href="#前导概念" class="headerlink" title="前导概念"></a>前导概念</h2><h4 id="GNU"><a href="#GNU" class="headerlink" title="GNU"></a>GNU</h4><p>GNU 是一个自由的操作系统，全称为 GNU’s Not Unix!，起源于 GNU 计划。GNU 计划由理查德·马修·斯托曼（Richard Matthew Stallman）发起，旨在发展出一套完整的开放源代码操作系统来取代 Unix。</p><h4 id="GPL"><a href="#GPL" class="headerlink" title="GPL"></a>GPL</h4><p>GNU General Public License，GNU 通用公共许可协议，缩写为 GNU GPL 或者 GPL。GPL 基于用户充分的自由，允许用户运行、修改、分发软件，但遵循 GPL 的软件的派生作品也必须遵循 GPL。</p><h4 id="GCC"><a href="#GCC" class="headerlink" title="GCC"></a>GCC</h4><p>GNU Compiler Collection，GNU 编译器套装，是“GNU 计划” 制作的一种优化编译器，支持将 C、C++、Go 等多种语言编译为机器语言。</p><h4 id="MinGW"><a href="#MinGW" class="headerlink" title="MinGW"></a>MinGW</h4><p>Minimalist GNU for Windows，缩写 MinGW，又称 MinGW32，是 GCC 及 GNU Binutils（一套编程工具）在 Win32 平台上的移植，用于生成 32 位 Windows 可执行文件。</p><p>MinGW-w64 用以解决 MinGW 项目更新缓慢、缺少新的重要 API 等问题，并提供 64 位支持，可用于生成 32 或 64 位 Windows 可执行程序。</p><p>所以，在 Windows 上安装 GCC 可通过在 Windows 上安装 MinGW 实现。</p><h2 id="下载、安装与配置"><a href="#下载、安装与配置" class="headerlink" title="下载、安装与配置"></a>下载、安装与配置</h2><p>进入 <a href="https://github.com/niXman/mingw-builds-binaries">mingw-builds-binaries</a>，安装方式有两种，一是通过安装程序在线安装，二是下载压缩包解压安装。</p><p><img src="https://cache.ymjrhk.com/img/image-20241220111509148.png" alt="image-20241220111509148"></p><center>图1 mingw-builds-binaries</center><h4 id="安装程序安装"><a href="#安装程序安装" class="headerlink" title="安装程序安装"></a>安装程序安装</h4><p>点击 online installer 即可。安装设置各部分含义可参考 ⌈压缩包安装⌋ 中的相关介绍。</p><h4 id="压缩包安装"><a href="#压缩包安装" class="headerlink" title="压缩包安装"></a>压缩包安装</h4><p>点击 Releases，根据版本、系统架构等信息选择合适的压缩包进行下载。</p><p>压缩包命名中各部分含义如下。</p><p><strong>Version</strong>：GCC 版本，若无特殊要求，选择最新版本即可。</p><p><strong>Architechture</strong>：架构，64系统 位选择 x86_64，32 位系统选择 i686。</p><p><strong>Threads</strong>：接口，Windows 选择 win32，Linux、Mac OS 等其他操作系统选择 posix。</p><p><strong>Exception</strong>：异常机制</p><ul><li>SJLJ：支持 32&#x2F;64 位系统。</li><li>DRARF：仅支持 32 位系统，性能优于 SJLJ。</li><li>SEH：仅支持 64 位系统，性能优于 SJLJ。</li></ul><p>GitHub 上较新版的压缩包的命名又分为 msvcrt 和 ucrt。MSVCRT（Microsoft Visual C++ Runtime）和 UCRT（Universal C Runtime）是 Microsoft Windows 上的两种 C 运行时库。MSVCRT 在所有 Windows 版本上均可用，从 Windows 10 起，支持 UCRT。若支持 UCRT 则建议选择 UCRT。</p><p><img src="https://cache.ymjrhk.com/img/image-20241220132458948.png" alt="image-20241220132458948"></p><center>图2 Release of 14.2.0-rt_v12-rev0</center><p>将压缩包解压到合适的目录。</p><h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>配置环境变量，在系统变量 <code>Path</code> 中新增项，值为 <code>bin</code> 目录的路径。</p><h4 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h4><p>在 ⌈命令提示符⌋ 中执行 <code>gcc -v</code>，若显示版本，则说明安装配置成功。</p><h2 id="END"><a href="#END" class="headerlink" title="END"></a>END</h2>]]></content>
+        <content type="html"><![CDATA[<p>本文将介绍 GNU、GCC、MinGW 等相关概念，并着重介绍 Windows 中 MinGW-w64 的下载、安装与配置。MinGW-w64 的安装方式有两种：安装程序安装、压缩包安装，压缩包既可在 <a href="http://sourceforge.net/projects/mingw-w64/files/mingw-w64/mingw-w64-release/">SourceForge</a> 上下载，也可在 <a href="https://github.com/niXman/mingw-builds-binaries/releases">GitHub</a> 上下载。本文介绍 GitHub 下载。</p><h2 id="前导概念"><a href="#前导概念" class="headerlink" title="前导概念"></a>前导概念</h2><h4 id="GNU"><a href="#GNU" class="headerlink" title="GNU"></a>GNU</h4><p>GNU 是一个自由的操作系统，全称为 GNU’s Not Unix!，起源于 GNU 计划。GNU 计划由理查德·马修·斯托曼（Richard Matthew Stallman）发起，旨在发展出一套完整的开放源代码操作系统来取代 Unix。</p><h4 id="GPL"><a href="#GPL" class="headerlink" title="GPL"></a>GPL</h4><p>GNU General Public License，GNU 通用公共许可协议，缩写为 GNU GPL 或者 GPL。GPL 基于用户充分的自由，允许用户运行、修改、分发软件，但遵循 GPL 的软件的派生作品也必须遵循 GPL。</p><h4 id="GCC"><a href="#GCC" class="headerlink" title="GCC"></a>GCC</h4><p>GNU Compiler Collection，GNU 编译器套装，是“GNU 计划” 制作的一种优化编译器，支持将 C、C++、Go 等多种语言编译为机器语言。</p><h4 id="MinGW"><a href="#MinGW" class="headerlink" title="MinGW"></a>MinGW</h4><p>Minimalist GNU for Windows，缩写 MinGW，又称 MinGW32，是 GCC 及 GNU Binutils（一套编程工具）在 Win32 平台上的移植，用于生成 32 位 Windows 可执行文件。</p><p>MinGW-w64 用以解决 MinGW 项目更新缓慢、缺少新的重要 API 等问题，并提供 64 位支持，可用于生成 32 或 64 位 Windows 可执行程序。</p><p>所以，在 Windows 上安装 GCC 可通过在 Windows 上安装 MinGW 实现。</p><h2 id="下载、安装与配置"><a href="#下载、安装与配置" class="headerlink" title="下载、安装与配置"></a>下载、安装与配置</h2><p>进入 <a href="https://github.com/niXman/mingw-builds-binaries">mingw-builds-binaries</a>，安装方式有两种，一是通过安装程序在线安装，二是下载压缩包解压安装。</p><p><img src="https://cache.ymjrhk.com/img/image-20241220111509148.png" alt="image-20241220111509148"></p><center>图1 mingw-builds-binaries</center><h4 id="安装程序安装"><a href="#安装程序安装" class="headerlink" title="安装程序安装"></a>安装程序安装</h4><p>点击 online installer 即可。安装设置各部分含义可参考 ⌈压缩包安装⌋ 中的相关介绍。</p><h4 id="压缩包安装"><a href="#压缩包安装" class="headerlink" title="压缩包安装"></a>压缩包安装</h4><p>点击 Releases，根据版本、系统架构等信息选择合适的压缩包进行下载。</p><p>压缩包命名中各部分含义如下。</p><p><strong>Version</strong>：GCC 版本，若无特殊要求，选择最新版本即可。</p><p><strong>Architechture</strong>：架构，64系统 位选择 x86_64，32 位系统选择 i686。</p><p><strong>Threads</strong>：接口，Windows 选择 win32，Linux、Mac OS 等其他操作系统选择 posix。</p><p><strong>Exception</strong>：异常机制</p><ul><li>SJLJ：支持 32&#x2F;64 位系统。</li><li>DRARF：仅支持 32 位系统，性能优于 SJLJ。</li><li>SEH：仅支持 64 位系统，性能优于 SJLJ。</li></ul><p>GitHub 上较新版的压缩包的命名又分为 msvcrt 和 ucrt。MSVCRT（Microsoft Visual C++ Runtime）和 UCRT（Universal C Runtime）是 Microsoft Windows 上的两种 C 运行时库。MSVCRT 在所有 Windows 版本上均可用，从 Windows 10 起，支持 UCRT。若支持 UCRT 则建议选择 UCRT。</p><p><img src="https://cache.ymjrhk.com/img/image-20241220132458948.png" alt="image-20241220132458948"></p><center>图2 Release of 14.2.0-rt_v12-rev0</center><p>将压缩包解压到合适的目录。</p><h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>配置环境变量，在系统变量 <code>Path</code> 中新增项，值为 <code>bin</code> 目录的路径。</p><h4 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h4><p>在 ⌈命令提示符⌋ 中执行 <code>gcc -v</code>，若显示版本，则说明安装配置成功。</p><h2 id="END"><a href="#END" class="headerlink" title="END"></a>END</h2><p>参考资料：<a href="https://www.cnblogs.com/zijie1024/articles/18376803">https://www.cnblogs.com/zijie1024/articles/18376803</a></p>]]></content>
       
       
       
