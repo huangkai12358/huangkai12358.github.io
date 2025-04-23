@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>LeetCode之回溯法</title>
+      <link href="/posts/a295/"/>
+      <url>/posts/a295/</url>
+      
+        <content type="html"><![CDATA[<p>46 全排列</p><p>可以往回回溯，即1-2-3，然后1-3-2</p><p>所以要用visited[]，不需要start</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">dfs(...) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; ...) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!visited[i]) &#123;</span><br><span class="line">            添加</span><br><span class="line">            dfs(...);</span><br><span class="line">            撤销</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>78 子集</p><p>不能往回回溯，1-2-3和1-3-2是同样的子集，没有1-3-2</p><p>不需要用visited[]，用start变量，dfs(…, start)控制位置，保证后面的元素肯定在前面的元素后面</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dfs(..., <span class="type">int</span> start) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> start; ...) &#123;</span><br><span class="line">        添加</span><br><span class="line">        dfs(..., i + <span class="number">1</span>);</span><br><span class="line">        撤销</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>39 组合总和</p><p>与78类似，不同的地方是后面的元素可以是前面的元素，即元素可以重复，唯一区别如下</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dfs(..., <span class="type">int</span> start) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> start; ...) &#123;</span><br><span class="line">        添加</span><br><span class="line">        dfs(..., i); <span class="comment">// 唯一区别在此</span></span><br><span class="line">        撤销</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>暑期实习</title>
       <link href="/posts/1a66/"/>
       <url>/posts/1a66/</url>
