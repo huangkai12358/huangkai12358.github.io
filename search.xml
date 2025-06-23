@@ -1,0 +1,1624 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>5月月记</title>
+      <link href="/posts/e0e3/"/>
+      <url>/posts/e0e3/</url>
+      
+        <content type="html"><![CDATA[<h2 id="5-6"><a href="#5-6" class="headerlink" title="5.6"></a>5.6</h2><p>lc 6</p><h2 id="5-7"><a href="#5-7" class="headerlink" title="5.7"></a>5.7</h2><p>lc 2</p><h2 id="5-8"><a href="#5-8" class="headerlink" title="5.8"></a>5.8</h2><p>lc 8</p><h2 id="5-9"><a href="#5-9" class="headerlink" title="5.9"></a>5.9</h2><p>接雨水失败</p><h2 id="5-10"><a href="#5-10" class="headerlink" title="5.10"></a>5.10</h2><p>周末</p><h2 id="5-11"><a href="#5-11" class="headerlink" title="5.11"></a>5.11</h2><p>招商银行统一笔试</p><h2 id="5-12"><a href="#5-12" class="headerlink" title="5.12"></a>5.12</h2><p>lc 1</p><p>整理招聘表格</p><h2 id="5-13"><a href="#5-13" class="headerlink" title="5.13"></a>5.13</h2><p>继续整理招聘表格</p><p>投递阿里大文娱</p><p>写编译原理作业</p><h2 id="5-14"><a href="#5-14" class="headerlink" title="5.14"></a>5.14</h2><p>参观科大讯飞</p><p>投递联想、阿里控股、淘天、东方财富</p><h2 id="5-15"><a href="#5-15" class="headerlink" title="5.15"></a>5.15</h2><p>lc 5</p><h2 id="5-16"><a href="#5-16" class="headerlink" title="5.16"></a>5.16</h2><p>lc困难 3</p><h2 id="5-17"><a href="#5-17" class="headerlink" title="5.17"></a>5.17</h2><p>lc困难 1</p><p>米哈游笔试</p><h2 id="5-18"><a href="#5-18" class="headerlink" title="5.18"></a>5.18</h2><p>周日休息</p><h2 id="5-19"><a href="#5-19" class="headerlink" title="5.19"></a>5.19</h2><p>投递高德、携程、菜鸟、蚂蚁、B站、灵犀互娱、荣耀</p><h2 id="5-20"><a href="#5-20" class="headerlink" title="5.20"></a>5.20</h2><p>投递华为</p><p>lc困难 2</p><p>LeetCode Hot 100 完结</p><h2 id="5-21"><a href="#5-21" class="headerlink" title="5.21"></a>5.21</h2><p>Java 多线程</p><p>lc sql 2</p><h2 id="5-22"><a href="#5-22" class="headerlink" title="5.22"></a>5.22</h2><p>Java 多线程</p><h2 id="5-23"><a href="#5-23" class="headerlink" title="5.23"></a>5.23</h2><p>招行面试</p><h2 id="5-24"><a href="#5-24" class="headerlink" title="5.24"></a>5.24</h2><p>周六</p><h2 id="5-25"><a href="#5-25" class="headerlink" title="5.25"></a>5.25</h2><p>蚂蚁笔试</p><h2 id="5-26"><a href="#5-26" class="headerlink" title="5.26"></a>5.26</h2><p>淘天面试</p><h2 id="5-27"><a href="#5-27" class="headerlink" title="5.27"></a>5.27</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 月记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 月记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LeetCode之回溯法</title>
+      <link href="/posts/a295/"/>
+      <url>/posts/a295/</url>
+      
+        <content type="html"><![CDATA[<p>46 全排列</p><p>可以往回回溯，即1-2-3，然后1-3-2</p><p>所以要用visited[]，不需要start</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">dfs(...) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; ...) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!visited[i]) &#123;</span><br><span class="line">            添加</span><br><span class="line">            dfs(...);</span><br><span class="line">            撤销</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>78 子集</p><p>不能往回回溯，1-2-3和1-3-2是同样的子集，没有1-3-2</p><p>不需要用visited[]，用start变量，dfs(…, start)控制位置，保证后面的元素肯定在前面的元素后面</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dfs(..., <span class="type">int</span> start) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> start; ...) &#123;</span><br><span class="line">        添加</span><br><span class="line">        dfs(..., i + <span class="number">1</span>);</span><br><span class="line">        撤销</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>39 组合总和</p><p>与78类似，不同的地方是后面的元素可以是前面的元素，即元素可以重复，唯一区别如下</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dfs(..., <span class="type">int</span> start) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> start; ...) &#123;</span><br><span class="line">        添加</span><br><span class="line">        dfs(..., i); <span class="comment">// 唯一区别在此</span></span><br><span class="line">        撤销</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>其中78和39也都可以用“选还是不选”的方法来做</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>暑期实习</title>
+      <link href="/posts/1a66/"/>
+      <url>/posts/1a66/</url>
+      
+        <content type="html"><![CDATA[<div class="timeline undefined"><div class='timeline-item headline'><div class='timeline-item-title'><div class='item-circle'><p>2025</p></div></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>3-31</p></div></div><div class='timeline-item-content'><p>投递野村</p><p>投递美团</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>4-3</p></div></div><div class='timeline-item-content'><p>野村笔试</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>4-5</p></div></div><div class='timeline-item-content'><p>美团笔试</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>4-6</p></div></div><div class='timeline-item-content'><p>美团AI面试</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>4-7</p></div></div><div class='timeline-item-content'><p>投递饿了么</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>4-12</p></div></div><div class='timeline-item-content'><p>饿了么笔试</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>4-14</p></div></div><div class='timeline-item-content'><p>美团一面</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>4-25</p></div></div><div class='timeline-item-content'><p>投递招商银行信用卡中心</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>4-29</p></div></div><div class='timeline-item-content'><p>招行笔试和AI面试</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>5-5</p></div></div><div class='timeline-item-content'><p>投递米哈游</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>5-11</p></div></div><div class='timeline-item-content'><p>招商银行统一笔试</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>5-13</p></div></div><div class='timeline-item-content'><p>投递阿里大文娱</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>5-14</p></div></div><div class='timeline-item-content'><p>投递联想、阿里控股、淘天、东方财富</p></div></div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工作 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>4月月记</title>
+      <link href="/posts/a87f/"/>
+      <url>/posts/a87f/</url>
+      
+        <content type="html"><![CDATA[<h2 id="4-10"><a href="#4-10" class="headerlink" title="4.10"></a>4.10</h2><p>LeetCode 3题 4h</p><p>Missing Semester Git 2h</p><p>CS61B Software Engineering (1) 1h</p><p>野村面试</p><h2 id="4-11"><a href="#4-11" class="headerlink" title="4.11"></a>4.11</h2><p>lc 5 3.5h</p><p>git branching游戏 3h</p><p>整理电脑桌面、有道云笔记 2h</p><h2 id="4-12"><a href="#4-12" class="headerlink" title="4.12"></a>4.12</h2><p>饿了么笔试</p><h2 id="4-13"><a href="#4-13" class="headerlink" title="4.13"></a>4.13</h2><p>美团面试复习</p><h2 id="4-14"><a href="#4-14" class="headerlink" title="4.14"></a>4.14</h2><p>美团一面</p><h2 id="4-15-16"><a href="#4-15-16" class="headerlink" title="4.15~16"></a>4.15~16</h2><p>主要写编译原理作业</p><h2 id="4-17-21"><a href="#4-17-21" class="headerlink" title="4.17~21"></a>4.17~21</h2><p>生病休息</p><h2 id="4-22"><a href="#4-22" class="headerlink" title="4.22"></a>4.22</h2><p>复习编译原理期中考试</p><h2 id="4-23"><a href="#4-23" class="headerlink" title="4.23"></a>4.23</h2><p>lc 6</p><h2 id="4-24"><a href="#4-24" class="headerlink" title="4.24"></a>4.24</h2><p>lc 5</p><h2 id="4-25"><a href="#4-25" class="headerlink" title="4.25"></a>4.25</h2><p>lc 3</p><h2 id="4-26"><a href="#4-26" class="headerlink" title="4.26"></a>4.26</h2><p>lc 2</p><h2 id="4-27"><a href="#4-27" class="headerlink" title="4.27"></a>4.27</h2><p>lc 3</p><h2 id="4-28"><a href="#4-28" class="headerlink" title="4.28"></a>4.28</h2><p>lc 7</p><h2 id="4-29"><a href="#4-29" class="headerlink" title="4.29"></a>4.29</h2><p>lc 1</p><p>招行AI面试和笔试</p><h2 id="4-30"><a href="#4-30" class="headerlink" title="4.30"></a>4.30</h2><p>五一启动！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 月记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 月记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CS61B Gitlet Design</title>
+      <link href="/posts/e423/"/>
+      <url>/posts/e423/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Gitlet-Design-Document"><a href="#Gitlet-Design-Document" class="headerlink" title="Gitlet Design Document"></a>Gitlet Design Document</h1><p><strong>Name</strong>: Kai Huang</p><h2 id="Classes-and-Data-Structures"><a href="#Classes-and-Data-Structures" class="headerlink" title="Classes and Data Structures"></a>Classes and Data Structures</h2><h3 id="Commit"><a href="#Commit" class="headerlink" title="Commit"></a>Commit</h3><p>Represents a commit in gitlet. A series of commits can be seen as a linked list.</p><h4 id="Fields"><a href="#Fields" class="headerlink" title="Fields"></a>Fields</h4><ol><li><code>private String message</code> The message of this Commit.</li><li><code>private long timestamp</code> Time at which a commit was created. Assigned by the constructor.</li><li><code>private String parent</code> The parent commit of a commit object.</li><li><code>private String secondParent</code> The second parent if merge.</li><li><code>public TreeMap&lt;String, String&gt; reference</code> References to blobs.</li></ol><hr><h3 id="Main"><a href="#Main" class="headerlink" title="Main"></a>Main</h3><p>This is the entry point to our program. It takes in arguments from the command line and based on the command (the first element of the <code>args</code> array) calls the corresponding command in <code>Repository</code> which will actually execute the logic of the command. It also validates the arguments based on the command to ensure that enough and appropriate arguments were passed in.</p><h4 id="Fields-1"><a href="#Fields-1" class="headerlink" title="Fields"></a>Fields</h4><p>This class has no fields and hence no associated state: it simply validates arguments and defers the execution to the <code>Repository</code> class.</p><hr><h3 id="Repository"><a href="#Repository" class="headerlink" title="Repository"></a>Repository</h3><h4 id="Fields-2"><a href="#Fields-2" class="headerlink" title="Fields"></a>Fields</h4><p>Local</p><ol><li><code>public static File CWD = new File(System.getProperty(&quot;user.dir&quot;))</code> Current working directory</li><li><code>public static final File currentCWD = new File(System.getProperty(&quot;user.dir&quot;))</code> A CWD that never change.</li><li><code>public static File GITLET_DIR = join(CWD, &quot;.gitlet&quot;)</code> .gitlet directory.</li><li><code>public static File Stage_DIR = join(GITLET_DIR, &quot;stage&quot;, &quot;addition&quot;)</code> The stage for addition directory.</li><li><code>public static File Removal_DIR = join(GITLET_DIR, &quot;stage&quot;, &quot;removal&quot;)</code> The stage for removal directory.</li><li><code>public static File Commit_DIR = join(GITLET_DIR, &quot;commit&quot;)</code> The commit directory.</li><li><code>public static File Blob_DIR = join(GITLET_DIR, &quot;blob&quot;)</code> The blob directory.</li><li><code>public static File Head_DIR = join(GITLET_DIR, &quot;refs&quot;, &quot;heads&quot;)</code> The head directory.</li><li><code>public static File Remote_DIR = join(GITLET_DIR, &quot;refs&quot;, &quot;remote&quot;)</code> The remote directory.</li><li><code>public static File Config_DIR = join(GITLET_DIR, &quot;config&quot;)</code> Record remote repository information: name and url.</li><li><code>public static File HEAD = join(GITLET_DIR, &quot;HEAD&quot;)</code> Store branch name in HEAD.</li><li><code>public static HashSet&lt;String&gt; gitIgnore = new HashSet&lt;&gt;(Set.of(&quot;.gitignore&quot;, &quot;delete_gitletDir.sh&quot;, &quot;Makefile&quot;, &quot;gitlet-design.md&quot;, &quot;pom.xml&quot;))</code> The gitIgnore file.</li></ol><p>Remote</p><ol><li><code>public static File remoteCWD</code></li><li><code>public static File remoteGITLET_DIR</code> If need, <code>remoteGITLET_DIR</code> will be <code>new File(readContentsAsString(join(Config_DIR, remoteName)))</code>.</li><li><code>public static File remoteCommit_DIR</code></li><li><code>public static File remoteBlob_DIR</code></li><li><code>public static File remoteHead_DIR</code></li><li><code>public static final String remoteSeparator = &quot;#&quot;</code>  Replace “&#x2F;“ with “#” because filename can’t contain “&#x2F;“, e.g. replace “R1&#x2F;master” with “R1#master”.</li></ol><hr><h3 id="Utils"><a href="#Utils" class="headerlink" title="Utils"></a>Utils</h3><p>This class contains helpful utility methods to read&#x2F;write objects or <code>String</code> contents from&#x2F;to files, as well as reporting errors when they occur.</p><h4 id="Fields-3"><a href="#Fields-3" class="headerlink" title="Fields"></a>Fields</h4><p>Only some <code>private</code> fields to aid in the magic.</p><hr><h3 id="HelpMethod"><a href="#HelpMethod" class="headerlink" title="HelpMethod"></a>HelpMethod</h3><p>The help methods to help achieve functions in <code>Repository</code> class.</p><h4 id="Fields-4"><a href="#Fields-4" class="headerlink" title="Fields"></a>Fields</h4><p>No fields.</p><h2 id="Algorithms"><a href="#Algorithms" class="headerlink" title="Algorithms"></a>Algorithms</h2><h3 id="init"><a href="#init" class="headerlink" title="init"></a>init</h3><ol><li>Check if <code>GITLET_DIR</code> exists. If exist, error.</li><li>Local directories and file make. </li><li>Make initial commit.<ol><li><code>new</code> instance ,serialize and sha1.</li><li>Write to <code>Commit_DIR</code>, filename: sha1-hash, content: serialization.</li><li>Write “master” in <code>HEAD</code>, write sha1-hash in <code>Commit_DIR/master</code></li></ol></li></ol><h3 id="add"><a href="#add" class="headerlink" title="add"></a>add</h3><p>…</p><h2 id="Persistence"><a href="#Persistence" class="headerlink" title="Persistence"></a>Persistence</h2><p>The directory structure looks like this:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">CWD                          &lt;==== The current working directory</span><br><span class="line">└── .gitlet                      &lt;==== All persistant data is stored within here</span><br><span class="line">    ├── stage                   </span><br><span class="line">        ├── addition</span><br><span class="line">            ├── a.txt                &lt;==== Content: hash in blob</span><br><span class="line">            └── ...</span><br><span class="line">        └── removal</span><br><span class="line">            ├── b.txt</span><br><span class="line">            └── ...      </span><br><span class="line">    ├── commit</span><br><span class="line">            ├── 6d675d...            &lt;==== Content: Serialized commit</span><br><span class="line">            └── ...      </span><br><span class="line">    ├── blob</span><br><span class="line">            ├── cdf006...            &lt;==== Content: Real content in xx.txt</span><br><span class="line">            └── ...         </span><br><span class="line">    ├── refs                    </span><br><span class="line">        ├── heads</span><br><span class="line">            ├── master               &lt;==== Content: sha1-hash</span><br><span class="line">            ├── ...</span><br><span class="line">            ├── R1#master</span><br><span class="line">            └── ...            </span><br><span class="line">        └── remote    </span><br><span class="line">            ├── R1</span><br><span class="line">            ├── master               &lt;==== Content: sha1-hash</span><br><span class="line">            └── ...</span><br><span class="line">            └── ...</span><br><span class="line">    ├── config</span><br><span class="line">    ├── R1                       &lt;==== Content: .gitlet url in remote repository</span><br><span class="line">    └── ...</span><br><span class="line">    └── HEAD         &lt;==== Where the head branch is stored (a file)</span><br></pre></td></tr></table></figure><p>The <code>Repository</code> will set up all persistence.</p><h2 id="Other"><a href="#Other" class="headerlink" title="Other"></a>Other</h2><h3 id="Super-helpful-commands-in-real-Git"><a href="#Super-helpful-commands-in-real-Git" class="headerlink" title="Super helpful commands in real Git"></a>Super helpful commands in real Git</h3><ol><li><code>git hash-object &lt;File&gt;</code> &#x2F;&#x2F;show the hash of the file</li><li><code>git cat-file -p &lt;sha-1 hash&gt;</code> &#x2F;&#x2F;deserialize</li><li><code>git ls-files -s</code> &#x2F;&#x2F;Lists the status of all the files in the current Git repository and displays the metadata for those files. Specifically, it lists the files in the staging area and their related information.</li></ol><h3 id="Key-sentences-from-a-video"><a href="#Key-sentences-from-a-video" class="headerlink" title="Key sentences from a video"></a>Key sentences from a video</h3><h4 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h4><p>Create a blob containing the content of the file.</p><h4 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h4><ol><li>Write the commit’s content to the working copy.</li><li>Write the commit’s content to the Index.</li><li>Point HEAD at the thing that was checked out.</li></ol><p>A commit is a set of changes.</p><h4 id="git-merge"><a href="#git-merge" class="headerlink" title="git merge"></a>git merge</h4><ol><li>Generate the diff that combines the changes made by the receiver and giver.</li><li>Apply the diff to the working copy.</li><li>Apply the diff to the Index.</li><li>Commit the updated Index.</li><li>Point HEAD at the new commit.</li></ol><p>when conflict:</p><ol><li>Generate the diff that combines the changes made by the receiver and giver.</li><li>Apply the diff to the working copy.</li><li>Apply the diff to the Index.</li><li>The user resolves the conflicts in the working copy.</li><li>The user resolves the conflicts in the Index.</li><li>The user commits the merge.</li></ol><h4 id="git-fetch"><a href="#git-fetch" class="headerlink" title="git fetch"></a>git fetch</h4><ol><li>Find the tip commit on the branch being fetched from the remote repository.</li><li>Copy to the fetching repository the tip commit and the objects it depends on.</li><li>Point the ref for the remote branch at the fetched commit.</li><li>Point FETCH_HEAD at the fetched commit.</li></ol><h4 id="git-pull"><a href="#git-pull" class="headerlink" title="git pull"></a>git pull</h4><p>git fetch + git merge FETCH_HEAD</p><h4 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h4><ol><li>Create the directory for the new repository.</li><li>Move into the clone’s directory.</li><li>Initialize the clone’s directory as a Git repository.</li><li>Check out the branch that was checked out on the repository being cloned.</li><li>Pull the branch that was checked out on the repository being cloned.</li></ol><p><code>git clone [ ] [ ] --bare</code> A bare repository: You push to it and you pull from it but you never commit to it directly.</p><h4 id="git-push"><a href="#git-push" class="headerlink" title="git push"></a>git push</h4><ol><li>Copy the pushed branch’s tip commit and the objects it depends on to the remote directory.</li><li>Point the pushed branch on the remote to the tip commit.</li></ol><h3 id="To-be-improved"><a href="#To-be-improved" class="headerlink" title="To be improved"></a>To be improved</h3><ol><li>Use ppt to draw .gitlet file structure, merge cases, tesing cases.</li></ol><h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol><li><p><a href="https://www.youtube.com/watch?v=fCtZWGhQBvo">Git from the inside out - video</a></p></li><li><p><a href="https://maryrosecook.com/blog/post/git-from-the-inside-out">Git from the inside out - essay</a></p></li><li><p><a href="http://gitlet.maryrosecook.com/docs/gitlet.html">GITLET.js</a></p></li><li><p><a href="https://cs61bl.org/su20/projects/gitlet/gitletFAQ">Project 2: Gitlet FAQ</a></p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>源源需求及解答</title>
+      <link href="/posts/fa3b/"/>
+      <url>/posts/fa3b/</url>
+      
+        <content type="html"><![CDATA[<h2 id="B站、小红书视频下载"><a href="#B站、小红书视频下载" class="headerlink" title="B站、小红书视频下载"></a>B站、小红书视频下载</h2><p>视频解析：<a href="https://www.xiazaitool.com/blbl">https://www.xiazaitool.com/blbl</a></p><h2 id="音乐下载"><a href="#音乐下载" class="headerlink" title="音乐下载"></a>音乐下载</h2><p>使用 Python 的 Music-dl：<a href="https://github.com/0xHJK/music-dl">https://github.com/0xHJK/music-dl</a></p><h2 id="必应每日壁纸下载"><a href="#必应每日壁纸下载" class="headerlink" title="必应每日壁纸下载"></a>必应每日壁纸下载</h2><p>油猴插件：<a href="https://greasyfork.org/zh-CN/scripts/35070-bing-image-download-button">https://greasyfork.org/zh-CN/scripts/35070-bing-image-download-button</a></p><h2 id="腾讯视频下载"><a href="#腾讯视频下载" class="headerlink" title="腾讯视频下载"></a>腾讯视频下载</h2><p>参考：<a href="https://www.youtube.com/watch?v=z2ja7bEz9is">https://www.youtube.com/watch?v=z2ja7bEz9is</a></p><p>使用手机 ALOOK 浏览器，打开<a href="https://v.wkvip.net/">我看VIP</a>解析视频，点击下载即可</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+            <tag> to be continued </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>R入门（转载）</title>
+      <link href="/posts/b8c8/"/>
+      <url>/posts/b8c8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="R入门"><a href="#R入门" class="headerlink" title="R入门"></a>R入门</h2><h3 id="R语言介绍"><a href="#R语言介绍" class="headerlink" title="R语言介绍"></a>R语言介绍</h3><p>相较于其他的所有软件，R 的优势之一在于，它是专为数据分析而设计的，它是主要用于统计分析、绘图的语言和操作环境。R 是属于<a href="https://so.csdn.net/so/search?q=GNU&spm=1001.2101.3001.7020">GNU</a> 系统的一个自由、免费、源代码开放的软件，它是一个用于统计计算和统计制图的优秀工具。R 语言有一系列的数据可视化包，包括ggplot21及ggplot2拓展包2、lattice、leaflet、playwith、ggvis、ggmaps。</p><h3 id="R语言安装"><a href="#R语言安装" class="headerlink" title="R语言安装"></a>R语言安装</h3><p>R可以在CRAN（Comprehensive R Archive Network，<a href="http://cran.r-project.org)上免费下载.linux、mac/">http://cran.r-project.org）上免费下载。Linux、Mac</a> OS X和Windows都有相应编译好的二进制版本。根据你所选择平台的安装说明进行安装即可。<br>R、Rtools和RStudio的安装，可以参考<a href="https://blog.csdn.net/xhmico/article/details/122443660">博文</a>中有详细介绍。</p><h2 id="语言编程基础"><a href="#语言编程基础" class="headerlink" title="语言编程基础"></a>语言编程基础</h2><p>这里就简单记录一下学习笔记，适合于有其他编程基础，又快速了解R语言的读者。这里将R语言与C&#x2F;C++、Python或者Matlab不同之处进行一个简单总结，其中也会包含一些相同点。</p><p>R 是一种区分字母大小写的解释性语言；<br>R 语句的分隔符是分号（;）或换行符。当语句结束时，可以不使用分号，R 语言会自动识别语句结束的位置。<br>R 语言只支持单行注释，注释由#开头，当前行出现在#之后的任何文本都会被R 解释器忽略。<br>R 语句由函数和赋值构成。R 使用 &lt;-，而不是传统的 &#x3D; 作为赋值符号。<br>R 语言的数学运算与我们平时的数学运算（加+，减-，乘*，除&#x2F;）基本一致。</p><p>注意：R允许使用&#x3D;为对象赋值，但是这样写的R程序并不多，因为它不是标准语法。一些情况下，用等号赋值会出现问题，R程序员可能会因此取笑你。你还可以反转赋值方向。例如，rnorm(5) -&gt; x与上面的语句等价。使用等号赋值的做法在R中并不常见。</p><h3 id="数据的导入与导出"><a href="#数据的导入与导出" class="headerlink" title="数据的导入与导出"></a>数据的导入与导出</h3><h4 id="数据文件的导入与导出"><a href="#数据文件的导入与导出" class="headerlink" title="数据文件的导入与导出"></a>数据文件的导入与导出</h4><p>我们常用外部保存的数据文件来绘制图表。此时，就需要借助可以导入数据的函数导入不同格式的数据，包括CSV、TXT，以及Excel、SQL、HTML 等数据文件。有时候，我们也需要将处理好的数据从R 语言中导出保存。其中，在数据可视化中使用最多的就是前3 种格式的数据文件。<br>（1）CSV 格式数据的导入与导出<br>使用read.csv()函数，可以导入CSV 格式的数据，并存储为数据框形式。需要注意是：当<br>stringsAsFactors&#x3D;TRUE 时，R 会自动将读入的字符型变量转换成因子，但是这样很容易导致数据只按默认字母顺序展示。在导入大批量数据时，为了提高性能，尽可能分两步走：<br>① 显式指定“stringsAsFactors &#x3D; FALSE”；<br>② 依次将所需要的数据列（向量）转换为因子。</p><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mydata<span class="operator">&lt;-</span>read.csv<span class="punctuation">(</span><span class="string">&quot;Data.csv&quot;</span><span class="punctuation">,</span>sep<span class="operator">=</span><span class="string">&quot;,&quot;</span><span class="punctuation">,</span>na.strings<span class="operator">=</span><span class="string">&quot;NA&quot;</span><span class="punctuation">,</span>stringsAsFactors<span class="operator">=</span><span class="literal">FALSE</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure><p>使用write.csv()函数，可以将data.frame 的数据存储为CSV 文件：</p><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">write.csv<span class="punctuation">(</span>mydata<span class="punctuation">,</span>file <span class="operator">=</span> <span class="string">&quot;File.csv&quot;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure><p>CSV 文件主要有以下3 个特点。<br>① 文件结构简单，基本上和TXT 文本的差别不大；<br>② 可以和Excel 进行转换，这是一个很大的优点，很容易进行查看模式转换，但是其文件的存<br>储大小比Excel 小。<br>③ 由于其简单的存储方式，一方面可以降低存储信息的容量，这样有利于网络传输及客户端的<br>再处理；另一方面，由于是一堆没有任何说明的数据，其具备基本的安全性。所以相比TXT 和Excel<br>数据文件，我们更加推荐使用CSV 格式的数据文件进行导入与导出操作。</p><p>（2）TXT 格式数据的导入与导出<br>使用read.table()函数不仅可以导入CSV 格式的文件数据，还可以导入TXT 格式的文件数据，并<br>存储为数据框数据。</p><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mydata<span class="operator">&lt;-</span>read.table<span class="punctuation">(</span><span class="string">&quot;Data.txt&quot;</span><span class="punctuation">,</span>header <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure><p>使用write.table()函数可以将data.frame 的数据存储为TXT 文件：<br>write.table(mydata, file &#x3D; “File.txt”)<br>（3）Excel 格式数据的导入与导出<br>使用xlsx 包的read.xlsx()函数和read.xlsx2()函数可以导入XLSX 格式的数据文件。但是更推荐<br>使用CSV 格式导入数据文件。</p><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mydata<span class="operator">&lt;-</span> read.xlsx<span class="punctuation">(</span><span class="string">&quot;Data.xlsx&quot;</span><span class="punctuation">,</span> sheetIndex<span class="operator">=</span><span class="number">1</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure><p>也可以使用write.xlsx()函将数据文件导出为XLSX 格式：</p><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">write.xlsx<span class="punctuation">(</span>mydata<span class="punctuation">,</span> <span class="string">&quot;Data.xlsx&quot;</span><span class="punctuation">,</span> sheetName<span class="operator">=</span><span class="string">&quot;Sheet Name&quot;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure><p>R是逐行执行的，这一点和Matlab很相似，可以通过运行脚本的方式一次性运行：<code>source(&quot;wf_hpc.R&quot;)</code></p><h2 id="R包"><a href="#R包" class="headerlink" title="R包"></a>R包</h2><p>包是R函数、数据、预编译代码以一种定义完善的格式组成的集合。计算机上存储包的目录称为库（library）。函数<code>.libPaths()</code>能够显示库所在的位置， 函数<code>library()</code>则可以显示库中有哪些包。</p><h3 id="R包的安装"><a href="#R包的安装" class="headerlink" title="R包的安装"></a>R包的安装</h3><p>如果拥有RStudio，那么最简单的方法是单击右下角写有“Packages”的选项卡，然后在弹出的<br>对话框中输入包的名称。或者直接在左下角的“ Console ” 控制台输入安装命令安装。例如安装包“devtools”：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">install.<span class="built_in">packages</span>(<span class="string">&quot;devtools&quot;</span>)</span><br></pre></td></tr></table></figure><p>批量安装多个包，例如：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">install.<span class="built_in">packages</span>(<span class="built_in">c</span>(<span class="string">&quot;ggplot2&quot;</span>,<span class="string">&quot;ElemStatLearn&quot;</span>,<span class="string">&quot;mlmRev&quot;</span>)) </span><br></pre></td></tr></table></figure><p>有时候需要直接从Github 或BitBucket 上下载安装包，这种方法可以得到包的开发版本，但是需要使用devtools 包来完成：<code>devtools::install_github(&quot;tidyverse/ggplot2&quot;)</code>，tidyverse为github用户名。</p><p>从下载的R包安装：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">install.<span class="built_in">packages</span>(<span class="string">&quot;E:/vegan.rar&quot;</span>)  #需要绝对路径，R将反斜杠（\）作为一个转义符。即使在Windows平台上运行R，在路径中也要使用正斜杠。</span><br></pre></td></tr></table></figure><p>这种方式不太可取，有时候包依赖其他包，这种方式很容易安装失败。</p><h3 id="包的加载"><a href="#包的加载" class="headerlink" title="包的加载"></a>包的加载</h3><p>包安装好之后，需要加载才能使用。现在主要有两种函数可供选择：library()或者require()，比<br>如：<code>library(ggplot2)</code>。<br>有时已经加载的包可能需要卸载。这个可以在RStudio 中的“Packages”界面取消勾选相应的复<br>选框，或使用detach()函数：<code>detach(&quot;package: ggplot2&quot;)</code>。</p><h3 id="查看R包"><a href="#查看R包" class="headerlink" title="查看R包"></a>查看R包</h3><p>查看默认加载的R包</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">getOption</span>(<span class="string">&quot;defaultPackages&quot;</span>)</span><br></pre></td></tr></table></figure><p>查看已加载的R包</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">（.<span class="built_in">packages</span>()）</span><br></pre></td></tr></table></figure><p>查看所有已安装的R包</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(.<span class="built_in">packages</span>(all.available = T))</span><br></pre></td></tr></table></figure><p>或</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">installed.<span class="built_in">packages</span>()</span><br></pre></td></tr></table></figure><p>本文转自 <a href="https://blog.csdn.net/wokaowokaowokao12345/article/details/126216181">https://blog.csdn.net/wokaowokaowokao12345/article/details/126216181</a>，如有侵权，请联系删除。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Windows 中 MinGW-W64 的下载、安装与配置</title>
+      <link href="/posts/1096/"/>
+      <url>/posts/1096/</url>
+      
+        <content type="html"><![CDATA[<p>本文将介绍 GNU、GCC、MinGW 等相关概念，并着重介绍 Windows 中 MinGW-w64 的下载、安装与配置。MinGW-w64 的安装方式有两种：安装程序安装、压缩包安装，压缩包既可在 <a href="http://sourceforge.net/projects/mingw-w64/files/mingw-w64/mingw-w64-release/">SourceForge</a> 上下载，也可在 <a href="https://github.com/niXman/mingw-builds-binaries/releases">GitHub</a> 上下载。本文介绍 GitHub 下载。</p><h2 id="前导概念"><a href="#前导概念" class="headerlink" title="前导概念"></a>前导概念</h2><h4 id="GNU"><a href="#GNU" class="headerlink" title="GNU"></a>GNU</h4><p>GNU 是一个自由的操作系统，全称为 GNU’s Not Unix!，起源于 GNU 计划。GNU 计划由理查德·马修·斯托曼（Richard Matthew Stallman）发起，旨在发展出一套完整的开放源代码操作系统来取代 Unix。</p><h4 id="GPL"><a href="#GPL" class="headerlink" title="GPL"></a>GPL</h4><p>GNU General Public License，GNU 通用公共许可协议，缩写为 GNU GPL 或者 GPL。GPL 基于用户充分的自由，允许用户运行、修改、分发软件，但遵循 GPL 的软件的派生作品也必须遵循 GPL。</p><h4 id="GCC"><a href="#GCC" class="headerlink" title="GCC"></a>GCC</h4><p>GNU Compiler Collection，GNU 编译器套装，是“GNU 计划” 制作的一种优化编译器，支持将 C、C++、Go 等多种语言编译为机器语言。</p><h4 id="MinGW"><a href="#MinGW" class="headerlink" title="MinGW"></a>MinGW</h4><p>Minimalist GNU for Windows，缩写 MinGW，又称 MinGW32，是 GCC 及 GNU Binutils（一套编程工具）在 Win32 平台上的移植，用于生成 32 位 Windows 可执行文件。</p><p>MinGW-w64 用以解决 MinGW 项目更新缓慢、缺少新的重要 API 等问题，并提供 64 位支持，可用于生成 32 或 64 位 Windows 可执行程序。</p><p>所以，在 Windows 上安装 GCC 可通过在 Windows 上安装 MinGW 实现。</p><h2 id="下载、安装与配置"><a href="#下载、安装与配置" class="headerlink" title="下载、安装与配置"></a>下载、安装与配置</h2><p>进入 <a href="https://github.com/niXman/mingw-builds-binaries">mingw-builds-binaries</a>，安装方式有两种，一是通过安装程序在线安装，二是下载压缩包解压安装。</p><p><img src="https://cache.ymjrhk.com/img/image-20241220111509148.png" alt="image-20241220111509148"></p><center>图1 mingw-builds-binaries</center><h4 id="安装程序安装"><a href="#安装程序安装" class="headerlink" title="安装程序安装"></a>安装程序安装</h4><p>点击 online installer 即可。安装设置各部分含义可参考 ⌈压缩包安装⌋ 中的相关介绍。</p><h4 id="压缩包安装"><a href="#压缩包安装" class="headerlink" title="压缩包安装"></a>压缩包安装</h4><p>点击 Releases，根据版本、系统架构等信息选择合适的压缩包进行下载。</p><p>压缩包命名中各部分含义如下。</p><p><strong>Version</strong>：GCC 版本，若无特殊要求，选择最新版本即可。</p><p><strong>Architechture</strong>：架构，64系统 位选择 x86_64，32 位系统选择 i686。</p><p><strong>Threads</strong>：接口，Windows 选择 win32，Linux、Mac OS 等其他操作系统选择 posix。</p><p><strong>Exception</strong>：异常机制</p><ul><li>SJLJ：支持 32&#x2F;64 位系统。</li><li>DRARF：仅支持 32 位系统，性能优于 SJLJ。</li><li>SEH：仅支持 64 位系统，性能优于 SJLJ。</li></ul><p>GitHub 上较新版的压缩包的命名又分为 msvcrt 和 ucrt。MSVCRT（Microsoft Visual C++ Runtime）和 UCRT（Universal C Runtime）是 Microsoft Windows 上的两种 C 运行时库。MSVCRT 在所有 Windows 版本上均可用，从 Windows 10 起，支持 UCRT。若支持 UCRT 则建议选择 UCRT。</p><p><img src="https://cache.ymjrhk.com/img/image-20241220132458948.png" alt="image-20241220132458948"></p><center>图2 Release of 14.2.0-rt_v12-rev0</center><p>将压缩包解压到合适的目录。</p><h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>配置环境变量，在系统变量 <code>Path</code> 中新增项，值为 <code>bin</code> 目录的路径。</p><h4 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h4><p>在 ⌈命令提示符⌋ 中执行 <code>gcc -v</code>，若显示版本，则说明安装配置成功。</p><h2 id="END"><a href="#END" class="headerlink" title="END"></a>END</h2><p>参考资料：<a href="https://www.cnblogs.com/zijie1024/articles/18376803">https://www.cnblogs.com/zijie1024/articles/18376803</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>微信语音导出</title>
+      <link href="/posts/82a8/"/>
+      <url>/posts/82a8/</url>
+      
+        <content type="html"><![CDATA[<ol><li>收藏语音</li><li>收藏转笔记</li><li>电脑微信打开笔记，鼠标移到语音条边缘位置直到出现蓝框，右键，复制</li><li>发送给文件传输助手（此时为.silk文件）</li><li>右键在文件夹中打开，用转换工具转换为mp3</li></ol><p>参考：</p><ol><li><p><a href="https://www.youtube.com/watch?v=ThoxI1-qmdc">保存语音很简单？全网最通用详细的微信语音转MP3教程</a></p></li><li><p><a href="https://www.bilibili.com/opus/552888584508561454">微信语音导出工具（silk转MP3）安卓&#x2F;苹果通用</a></p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>小魏家的美食日记</title>
+      <link href="/posts/2c07/"/>
+      <url>/posts/2c07/</url>
+      
+        <content type="html"><![CDATA[<h2 id="煎饺"><a href="#煎饺" class="headerlink" title="煎饺"></a>煎饺</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909210158.jpg" alt="微信图片_20240909210158"></p><h2 id="三明治"><a href="#三明治" class="headerlink" title="三明治"></a>三明治</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909210159.jpg" alt="微信图片_20240909210159"></p><h2 id="包饺子"><a href="#包饺子" class="headerlink" title="包饺子"></a>包饺子</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_202409092101591.jpg" alt="微信图片_202409092101591"></p><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909210200.jpg" alt="微信图片_20240909210200"></p><h2 id="包馄饨"><a href="#包馄饨" class="headerlink" title="包馄饨"></a>包馄饨</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909210208.jpg" alt="微信图片_20240909210208"></p><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909210209.jpg" alt="微信图片_20240909210209"></p><h2 id="西红柿圆子汤、青椒牛肉片"><a href="#西红柿圆子汤、青椒牛肉片" class="headerlink" title="西红柿圆子汤、青椒牛肉片"></a>西红柿圆子汤、青椒牛肉片</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909210201.jpg" alt="微信图片_20240909210201"></p><h2 id="煮面条（加荷包蛋）"><a href="#煮面条（加荷包蛋）" class="headerlink" title="煮面条（加荷包蛋）"></a>煮面条（加荷包蛋）</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909210202.jpg" alt="微信图片_20240909210202"></p><h2 id="牛排、意面、奶冻"><a href="#牛排、意面、奶冻" class="headerlink" title="牛排、意面、奶冻"></a>牛排、意面、奶冻</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909210203.jpg" alt="微信图片_20240909210203"></p><h2 id="酸辣土豆丝"><a href="#酸辣土豆丝" class="headerlink" title="酸辣土豆丝"></a>酸辣土豆丝</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909210204.jpg" alt="微信图片_20240909210204"></p><h2 id="西红柿炒鸡蛋"><a href="#西红柿炒鸡蛋" class="headerlink" title="西红柿炒鸡蛋"></a>西红柿炒鸡蛋</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909210205.jpg" alt="微信图片_20240909210205"></p><h2 id="青椒炒鸡蛋"><a href="#青椒炒鸡蛋" class="headerlink" title="青椒炒鸡蛋"></a>青椒炒鸡蛋</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909221857.jpg" alt="微信图片_20240909221857"></p><h2 id="可乐鸡翅"><a href="#可乐鸡翅" class="headerlink" title="可乐鸡翅"></a>可乐鸡翅</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909210217.jpg" alt="微信图片_20240909210217"></p><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909210206.jpg" alt="微信图片_20240909210206"></p><h2 id="蒜蓉青菜、土豆炖牛肉"><a href="#蒜蓉青菜、土豆炖牛肉" class="headerlink" title="蒜蓉青菜、土豆炖牛肉"></a>蒜蓉青菜、土豆炖牛肉</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909210207.jpg" alt="微信图片_20240909210207"></p><h2 id="豆角炖排骨"><a href="#豆角炖排骨" class="headerlink" title="豆角炖排骨"></a>豆角炖排骨</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909221858_compressed.jpg" alt="微信图片_20240909221858_compressed"></p><h2 id="小炒黄牛肉"><a href="#小炒黄牛肉" class="headerlink" title="小炒黄牛肉"></a>小炒黄牛肉</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909210210.jpg" alt="微信图片_20240909210210"></p><h2 id="杭椒牛柳"><a href="#杭椒牛柳" class="headerlink" title="杭椒牛柳"></a>杭椒牛柳</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909210211.jpg" alt="微信图片_20240909210211"></p><h2 id="宫保鸡丁"><a href="#宫保鸡丁" class="headerlink" title="宫保鸡丁"></a>宫保鸡丁</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909210212.jpg" alt="微信图片_20240909210212"></p><h2 id="火锅！！！"><a href="#火锅！！！" class="headerlink" title="火锅！！！"></a>火锅！！！</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909210213.jpg" alt="微信图片_20240909210213"></p><h2 id="拍黄瓜"><a href="#拍黄瓜" class="headerlink" title="拍黄瓜"></a>拍黄瓜</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_202409092102061.jpg" alt="微信图片_202409092102061"></p><h2 id="9-9牛排"><a href="#9-9牛排" class="headerlink" title="9.9牛排"></a>9.9牛排</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_202409092102131.jpg" alt="微信图片_202409092102131"></p><h2 id="青椒牛肉丝、凉拌柿子"><a href="#青椒牛肉丝、凉拌柿子" class="headerlink" title="青椒牛肉丝、凉拌柿子"></a>青椒牛肉丝、凉拌柿子</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909210214.jpg" alt="微信图片_20240909210214"></p><h2 id="椒盐土豆"><a href="#椒盐土豆" class="headerlink" title="椒盐土豆"></a>椒盐土豆</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909210215.jpg" alt="微信图片_20240909210215"></p><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909210216.jpg" alt="微信图片_20240909210216"></p><h2 id="炸带鱼"><a href="#炸带鱼" class="headerlink" title="炸带鱼"></a>炸带鱼</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240909221856_compressed.jpg" alt="微信图片_20240909221856_compressed"></p><h2 id="红焖带鱼"><a href="#红焖带鱼" class="headerlink" title="红焖带鱼"></a>红焖带鱼</h2><p><img src="https://cache.ymjrhk.com/img/1732802090991.jpg" alt="1732802090991"></p><h2 id="好吃的早餐三明治"><a href="#好吃的早餐三明治" class="headerlink" title="好吃的早餐三明治"></a>好吃的早餐三明治</h2><p><img src="https://cache.ymjrhk.com/img/1727665689629.jpg"></p><h2 id="鸡蛋饼"><a href="#鸡蛋饼" class="headerlink" title="鸡蛋饼"></a>鸡蛋饼</h2><p><img src="https://cache.ymjrhk.com/img/1727665689623.jpg" alt="1727665689623"></p><h2 id="小炒牛里脊、凉拌柿子（白糖版）"><a href="#小炒牛里脊、凉拌柿子（白糖版）" class="headerlink" title="小炒牛里脊、凉拌柿子（白糖版）"></a>小炒牛里脊、凉拌柿子（白糖版）</h2><p><img src="https://cache.ymjrhk.com/img/1727665689619.jpg" alt="1727665689619"></p><p><img src="https://cache.ymjrhk.com/img/1727665689613.jpg" alt="1727665689613"></p><h2 id="干煸土豆豆角"><a href="#干煸土豆豆角" class="headerlink" title="干煸土豆豆角"></a>干煸土豆豆角</h2><p><img src="https://cache.ymjrhk.com/img/1727665689608.jpg" alt="1727665689608"></p><h2 id="锅包肉（mini版）"><a href="#锅包肉（mini版）" class="headerlink" title="锅包肉（mini版）"></a>锅包肉（mini版）</h2><p><img src="https://cache.ymjrhk.com/img/1727665689603.jpg" alt="1727665689603"></p><h2 id="豌豆饭"><a href="#豌豆饭" class="headerlink" title="豌豆饭"></a>豌豆饭</h2><p><img src="https://cache.ymjrhk.com/img/1727665689597.jpg" alt="1727665689597"></p><h2 id="自制麻辣烫（哇！）"><a href="#自制麻辣烫（哇！）" class="headerlink" title="自制麻辣烫（哇！）"></a>自制麻辣烫（哇！）</h2><p><img src="https://cache.ymjrhk.com/img/1727665689592.jpg" alt="1727665689592"></p><h2 id="蒜苔肉丝"><a href="#蒜苔肉丝" class="headerlink" title="蒜苔肉丝"></a>蒜苔肉丝</h2><p><img src="https://cache.ymjrhk.com/img/1727665689587.jpg" alt="1727665689587"></p><h2 id="青椒牛肉片（豪华版）"><a href="#青椒牛肉片（豪华版）" class="headerlink" title="青椒牛肉片（豪华版）"></a>青椒牛肉片（豪华版）</h2><p><img src="https://cache.ymjrhk.com/img/1727665689576.jpg" alt="1727665689576"></p><h2 id="肉丝面"><a href="#肉丝面" class="headerlink" title="肉丝面"></a>肉丝面</h2><p><img src="https://cache.ymjrhk.com/img/1727665689562.jpg" alt="1727665689562"></p><h2 id="菠菜汤"><a href="#菠菜汤" class="headerlink" title="菠菜汤"></a>菠菜汤</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20241007180438.jpg" alt="微信图片_20241007180438"></p><h2 id="番茄炒大头菜"><a href="#番茄炒大头菜" class="headerlink" title="番茄炒大头菜"></a>番茄炒大头菜</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_202410071804381.jpg" alt="微信图片_202410071804381"></p><h2 id="土豆炖牛腩"><a href="#土豆炖牛腩" class="headerlink" title="土豆炖牛腩"></a>土豆炖牛腩</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20241007180439.jpg" alt="微信图片_20241007180439"></p><h2 id="土豆炖豆角"><a href="#土豆炖豆角" class="headerlink" title="土豆炖豆角"></a>土豆炖豆角</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20241007180440.jpg" alt="微信图片_20241007180440"></p><h2 id="东北大饭包"><a href="#东北大饭包" class="headerlink" title="东北大饭包"></a>东北大饭包</h2><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20241007180441.jpg" alt="微信图片_20241007180441"></p><h2 id="凉面"><a href="#凉面" class="headerlink" title="凉面"></a>凉面</h2><p><img src="https://cache.ymjrhk.com/img/1732801753914_compressed.jpg" alt="凉面"></p><h2 id="炸酱面"><a href="#炸酱面" class="headerlink" title="炸酱面"></a>炸酱面</h2><p><img src="https://cache.ymjrhk.com/img/1732802148426.jpg" alt="1732802148426"></p><h2 id="番茄肥牛卷"><a href="#番茄肥牛卷" class="headerlink" title="番茄肥牛卷"></a>番茄肥牛卷</h2><p><img src="https://cache.ymjrhk.com/img/1732802232614.jpg" alt="1732802232614"></p><h2 id="大虾和排骨"><a href="#大虾和排骨" class="headerlink" title="大虾和排骨"></a>大虾和排骨</h2><p><img src="https://cache.ymjrhk.com/img/1732802338492.jpg" alt="1732802338492"></p><h2 id="特别好吃的韭菜虾仁馅饺子"><a href="#特别好吃的韭菜虾仁馅饺子" class="headerlink" title="特别好吃的韭菜虾仁馅饺子"></a>特别好吃的韭菜虾仁馅饺子</h2><p><img src="https://cache.ymjrhk.com/img/1732802319072.jpg" alt="1732802319072"></p><h2 id="乱入"><a href="#乱入" class="headerlink" title="乱入"></a>乱入</h2><p><img src="https://cache.ymjrhk.com/img/1732802379514.jpg" alt="1732802379514"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>灰度图变彩色图</title>
+      <link href="/posts/ffde/"/>
+      <url>/posts/ffde/</url>
+      
+        <content type="html"><![CDATA[<h2 id="原图"><a href="#原图" class="headerlink" title="原图"></a>原图</h2><p><img src="https://cache.ymjrhk.com/img/%E7%81%B0.jpg" alt="灰"></p><h2 id="彩色图1"><a href="#彩色图1" class="headerlink" title="彩色图1"></a>彩色图1</h2><p><img src="https://cache.ymjrhk.com/img/%E7%BA%A2.jpg" alt="红"></p><h2 id="彩色图2"><a href="#彩色图2" class="headerlink" title="彩色图2"></a>彩色图2</h2><p><img src="https://cache.ymjrhk.com/img/%E9%BB%84.jpg" alt="黄"></p><h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ol><li><p><a href="https://colorize.buyaocha.com/">https://colorize.buyaocha.com/</a></p></li><li><p><a href="https://playback.fm/colorize-photo">https://playback.fm/colorize-photo</a></p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>好厉害啊python+chatGPT</title>
+      <link href="/posts/2107/"/>
+      <url>/posts/2107/</url>
+      
+        <content type="html"><![CDATA[<p>问：</p><p>5.1.5 系统结构中的并行性开发及计算机系统的分类 (transcribed on 10-Oct-2024 23-10-44).srt<br>6.1.31 计算机系统的软、硬件取舍及定量设计原理(一) (transcribed on 10-Oct-2024 23-21-36).srt<br>7.1.32 计算机系统的软、硬件取舍及定量设计原理(二) (transcribed on 10-Oct-2024 23-40-49).srt<br>如何批量去除一个文件夹中所有srt文件的文件名中的 (transcribed on 10-Oct-2024 23-40-49)</p><p>答：</p><p>你可以使用Python批量修改文件名，去除SRT文件名中的 “(transcribed on …)” 这部分。下面是一个简单的Python脚本示例，可以在指定的文件夹中修改所有<code>.srt</code>文件的文件名，去除括号及其内容：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定要处理的文件夹路径</span></span><br><span class="line">folder_path = <span class="string">&#x27;path/to/your/folder&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 遍历文件夹中的所有文件</span></span><br><span class="line"><span class="keyword">for</span> filename <span class="keyword">in</span> os.listdir(folder_path):</span><br><span class="line">    <span class="comment"># 只处理以 .srt 结尾的文件</span></span><br><span class="line">    <span class="keyword">if</span> filename.endswith(<span class="string">&quot;.srt&quot;</span>):</span><br><span class="line">        <span class="comment"># 使用正则表达式去除文件名中的括号及其内容</span></span><br><span class="line">        new_filename = re.sub(<span class="string">r&#x27;\s*\(transcribed on.*\)&#x27;</span>, <span class="string">&#x27;&#x27;</span>, filename)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 获取完整的旧文件路径和新文件路径</span></span><br><span class="line">        old_file = os.path.join(folder_path, filename)</span><br><span class="line">        new_file = os.path.join(folder_path, new_filename)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 重命名文件</span></span><br><span class="line">        os.rename(old_file, new_file)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&#x27;Renamed: <span class="subst">&#123;old_file&#125;</span> -&gt; <span class="subst">&#123;new_file&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;所有文件重命名完成！&quot;</span>)</span><br></pre></td></tr></table></figure><p><strong>脚本说明：</strong></p><ol><li><code>folder_path</code>：指定包含SRT文件的文件夹路径。</li><li><code>re.sub(r&#39;\s*\(transcribed on.*\)&#39;, &#39;&#39;, filename)</code>：使用正则表达式匹配并去除文件名中 “(transcribed on …)” 部分。</li><li><code>os.rename()</code>：用来重命名文件。</li><li>该脚本会遍历文件夹中的所有<code>.srt</code>文件，去除文件名中不需要的部分，并进行重命名。</li></ol><p>运行此脚本时，将自动处理所有符合条件的SRT文件。如果有大量文件，修改速度也会很快。</p><p><strong>注意事项：</strong></p><ul><li>运行脚本前确保 <code>folder_path</code> 路径正确。</li><li>请先备份文件，避免误操作。</li></ul><p>如图：</p><p><img src="https://cache.ymjrhk.com/img/image-20241011151602496.png" alt="image-20241011151602496"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>记视频自动生成字幕的一晚上</title>
+      <link href="/posts/c7f2/"/>
+      <url>/posts/c7f2/</url>
+      
+        <content type="html"><![CDATA[<p>起因是b站的一个网课视频没有字幕功能，3倍速有时候听不清</p><ol><li><p>省心方案：<strong>百度云</strong><br>上传到百度云网盘在线观看，开svip享受ai字幕功能<br><img src="https://cache.ymjrhk.com/img/ae5e636b8b662fa37b878ca4b836c0a.jpg" alt="ae5e636b8b662fa37b878ca4b836c0a"><br>缺点：一天只能生成10次，导出的字幕为docx</p></li><li><p>使用openai的<strong>whisper</strong>跑本地模型<br>用了桌面端<strong>Buzz</strong>，用Medium模型速度：15分钟视频需要10分钟<br>注意模型移动到C:\Users<username>\AppData\Local\Buzz\Buzz\Cache\models\whisper 或 C:&#x2F;Users<username>&#x2F;.cache&#x2F;whisper<br><img src="https://cache.ymjrhk.com/img/1f4f17de4b292f6a3437179e6f405e2.png" alt="1f4f17de4b292f6a3437179e6f405e2"></p><p><a href="https://www.bilibili.com/read/cv23995720/">https://www.bilibili.com/read/cv23995720/</a><br><a href="https://www.bilibili.com/video/BV15c411j789/?vd_source=2e2950ffb6b9eff2b1e600206af0494e">https://www.bilibili.com/video/BV15c411j789/?vd_source=2e2950ffb6b9eff2b1e600206af0494e</a><br><a href="https://blog.csdn.net/oXiaoWeiWuDi/article/details/128925672">https://blog.csdn.net/oXiaoWeiWuDi/article/details/128925672</a></p></li><li><p>github上的<strong>VideoSrt</strong>，好用<strong>速度快</strong>，要用到<strong>阿里云oss</strong>和智能语音交互</p><p>阿里云的语音识别试用期3个月，每天2小时额度。升级商用版则大约2.5rmb&#x2F;h，略贵</p><p><img src="https://cache.ymjrhk.com/img/image-20241011010721492.png" alt="image-20241011010721492"><br><a href="https://github.com/wxbool/video-srt-windows">https://github.com/wxbool/video-srt-windows</a><br><a href="https://www.yuque.com/viggo-t7cdi/videosrt">https://www.yuque.com/viggo-t7cdi/videosrt</a><br><a href="https://www.yuque.com/viggo-t7cdi/videosrt-pro">https://www.yuque.com/viggo-t7cdi/videosrt-pro</a></p></li><li><p>使用剪映或必剪<br>剪映每月限9次（不过也许可以把所有视频剪一起再识别字幕？），可以单独导出字幕<br>必剪不限，且速度极快，但不能单独导出字幕</p></li><li><p>Win11自带ai字幕<br><strong>Win+Ctrl+L</strong>启动！<br>很牛，识别很快，缺点是一旦高倍速就准确率下降，不如srt格式稳定<br><img src="https://cache.ymjrhk.com/img/38859291e4f5e365b770b9c5dcc6d51.png" alt="38859291e4f5e365b770b9c5dcc6d51"></p><p>在知乎一堆广告中看到的有用的回答</p><p><img src="https://cache.ymjrhk.com/img/Snipaste_2024-10-10_20-37-04.png" alt="Snipaste_2024-10-10_20-37-04"><br><a href="https://support.microsoft.com/zh-cn/windows/%E4%BD%BF%E7%94%A8%E5%AE%9E%E6%97%B6%E5%AD%97%E5%B9%95%E6%9B%B4%E5%A5%BD%E5%9C%B0%E4%BA%86%E8%A7%A3%E9%9F%B3%E9%A2%91-b52da59c-14b8-4031-aeeb-f6a47e6055df">https://support.microsoft.com/zh-cn/windows/%E4%BD%BF%E7%94%A8%E5%AE%9E%E6%97%B6%E5%AD%97%E5%B9%95%E6%9B%B4%E5%A5%BD%E5%9C%B0%E4%BA%86%E8%A7%A3%E9%9F%B3%E9%A2%91-b52da59c-14b8-4031-aeeb-f6a47e6055df</a></p></li><li><p>通义——实时语音转文字</p><p>没试，应该和5差不多，但是不如5方便且5不要钱<br><a href="https://tingwu.aliyun.com/home">https://tingwu.aliyun.com/home</a><br><a href="https://tongyi.aliyun.com/efficiency/">https://tongyi.aliyun.com/efficiency/</a></p></li><li><p>各种在线字幕生成工具（要钱太贵）<br><a href="https://www.zimujiang.com/aff?code=aannv4os">https://www.zimujiang.com/aff?code=aannv4os</a></p></li></ol><p>综上，<strong>本地</strong>和<strong>阿里云</strong>是最好的，不着急量大本地，着急量小就阿里云或者剪映</p><p>额外：<strong>bilidown</strong>——b站视频音频下载工具，好用<br><a href="https://zhouql.vip/bilibili/">https://zhouql.vip/bilibili/</a><br><a href="https://zhouql.vip/bilibili/pc/">https://zhouql.vip/bilibili/pc/</a></p><hr><p>10.28更新</p><p>最终选择：<strong>阿里云</strong></p><p>意外地发现升级<strong>商用版</strong>后购买的100元&#x2F;40h的资源包可以用学生认证的300元代金券抵扣，刚好我代金券马上就要过期了还有280多，狂买2~3个，这下再也不用忍受自己电脑风扇呼呼转或者试用版每天2小时的小水管了。果然，用<strong>钱</strong>解决的效率是最高的（笑哭）</p><p><a href="https://sspai.com/post/79977">https://sspai.com/post/79977</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>九月关键词</title>
+      <link href="/posts/e5c6/"/>
+      <url>/posts/e5c6/</url>
+      
+        <content type="html"><![CDATA[<div class="note info no-icon flat"><h1 id="机缘很重要"><a href="#机缘很重要" class="headerlink" title="机缘很重要"></a>机缘很重要</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">进厂和考公的纠结</span></span></p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 专栏 </category>
+          
+          <category> 关键词 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 关键词 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>八月关键词</title>
+      <link href="/posts/ef73/"/>
+      <url>/posts/ef73/</url>
+      
+        <content type="html"><![CDATA[<div class="note info no-icon flat"><h1 id="开启新生活"><a href="#开启新生活" class="headerlink" title="开启新生活"></a>开启新生活</h1></div><div class="note danger no-icon flat"><h1 id="拒绝懒惰"><a href="#拒绝懒惰" class="headerlink" title="拒绝懒惰"></a>拒绝懒惰</h1></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 专栏 </category>
+          
+          <category> 关键词 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 关键词 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《自卑与超越》</title>
+      <link href="/posts/a727/"/>
+      <url>/posts/a727/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240730100732_compressed_docsmall.com.jpg"></p><h1 id="2"><a href="#2" class="headerlink" title="2"></a>2</h1><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240730100730_compressed_docsmall.com.jpg"></p><h1 id="3"><a href="#3" class="headerlink" title="3"></a>3</h1><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240730100731_compressed_docsmall.com.jpg"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 读书 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 读书 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>七月关键词</title>
+      <link href="/posts/3aee/"/>
+      <url>/posts/3aee/</url>
+      
+        <content type="html"><![CDATA[<div class="note info no-icon flat"><h1 id="无"><a href="#无" class="headerlink" title="无"></a>无</h1></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 专栏 </category>
+          
+          <category> 关键词 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 关键词 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>换电脑了</title>
+      <link href="/posts/4fc5/"/>
+      <url>/posts/4fc5/</url>
+      
+        <content type="html"><![CDATA[<p>换电脑了，测试是否能重新部署</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>六月关键词</title>
+      <link href="/posts/297a/"/>
+      <url>/posts/297a/</url>
+      
+        <content type="html"><![CDATA[<div class="note info no-icon flat"><h1 id="巴啦啦啦巴啦，布噜噜噜布噜"><a href="#巴啦啦啦巴啦，布噜噜噜布噜" class="headerlink" title="巴啦啦啦巴啦，布噜噜噜布噜~"></a>巴啦啦啦巴啦，布噜噜噜布噜~</h1></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 专栏 </category>
+          
+          <category> 关键词 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 关键词 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>五月关键词</title>
+      <link href="/posts/2fd8/"/>
+      <url>/posts/2fd8/</url>
+      
+        <content type="html"><![CDATA[<div class="note info no-icon flat"><h1 id="接受"><a href="#接受" class="headerlink" title="接受"></a>接受</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">接受自己的平凡，接受一切，有接受才不会有欲望缠身</span></span></p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 专栏 </category>
+          
+          <category> 关键词 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 关键词 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>四月关键词</title>
+      <link href="/posts/12c/"/>
+      <url>/posts/12c/</url>
+      
+        <content type="html"><![CDATA[<div class="note info no-icon flat"><h1 id="变幻莫测"><a href="#变幻莫测" class="headerlink" title="变幻莫测"></a>变幻莫测</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">又何尝不是一种因祸得福？</span></span></p></div><div class="note info no-icon flat"><h1 id="要开始了"><a href="#要开始了" class="headerlink" title="要开始了"></a>要开始了</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">蓝桥杯获奖，终于开张咯~</span></span></p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 专栏 </category>
+          
+          <category> 关键词 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 关键词 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>保研前的几个竞赛时间点</title>
+      <link href="/posts/801f/"/>
+      <url>/posts/801f/</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="de370194489e94d37071872c38e0ae2fd3753cd50eb2eb5f7ad79e6c326c0683">689011e36612bd0ddb82bd0e4ee6472f3e6fe52eaabdf1e2e92451ccd23f53e1e00fec55d04108e646df29f46b3d92920f5ea7d20d78f5fcbb5c9f9db3066d4b2365c05f10526c3c4f0dc350eba28b75a91e01ff7ab19a2ae3ffc7f64184ff1f5210a59437cc01932fb630347d44edaa88476665d269f6c53574033059b0e897cbbf030086236472f588fad4465f597fb8b456661e77014dc64d33791e6924c099cefdd0c33eee11491718ba1c01217461759edd781f198a88fa49868a4b1921ee0e31cc9a0a9f704edca94e5031775897ea532bb03044918db29273caf6c830a853364b835f24a8f6c72503ddacf66d3414b44875230603dbd2d1bd7767a5589b79d3ca18a41907ca7747ab14d6d01bc24284c98a60d9b77347b76653ef8838a539229f8322edcd938c0dd2d5b579152b8fcabfe34c443ba2e4cbaa8c99d0435dab88b355bbbee4d029a491196c85c33da6369d5de91bfa2597154ecd81d418f9febb9e491cf4246b5f526d37f81cc3ad5a10ea5b944dff5b7269aea935a9d584110b39bfb1c8bcf43f13339b90f66c3831ef855025375759fe37c92d66874ed21ce3f32bacf982a66dd43ad9df7356da38997a4c234fa2fae0e5cc19c2d107167db65bb6c7c0760bb4b4ba1a9681db66f1e754e53501bb9b4311d42245e2d8778cb70aca0f23d33781b9727a102f1903e579bbee5103067361ab2eb9435058636153a906612e833f71382a71e089c4351498127d17deddfa3244edc98e0ec7bb0d949c2a995ad57cf5c33f76d91df1fd9e8a1f568d084f4f66281f071b3baadd8fe4b35dffcedd9c8dbf2005f45d883c4c69dd97b67a0f621bdb41e38ca5aeb7a05863076f3478b14f748f21dfe49e9a69142ccc9bded31d9ec7f22a18d60fd655ad5b6e20895bccc6a4487661345fc2200dd41d9e5ede66835cca73a5756971977d80e2ff682c23512176843c45947509dfa88d4aef3b12287d76683141ce6c623d6e24f91f26f920a0fd8d44950719e4028e076744aad7e62ec713841bf82bf5186b095b2185b4dfeafde608878f9769d02c1c607bd860ebfb37a29e32f9de8c0b363d96dddca84c26099a322d1db6d26b56a0b5302833e95821dbc21a543e56a4f1375dcb88487c3bb5aefff70606e34904b713abafa2e496216cb629ea249b45b72d2015496f3441829c4a0f8b9f244ac3b0507c63a94a776a52ada0c34b7b15558a60ee90bcc63a6630904a411df947556dbf5587428272bf49dc9213875a5ad1fbbd543d9428ea86d45758de804d62c8e85d87a3bdc30e4d3e47d11f6b24d2c1e5c9c86a1ad2337ac25b37b83d5acc94b9625c33128bc4f5c24a49a9</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-blink">      <input class="hbe hbe-input-field hbe-input-field-blink" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-blink" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-blink" data-content="您好, 这里需要密码.">您好, 这里需要密码.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>三月关键词</title>
+      <link href="/posts/30f6/"/>
+      <url>/posts/30f6/</url>
+      
+        <content type="html"><![CDATA[<div class="note info no-icon flat"><h1 id="诸事顺遂"><a href="#诸事顺遂" class="headerlink" title="诸事顺遂"></a>诸事顺遂</h1></div><div class="note primary no-icon flat"><h1 id="双向奔赴"><a href="#双向奔赴" class="headerlink" title="双向奔赴"></a>双向奔赴</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">目标明确</span></span></p><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">有情人终成眷属</span></span></p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 专栏 </category>
+          
+          <category> 关键词 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 关键词 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>爱心</title>
+      <link href="/posts/92f0/"/>
+      <url>/posts/92f0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="0"><a href="#0" class="headerlink" title="0."></a>0.</h1><p><img src="https://cache.ymjrhk.com/img/%E7%88%B1%E5%BF%83.jpg" alt="爱心"></p><h1 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h1><p><img src="https://cache.ymjrhk.com/img/%E7%88%B1%E5%BF%831.jpg" alt="爱心1"></p><h1 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h1><p><img src="https://cache.ymjrhk.com/img/%E7%88%B1%E5%BF%832.jpg" alt="爱心2"></p><h1 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h1><p><img src="https://cache.ymjrhk.com/img/%E7%88%B1%E5%BF%833.jpg" alt="爱心3"></p><h1 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h1><p><img src="https://cache.ymjrhk.com/img/%E7%88%B1%E5%BF%834_1.jpg" alt="爱心4_1"></p><p><img src="https://cache.ymjrhk.com/img/%E7%88%B1%E5%BF%834_2.jpg" alt="爱心4_2"></p><h1 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h1><p><img src="https://cache.ymjrhk.com/img/%E7%88%B1%E5%BF%835.jpg" alt="爱心5"></p><h1 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h1><p><img src="https://cache.ymjrhk.com/img/%E7%88%B1%E5%BF%836_1.jpg" alt="爱心6_1"></p><p><img src="https://cache.ymjrhk.com/img/%E7%88%B1%E5%BF%836_2.jpg" alt="爱心6_2"></p><h1 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h1><p><img src="https://cache.ymjrhk.com/img/%E7%88%B1%E5%BF%837.jpg" alt="爱心7"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+            <tag> to be continued </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Exchange</title>
+      <link href="/posts/68c0/"/>
+      <url>/posts/68c0/</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="7dad28256daedd3469d6d24c1775c0e6f8ce3ec884e010fb8020ae869bc00758">689011e36612bd0ddb82bd0e4ee6472f70a9399da00c2eeb7b3f9779c6cf78a9be07db9245e24902c733f00668d04a74f0332092ecfb86f91b8b57281d919622b1a5045b141b390cd0d5619d17d6adaac3869ef0551d7cc636988b534a5e5dec661d51948ef9cf8ec015a07482be6c2062771193815300b40d8fd5e9e4317b691d97ccf9e93fe9909c7ad627531a60ebd17124d7e9b1eac02f7d65bfe8eeb5c2725622b8e8af392e3b68f9d68fa0246d1795d9ea47ca715a5d1c9bb5fddec21fc7cf52f6b80080f4a89606aa052e5ad774bd7b8445c1921575caecc5d2a374e4e8ac4dc95898db969245d5cfb7e6c43c3357901f3a9680d1d2355cf2947a74385eeb64b3ed73b174058a7e1e334e19a86535e4a2303dedb5a10fb4019b044cfbaa4bd4342a12926abeed1300048c6e7ae2bf5e9cdf548c93ed8002b60599b0380d2fc2ff7c67cfb1ecdb9b814a9f2bbb12ee2f5cae2d349a2e5743a17a13364c6a764182d64d24af2741d4b8f3b5d570037171342472fb06b7d2a721ef5f881ef20270a58a9c426c8f65c76322c8d1a8c5499dedc480e67f82e0c65e51a58d305e3afedf5d5a2af9859f36220ad1167ace264c6cbaa701ed84d4b9172e07984b4877896204e1dcd5f3a66c49363898fdeca4001a5c5802356ab71d210ce466be87c97f7fc6c5c57ef3d23c1b1ac7be4f444ba5c48697d23def36f4fc1d4e0b42d970979f7310d59551960c40b23105be3b2b23d8ee6dc9a2c045562abc7ad45d7682d88ebc3dd41d1b9ec578bd77f536867c3f4c8a338cdd794db998e55698606757b97875f59797a45823b25bcdc755d7b2eab56a39dd5bf5db93491c9423c68eb6e84bde158ac6c5b28199975662240f49f0ba381a51b24fbdb66a535b7341a5f3d7a144afdc118982d4b6c06f7e2b76f33cc08d37b991a58a613e5e4eb90d64190a20cce05297cdb8736a01098224264e3e5e0c4b57e53e67234f1f226d78a9eecd23eddf5e7ff1567e15f46ce1246c8cb6b1520d2561081f0ffeb4823235d891fcf077a40e4996339ca0c9b55254c8a5f9ba8fd0712c5d163f30d7491bff03680d2fed54dab042b6048578ac2ca4aa3e5f6e91194fe5756768771fbf1b2ca9ebfedcb1925e3f4ffa8899de348f114836a597a950e99ecc896b57e112b52f8292629adc039109f2efadda37899629c39be2b7d9db97dfd5596ca62a3346b08885b8a5dce7de8a3f36e5ca0dad0da45584ba21a5a50787d3e3340b5ba36de292ba0a40bbf245bb76db6329c2af01ec0a05a4083a6572e2a256e9984ca21723d7b0d5651dacc24a42e71743fac602cbc49b465b550b5cc8b9fe608f59769a0c3369e2895e7b4cfc46880e910883cdb4d829b1bb6fc489f1ab8c3f0d9da9a30bf9dea0a22d7e4aeb29bcd075d5ba5e008868e83312bc4cdb52952c2c328fb7916a52866943b1b76249818ab721c9afde786b15d3497331dc78370636958c21cb3a66dbe8eaffa7a883edb0dc35df69acff2784bc7cf2cc92958a549aaf6edee934d0ea9b529e14247c5b17da7f5bb7700923c746595d0c552217a0524946b000f762911d0f38a6272f30a47ec0d50995b0b0c499711098f8732fc40ce7209de653c3c54119d7363fb3b9512b8e50b633d2f95ce7886aa447bdb5bf50223f3a73032f7df0e4bce347a7b0d1c090d7e26fe5213149b8826cc335d1bf2b2285f60770bf283fc15c0eb924af105f4e4152153706392676fc8b9c0383273e651d62011a46f67c7f37efe41b75c0056ba34f463e5c74f6888d4d763ff8133accc96b17</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-blink">      <input class="hbe hbe-input-field hbe-input-field-blink" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-blink" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-blink" data-content="您好, 这里需要密码.">您好, 这里需要密码.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>四年一次的2月29日</title>
+      <link href="/posts/be1f/"/>
+      <url>/posts/be1f/</url>
+      
+        <content type="html"><![CDATA[<p>冷知识：这周的疯狂星期四将是28年一遇</p><p>　　因为刚好在2月29日</p><p>　　下一个在2月29号的星期四要等到2052年</p><p>　　谁v我50我将记他到2052！</p><p><img src="https://cache.ymjrhk.com/img/crazyThursday.jpg" alt="crazyThursday"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>二月关键词</title>
+      <link href="/posts/f7f9/"/>
+      <url>/posts/f7f9/</url>
+      
+        <content type="html"><![CDATA[<div class="note info no-icon flat"><h1 id="多一点坚持，少一点欲望"><a href="#多一点坚持，少一点欲望" class="headerlink" title="多一点坚持，少一点欲望"></a>多一点坚持，少一点欲望</h1></div><div class="note info no-icon flat"><h1 id="我可以等"><a href="#我可以等" class="headerlink" title="我可以等"></a>我可以等</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">别急，心急吃不了热豆腐</span></span></p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 专栏 </category>
+          
+          <category> 关键词 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 关键词 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>课表分析</title>
+      <link href="/posts/362d/"/>
+      <url>/posts/362d/</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="0cd866c65822406c33bbd37d559ff1b59eeeb821a79f79e30b2f9b56fc7ac064">689011e36612bd0ddb82bd0e4ee6472f3e6fe52eaabdf1e2e92451ccd23f53e1e00fec55d04108e646df29f46b3d9292bfbafaa9bae12dc6b589e289a698f5b31d9fa22ad584313a3089e616b92ac3ac2934b49c64f73fcdef3f6b53869b7369126d3749f09e2dd67e3dbf82e8cf9d5f8f99266c553f6357db5597e3b1e5a025bbe0557bbc78e08a7448201822ed5e8815bf13add9c41da1da7e3fa65fe6c47ac0bf8c2b31fb3cb4c43d8bd30e9ea821227e1a54fba1e5f6bf299122721f558903fb4568b0df1cda5c67aca9d45deac3ce993ce9a62f80f00eb2336e9fbfda8a009f9ac3e54a6dd1f09447ed69c88546765e721ab50f1387e9d5cff06b858a5c9167a944ea6db47eff4587bddced6753513f1d45d08c5bd443865218f95cb4758c95b6fac45095c051a968ea199056f452907b801bdf09e8d0b4aa3da59437d15c9b3112293d0ddf306a54c92f9ebadcc786ce83fa27ecf92ab0ed029354216a07c2995a4709b2fb54b9e3184221f63dc246bf3c92a6b4b3fd0be64c3637112b899ad44ce51b9f4ed3353ff0e334feffce1512ad5bd16d8e0aae52daa200ec01664c93712d63d06320a2832a26340d8367689ef28c36bad28eef0a54925c6cf949807d1278091a041d245b03d20e3fc90fcbe3245f87f794e5b2cd6a176ff84fab59c1477321e4ccc87038ffbbf9f90a2b2db3f394f5183daf2797ea51b5e9cf621f9500979d431aa2cb0f4e4c89c66fda18e5f597fc17a4c425b524d43a82d2e2449b374b59507fdedb5e73af734175a39db2018dba219a1a11d2d38a2653337ad4c740eeff543391e515d2c4a039928845fe2cfbf6eeb56bf8803b8aefa59e958bbc9087a525bc59809ec0aa8e036c6be2c07d99876ba548539819be03c74d0c02039af2b3a5b36f47b574556dd00de63416edd9011c45116a4541b28224819112235f42e79615e854e3a9c0d528d98e5862f7358b372a52f46623df8c3b7bf85fc9ef3459c5ffb39f5a56398a81fc71a53b177c43491d2c3dfc11b8ae0dea17807d95a4020c4d9612bafed3a395b403474c2def2ecfeec01645e093d9dea34af7b8c97bdedbd5a01a424b57902fd1a2822258993e95cedccbe973f0528d44ec0a18b65dfe37eaf8645792ba9d73f9cdda18ca8ed31f88a13df31d0b61745dead96adab10e8beccd8bf4fb4ff99f228d2e3f6df2159234e6d9751d3b9ee7e22b4013f050e10859de51cae85ea758e30cf9d5d03a0c83e8e4ab861adf24641eed00ef75743fc61de1526eb81ac98f607d1c2e6b49f377fcd06351c45b7c1ff677b678f69994fb03f2fe734875407c2fca28a3582da01fda2e528d521eff76e22d8121105ba740382e331e32fd99bb1e31796396bb204f442af7768cfcc2e8de3558dac844b00023507f76056244c32d927022ee4708fa822e28dacc4ab9f756d002d90a0b0b277a6aa13336d5cc7a59995cf37f5cf4279789fa0b73f3613c7d90bc0707b28f2b3c8b10cca5b3ad26e498671de3fe196f9aa52579cb9fb4f15f0c7faac4c81ba43eaa55460c6f7c3b97f917aea3f7335f434dd416bf47ea780dd0c27acfcdd4d93a0091cdb99c998826aee40e21e01c99bae294e6e1c3ea96b419b3e05e90fec56337f74492fa540123cce577c421e206ad6a71c74a523434bdb72abc3813f3894de08bc205d84e6efe39d66ae5b8f326d7b40046bd1998c0e92b29e773985b2ed95d9ba72b1c3fe1a2da97bd2a90301047502973f574a4f271e051dd3b797dd6712de5d89109327037118bd77e18f009524849b3da3368bfcd891140121d1e87d616dc444eea605232f0cd4a9b4815d7049577eddf97348d22b5be4c56387ca43457ddba4ad28689559efa59f2acc7e4033caefce86c868bb0c051f6e1de406c67dda6b54096c5ddf05101f1ef96c20056997ebbbf2d696c638477aad12daa15c95255d572ce2f317add68d039769ed5111649288f824b96754e61ea04ed2108ea522aa2590f2cfec64e6121510fb86495d416584af43c9de1a74c075bbe3a9d9f7a8b8263182328ae1e711fd1093b265dadcf0ad9bcc6a932120152c437148f99205717a7a82f48922bbd4ab41e34ed3b75d0e52f9813bb0387cd048c96fe7c8d3622cd52df88230efd68045c03c128716d188736b8e042e4fc4474862a15bf541eb31d83b5878dc0f9dec3dbe6d71688580af2473c5f98d0769c1c3cd8a5388b7d71c5faec1721ad45ca76a1d843346eafa87304da55bac1b6b4e6e6af22b7b85502b899c852634dbaeb88c1ac6504777cb9b50d4eddda44e38f2e600f3d9b1d7f12e8e5ba58f859d428a122e963335ad4a671005fc58bb9f6f09d757660105f289135de4f0eadcb8cd68cb620909db85937e76582a487f6a63e85da110ba1b6eb2e947d31a9384b31fec92d2b6e6be764bead6f51ffcc31671c5270642efa6cb16f7553140a36fa217df5dc14fe3543aa72b44bff47df0a6f84d3b29d271ef23d54ef6a3a4758d42ed76c41ea92040f245d1eaac8835916fd76e9fb52f77d1914b73e73654e3139a3d95165bcfba9d526a50b351235406edadbf1fef68007db51c2648a3321561e49568ca1754aa4efaec6fedbeb176820924bba3e49d6a3badcb276a36ec91b93bd10e4a17debfe8b9f0d25aa88cd817981e3f74486e25fe43e57bdba693bfa08be47c3e6b0952fc1563acafbe7610bdc0ffa340317fd88d5efadaf00eef29473</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-blink">      <input class="hbe hbe-input-field hbe-input-field-blink" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-blink" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-blink" data-content="您好, 这里需要密码.">您好, 这里需要密码.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> 大学课程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 大学课程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于读研还是就业的思考</title>
+      <link href="/posts/707c/"/>
+      <url>/posts/707c/</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="60b0838ac1d904208276908afb901a71756b837333c2213268d0402db4a3384c">689011e36612bd0ddb82bd0e4ee6472f18cad05fa27c6129ed33856422c6460122e925c5d099c4cd8df85c82c7aa4e4af9efb9566e892315a404ecc229ec98c824e8ad89407ce9b7c1a0d5b07534be8459b039ea21d32d7921c13b3c08e881122c567f584c6f620f34c705db94140141b1e5e1ea8c9e3cc412bc7c00454afa6037322856f78c866d59c795ac51dc9c63d5c95213b1bba1a1b15b87b2e76ca96d161f5859fb1c50c8b6fe3a54ef99b865c7ca5408bbf6bea732c2273c85b59d2d97ae7c241839cdb34c2f835d7ec759dc0447ee938a6af919055c9f622f78873c2299340d8acd2bbd85554de4097de96533424455fc32e202d8d3880e76ea10f0acaaa2732a04e0d93dc9a58c47ff3c4751853c2682a1f5c7dead5a1c0cb94fbe98159e0d49c3fdf384818af43146c696b78bd83054c7601df21af698c73ae2811f6ae36f72460e4673f1179b69c6e9c1ae7bf918d73d4e26358957fc27dae44bbf6998bea0e15a6baf6d421b4ae68b417caa7c1b154d035f917a47d2c7c0e51e15c8c5d32dccdd0b2e7fd63a3ae0b04e914ab0a6ac5b85b0620637c4f9d6e4ae6f335bd609a452288250a843477d58ab15ef3c344050a084975ad61329869e9b663152d1ffa5cca74a85fad29b3956dd4bf0bb6270967ae6fcd62c98920caef8119338a9195f3efcc92ec8cd3dc76c0b41db8129b98702c27accd09cec300fce242c2a376f51ac8ab5bef1acff0f0ee5f8f1d1a717a06ff3851d37820d0e306335589935d9777eefe910b0b07949641bd0c72017e113c4d37b67815b86465fb9f790ec6168d74ac8b7a0109449681b88b40a64672831152b2d9589663d093053adf7bbffe7932f036f7dba9ea1caa5f549ce67c647f82aeb79f45bc3523d503ea5a9fc8c57c41c0e05ae13d1542a15f59343c26cb580a79fba47bd313eaa1a4ce147bb2b9a57745656058b11866432143e0ca77546389636c36001b4d87138a0ee76e4c9e5d771457f4a5c1f8f854c7fd5a771ccf2c9ca940971184c425c30f5664b8522a27cf61b89faf7ef4950fde2d8473d6305e8e42a2c4e455a25a71ea8c28b7b05448969d602552d42527a15be15469cfe2a29f7654ce564595368536d35641c235c502eb596d173ea8c31cb4cddbb51f7621f03d77f692345ace9a89bc4cf2e99be8981ac6bc03b34be1a450fcb71237b96745d132f5ab7c6b39e1da360dad54755011abf526c6a9feade3888648b830ec56da463a652b1985ddb2707c4db51990cea8f3e368facd05d919949b4b6cad15ee1ad53f2559817b8300d38bf512ccdf27bc8fe211c25ef4efb2a3d5d40449b982ef1538c9cd356b79fdc3170bb558386f7ff9cc70443c57c79be3fbfc4dd721c8cb97f11b3993f3159f76dcf2644a285df9f26426bb1301826c9a8322282ba7f90b875e8d28eb01d580df09407e282310ba35bfc2c73a274ae187cba92f846b960c0946f413b360d97413599c18fc2a1380c7a89b5f272679dc96119acfe22e89b2c46077800f4156bd3d927636b8ad3111f84c7115ee5df0eb91584436cf6b169a76ea3a99dcdd8ae52140bf768cc156e9f4d98730ac375d1e32fa76662b2db92ff10f775d97e4d6554216ca30441d3631752f88d741cbfce44c525d451bed83b7bcce79d0892e1196c6ea37f30dfffcf31fa9c4e3d17889046b0374ffdccb38ffff7e86c86ea65cd51008d239243c65e4f9a9f76629148410cec6b071c6905fba70b7ec882063164a9627a7586e622fb429faec66dad716b4910b2b6021949621a89090c7ca3f61de6539416f3039f006e777b4dcec6a54adf6eedf6e86f15368a107a3416e7ed8819f6b8981acf6ff0b70f244296b1325585742bce68014ef1c638977e3df111ee3374994f17faced5771ca2bae494c82bff1daf8cc54552bcc7e0889d2aebfd8ec72299e69c9892ed066ae4031458225ae10b0afcf9a33bb2a34fff6f2f3698adfe1b9a11ef166dad51fe6b7dc6f6a7c9ad15fc83c59de266caaaed10693777c16f2b06e97f6416525a4a227d00953f3d38ea4a2784391824ffcf633d03110411c5576b0e7b85f7274e7a4168c3baeee880d84d536708d6732d4e16223cf740a3466ac89d11fd734ef99c92efecf2d9255dcab814107d45cbad0613ac25a0f42fae4cd9554c63a5ec398178385e9c2b58ed9a165f05452ba25571f9a3829dcf008529daa66f5f21c1cb858b6aeb8d29dd9a3996e005411d4cf17fbac592ebd35c5289ea29199e8f0544ea9800635b001c18394c5c6afcb8b7aec1d4fadb7a9dc170e56cbc1eb87a6db3e8cb56ae70cc397ef1c330d99673ff623dca88ce3799eba6abf5fc065fb63747553fc33ce61102bda4099e7bf68767e569043b8c68b006d34cf9457a0b1f39a787e80976d242eade2dc3794c1e4fd876474c907c9a45182787d0ed8d1c2b60832d990dd950362c60c884d4667d45bde191e8b65771dd27b09c383088854a573f825e8c82f04c1dded00201979ed00ee29d1e68003de8bbb09e749440274d07af53ca1b84df1974eb7219e37c3648be6421fd88e2190962d5af296c52de7ada19193b14efaa93fd2cf6ed74ac840cf0c699424f65605585c54b1bb7805b0cbf44753fb12f361407d5b358e3ceec3701cc17f5d5aff582bd69378f56c5efea1318187e1297fb4ede30442bc678f52ebe6dec8843c69fe75d3b363b4abb5d5565c3ab003e4658218f1f234f70d2d9cd47135b8887c980bbf4a103125c293074b9c128cc3b0f9d04ee37e08a41c75e6d1d5cc2224e99a2344d61236d2a88a6b6e6a73cda7def232ccc821ef880a83758d68e4a71c9d8e0bb6e184c7b807330dba9c6003383c257a4ac854fe0b1592822b1adf1ff74a395c0378b661c158eb4b664fbc6de869e354f454797dbaf88238e5f02e546b1502b9077295112c6c7ac982de4113338321bf3b194ea2fd0da6963b5f23fc3afa0065cede43d8aa75671ee903dad2b78f009ba896d28edce5c62545000dc49f35cc25d33480dce9edc5552bf45b345e9f307f75921990d414ad5d1c64a40e8f26709d10d27e44310a0e9bae40fd7f0d01d4c52c648d62743675029d8a8cf19155036949bc0ef17d9d8c389f34d7f501b6c665e86b3505e7bf41f93c4c00daa1e742c5c0e6f3027f016a4edd190a25539786ea9e00b6703a612ff16662b6637405398b22998eef3bd3d876c8412605a6da263a4709eae3a0038d710aef35f61e327a5ef207afd7960a94fe60706d9f523a6e65dad80705b7d61c7834bc6fd1584c69f4098e7b13b8faf1b405edc3915dce857ec3cd95d1ef945e7a873d75a03ef0a1cdb30f106ea62456019e02616a87c46665eef9ea276a3ba0008b04713bfdfb5518dac1e2f5e24373c403c73e2225edbb7d27ede3a08c82d35452b8cf2a4509d7fb40ebb547ec248a2af0d68bfd13ed91df11e86b025564ce983355f4c4aa7df7741f4e7c171c4c10491ff615b5771c84ca9be369e29e976f979f27c0cad8f7110c2fb2563dea3e774bc8e7cb36d5e527720a30f2f2a9d442488d9bef43163a3aa590300b18adf7a2269d2052804fe6b406573ea73223982328a3573aff72a097e7530e0bc4c9e7cfa85f67f48e26f61eb2d47d28f57b7f700c0e89ca94a567cdeca0fde975979196a9e3e65892fd9b6ab4c2c721254b87ff7ee8121576336f920eb1fc22c44c07d6dd2b2dafce3b365f0866ece003fd4536fb1f55067f8971c4cdd50e187cc4689cad85ca5ce9ba3b4c5280b0db0bf97a9ebcd1c6ad14fb616347bb8f5440cabf7c24e36df30919109a934717191a67e9db9ceed4dc2a4e442ae5e9c2ba8031eeceae14a663c5405db7255f499a929e4f872a667a0d3680f2d448582ca55325f6af28f2228a0b8aa21eafe9f5177b09ba64577d38833a4da9cab1073f5a65f4d5f9b9cefb69a1d454e03670ea1f448b30549e427dfd046ce463e5d894d32a6504bbdcc7f318ad54a296e8f9e7a5a2dfe1a9886077757e2b311dc5e1a757a672252f44db68fdb620dc0be186c4c15337aff0145e77db01dfe3b68442a674d4aecdac2844507deac630b3dccfbc8b179c5d6962165b60c1e235dfeb44db79f6f0bfcd87bea0ebf43a1af1ca50c9291968d5ff650b006d0a79827e2f356c2ee03b84889f601b41fee6c4b5e8eb3f33bacb77283815f58afac7f35a3669f1e8d8704ddeb47beabfc2873ca49b05d8860cfe9b807a68a9a22317ebfc457e4e6ef5e4e54f80718ca768670036aa733bc82736b2cae5394e5068254b261548202ce3b0f049463b1ccebefd57e076be650c3046ded2800c0f1e48bcdf599c4ef25d083d0dbbb956d0be7ac05b47c0603d915d08ccd44364ce0e4c7bfa4edaac23a5ea226c200f488dbd5db7dafee55eedbfe10d23fd93073af766d5c2663088dadf66e48212863d092dfe5afb39b51c12cb28bc0e11e75365b5dc95ccc093d6a8e5b6bc6256904b673a35fe9e34bc7366d790f94a8b9f64629c0519c97690617aed7b73e54378804c3b039abeb91a43d0d6759cfef65d4b152f692d473626b72f1dc01c9d0cb4195d940ca8ff32f090b90db4f76cb1efe79cfecc18f28a4b255367eccb99fec2340bd3c62eaa5ac525cce20107f0b3d53feed40139a40eff5f7104cd3169762158fcde1d9abdeeaca55b42f17a7acb24f581d3377919223b98c8516da07da317a90b4791e8bd3a646667ec5082641cb63e221c4c92d8efd473b019b62336442d53a2ec891e9176b1df2f2450428a2ba41699f314c966de015617bf393964feaae7a609109e2c29f2610c650cf7c6874016450cb88fd43144ce663fa17c668d6436f94886db416c0c73ffd87dbc6a6a04afbe748d2837548b581c573dd4bb4521b24b6a919badce07ef0ea87417833b8d0bdd80d4f163128e159f569a8109a906fb0eee2564999e92fdff94005b601edf577b721f99c765c335915ca</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-blink">      <input class="hbe hbe-input-field hbe-input-field-blink" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-blink" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-blink" data-content="您好, 这里需要密码.">您好, 这里需要密码.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+            <tag> to be continued </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>情人节专辑</title>
+      <link href="/posts/411a/"/>
+      <url>/posts/411a/</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="73ba534562494aace300fa58501dd1be74db3d51558f6a2d7106be18a4d22344">689011e36612bd0ddb82bd0e4ee6472f18cad05fa27c6129ed33856422c646012e6c8983cfadea588cb305c1b12d89edf75ef7f32ed373dc0e008be5bf01238327a1d6d64f62f38e3485cd43fff669dfe19cbb7a0d5f018ca24425d0e7c135afccbebe70d61d3e24883d2f18d974bd5c3b311333b91407ac00ff935f28608c6ca4d926dbae3013ead6ab351581efd0d183e3e7528d2debd2145141c866294b0ae60606c624c6a12c5b910d27f78ce72f643a6aa861a5061379f6c5b6cb3b153d5be2008edbc624056d0fc95bf4f6329a1e15ff287d5fe211d30e27c0c47f7f85f5d5d7beb2dbb51ba46452cc8f398f41cbf6c6e9ea4fed789959f04cd740d3835f6d82507550431a0277f1a2b1d1eafcfa37ca037483d1b5c2132f50a360b2fb920b85af9e9cb2f48b1dbcc955297255eaf6b0998eddb67c17a5435c92b3c2ba2b40338e21e24b94f440352744152d7d349fcfe1e201e74b4630dfe79fa4df819ed946c7b7cc1d2d1fdc72fdbb82b49a459b33c21631dd8c0f85cf3ad87c19c9ed85b38fb01bf4db2e629a9cc85d54374de332b8c013cb58e9270c73997dda2509d3072c43996bdfbe869048bcc83af846ac7a228276569d567ef4a523a6be0d66c429390ef9e3e7f626b72bbb45424b5b52ca8b7f878701ab98327450b5a0a36f826610af4e23ecf4c4e84dfc5ff7ecfc7dbdbba00ac2963e7f937b90ae26cfcabda0d60ee49d94027aa166c05afcea826805affdcde15c4a328b220ad8cd5c72ff49737ef1b008748607d7fc6b4554ad127890cb15159a02b837cf94d5fb41d0692b2ceb983c69777408ec3095c016654085d6f55820225a267cd0383efb4c38a0fe8fe19a2d4529326c9ca4597e4ecd97e1430fbd8682a30df32ed21f505b44c66d2af5e5e97e83d24bae9c64af005509188025e65c24b8a2e846a22d62c354e8a592a2497bd412e0533af06bab77a773b928486d2d9a55fa3546b5424d9439d4ed553d210afdf543d2ab2ce4b968be1b95e02d05bdd0dc54196c4183756779fceafafab027ca7b2d705cd44ddd544bacde6d18dadfc9bde9fff140e8dcf1ac862aa100d51b73cc9eeeb2b10e55aa45e845bba5e8b3afd43ae413e9e7055037ee1eb4d4c5f1d935a8a43c435a106b6876a3a955f4e1d8bc9ab22494a3edc1305266f6fb9a21784b4aa280e8e727744b32a7694c5463bfe4e70351df822cf2bfdd00b2b3e0776ee1bfdd1016a0e719fb3784d30d74cab8e96a3423adca252764b866cd64753295c6f449040a892e3d1c168abd31dea321198d3dad79fa2c7ef6fd9e6be874e2b6c91ca32cab126e5038696414eda14f653e5ab6fac7d45938f6ac36032edb8ba78e2f2f9072175449385212f47a559b9dd34a75d0728cf7303c1a7ee9398e8c904262183f4283303757e3410c07baa2fdf4ed38ee1567f30d528c60549cbeba09f839e0ca424e7f6d5f10b72ef2aea0ec3ae05948699f269bf9700536a221464661a0cc8596f9b30425453ded5ca88cf3abcd37bd842960e572e50aa78b44470b773bdba80ab2c347ac9149b5444048d47ebb9bf1fcda3c0f488da673a08a528dd0f275da4db9e0064edff87ec77780d2f6a10a5716b2a4fd37f42f88326c18563532584dfd723ec24cdfa3403938ac71c3a9a6da8a4242c27f5a2e8c7493659fab3bec1e7dde017b32f6ac454267500b2dad3bfd7038ba0a7270c666bf1a4d8732bbd1fa65385642d2f241c0ec19fd2c29c6ba669a5174034a34bf12f7856c698f8325191649249b2183ff0909fc9f75d35e54d878ae5710c8021983bb44cd8f8e56abc27ec5c05c3532aa127590c89341f0cde6e27729d29e35ee10a860ecc427d7d60da8fa7e51a63eaec54d7b197c7b3e46fa340290bc1ae633a3726358a1098924e5df2a3304f58378a15ef35f71e4f9999a6f6c759b5357a8b86329312cb4eda916d71bb11e8ecb4ac563605f5afaadad58c7ba9de4c5613d07054feb494f01d0e7dd0e4fddf68fb529f9d8ea2963df5f621a2158a54f69fdc137d83af4635889cfb7ed218b3d01206f1b2b7ff6439c3cada26d441d9c27ec85c77a5862b93e9fed9fd9a6fd4b3cf8f52553700c6dedf0cc86c32439279ec740a2bab9e52ffd7d41bccfa8cb5a38c66b223fb78a960184351348002a4ad1966a977f91a553682895370ed60687530e44ec40cbf3f2a582ff6510500739c3684c0d1df9c4f5a3a20ec854316c8b96f3a7adb59631d3f72af2033b503039538325ab7d2285f7707e75e32e5454025d00107e2eba3af2a07095e42e201ce3f1040557b1317a9dfbe05269a6b1cec0c6edaa46cab34800bda07e5a6534b9a10fe634126810e987df7e469d34d4052e82513e75ece028a9187c0c4bb0aae271e05c8efe0ce3cb9f85f07a1cf0f8dd1699a8d671261d31328234bc521d311f456631bdf072b11f21953ddbc6586bc58a5b0cb61948dc270d84081b8efb1db2fd87cce8e419fc9ea92f3f49b07caf07c8357850b42b856f604cdf2da6de8939cbb3bed549a498efb54a3cdcde7bbad18ce03adbe20f0b180751d78005106292fd235f2402b0d6f9b9924eb124205fdbf5b38f3f0164dd163907d888449c645f52a51157a73854fea1af6bb46e093799b1fc0122cfd54d2af1b5bb4aca74c532df88f48ced1c743a2342a204b34959b051cd486635c1d525e3018233a4a6468d5cbcc18b90ff9ec7cb4509afa750e6c9d307bad2a7db4192428d005a3f1af0ae16218425feb90b7d9bc26bb41f17185867bcdb8db360428961129eb0c3249ecd81f8c568c2dd842c81e2b388702ded0ddd9f1aa012354525650d62f6d99bdc45d76a3337e723b9f643b1d6565e76c228b8899d48e06f8f71fc9cd52024f9dda3946811870cfee73d6b3dc77105661b4fab055d242d9d9e639ae8e1bd71cb0edcd07d72131f3bc02a65efd12ca2b4d1d5f0fc7e0bed2ee1ae79ce56e0474fa83f6fd64474e69cbebb8fe6e3cc3f7462817d377e71322168f163da16cc78b285e1d7975139f83f9ee6a07b8d3f72cf201a7aad6b8e08f6789d822514de7b4b82e4a1c782dadd9664a7f3b301358c5b4ea161e523a4784193603330345aed025905dcbc52b51771932a4869b25ce4e89595ba34be62d1acb893bd5c8066f599418b4bae63331711f5e5598867b8c020b93f09d7b6f050d2931b251f709126193baf4c7fe8e22f8977b7045db611f21415b13b66e535c0f3bcb9c133039877ffc615199d5346468993c6347f80fa9944bdc6d76ca2113d5c0ed53449e4d6c79984d14ab7bab009cc03a87304260c26412b04997db53af8cf77a9458ef1dc908dbedd83159eaa5fb024d3eb0c6c223b79693dfe07734a7ea5603c0f31b83a81227ce1fe20056aa3ca0227e0f4d4d28170a92ac3c3bfc3bec75d412775127b58f8e29287760a8e95cbcc139bec857ad51708fb71ef5cc842f19d7afa0b5dd291744db6fe754d3a1bec83667b718a314ecb257d64d6fae7d8d465dcc98ce6b5363994221a3047c666f97f1b1f862ac504c17d90e147ced30d6b7be6df8cb44cc119343929bddfda63f766c5c8af828fc3efe7c649d45f0d85a4bcc4faf1a88bae4361ec8993006e0600cdfded7c7bb1796d9dd0bce94b060a3991d4b33eb0ba83876997</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-blink">      <input class="hbe hbe-input-field hbe-input-field-blink" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-blink" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-blink" data-content="您好, 这里需要密码.">您好, 这里需要密码.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> YUAN </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> YUAN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>手机分析</title>
+      <link href="/posts/aadd/"/>
+      <url>/posts/aadd/</url>
+      
+        <content type="html"><![CDATA[<h1 id="手机分析"><a href="#手机分析" class="headerlink" title="手机分析"></a>手机分析</h1><h2 id="追求"><a href="#追求" class="headerlink" title="追求"></a>追求</h2><ol><li>续航</li><li>拍照要快</li><li>很少摔手机</li><li>偶尔打游戏</li></ol><h2 id="目前手机的问题"><a href="#目前手机的问题" class="headerlink" title="目前手机的问题"></a>目前手机的问题</h2><ol><li>电池续航很差，一晚上掉20%电，出门必带充电宝</li><li>拍照成像很慢</li><li>存储空间512G还剩40多G</li><li>开机很慢</li></ol><h2 id="目前手机的优势"><a href="#目前手机的优势" class="headerlink" title="目前手机的优势"></a>目前手机的优势</h2><ol><li>充电速度仍很快</li><li>被誉为最好扬声器的音乐手机（平常很少外放，几乎用不到）</li><li>系统仍然很流畅，日常使用不卡顿</li></ol><h2 id="安卓-VS-苹果"><a href="#安卓-VS-苹果" class="headerlink" title="安卓 VS 苹果"></a>安卓 VS 苹果</h2><p>安卓优势：</p><ul><li><p>充电快</p></li><li><p>&#x3D;&#x3D;能与电脑协作&#x3D;&#x3D;</p></li><li><p>应用双开</p></li><li><p>手机分身</p></li><li><p>便捷小组件</p></li><li><p>原手机数据和应用方便转移</p></li><li><p>红外开空调</p></li><li><p>NFC卡包</p></li></ul><p>安卓劣势：</p><ul><li>用不到几年会卡</li><li>电量损耗</li></ul><p>苹果优势：</p><ul><li>连airpods方便</li><li>出国信号稳定</li></ul><p>苹果劣势：</p><ul><li><p>&#x3D;&#x3D;不能与电脑协作&#x3D;&#x3D;</p></li><li><p>输入法鸡肋打字慢，&#x3D;&#x3D;不能发搜狗自带的那个幸福的表情&#x3D;&#x3D;🥰（好像也可以）</p></li><li><p>返回上一级鸡肋</p></li><li><p>充电慢</p></li><li><p>贵</p></li><li><p>存储空间贵</p></li><li><p>翻墙不方便</p></li></ul><h2 id="小米14-Pro-VS-iPhone-15-Pro"><a href="#小米14-Pro-VS-iPhone-15-Pro" class="headerlink" title="小米14 Pro VS iPhone 15 Pro"></a>小米14 Pro VS iPhone 15 Pro</h2><p>小米14 Pro:</p><ul><li>120W快充，18min充满</li></ul><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>买小米14绝对各个方面都是正提升，因为是无缝衔接的；买iPhone可能有很多不尽人意的地方，还贵，最好等以后工作了电脑换了Macbook再买，而且实事求是地说，我的平板用得并不多。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>新年快乐</title>
+      <link href="/posts/ebb7/"/>
+      <url>/posts/ebb7/</url>
+      
+        <content type="html"><![CDATA[<p>新年快乐！！！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>马云传</title>
+      <link href="/posts/c0d7/"/>
+      <url>/posts/c0d7/</url>
+      
+        <content type="html"><![CDATA[<ul><li><p>路遥在《人生》中引用了作家柳青的一段话：<strong>人生的道路虽然漫长，但紧要处常常只有几步，</strong>特别是当人年轻的时候。没有一个人的生活道路是笔直的、没有岔道的。有些岔道口，譬如政治上的岔口，事业上的岔道口，个人生活上的岔道口，<strong>你走错一步，就会影响人生的一个时期，甚至会影响一生。</strong></p></li><li><p>他认为，<strong>遵守承诺是一件极为浪漫和极富挑战性的事。</strong></p></li><li><p>“因为我知道我看见了这个东西，我太想做一样东西。很多年轻人是晚上想想千条路，早上起来走原路。中国人的创业，关键不是因为你有出色的想法、理想、梦想，<strong>而是你是不是愿意为此付出一切代价，全力以赴地去做它，证明它是对的。</strong></p></li><li><p>“其实最大的决心并不是我对互联网有很大的信心，而是我觉得做一件事，<strong>经历就是一种成功</strong>，你去闯一闯，不行你还可以调头；但是如果你不做，就像晚上想想千条路，早上起来走原路，一样的道理。”马云提起当初，赞赏的是自己的勇气而不是眼光。</p></li><li><p>“如果把企业也分成富人穷人，那么互联网就是穷人的世界。因为在互联网上大企业与小企业发布多少Page是一个价钱。”马云说，“<strong>而我就是要领导穷人起来闹革命。</strong>”</p></li><li><p>“舍得”一词，最早出自佛经《了凡四训》。舍得舍得，不舍不得，这是人们对佛教“布施”观念在寻常生活中的运用。“布”是流通的意思，“施”是给予的意思。舍得，便是人人为我、我为人人的人生境界。陕西著名作家贾平凹先生有一篇文章，说的也是《舍得》，他在文中写到：会活的人，或者说取得成功的人，其实懂得了两个字：<strong>舍得。不舍不得，小舍小得，大舍大得。</strong></p></li><li><p>阿里巴巴团队的确是一支执行力非常强的团队。马云曾自豪地将阿里巴巴称为“一支执行队伍而非想法队伍”。他还在各种不同场合反复强调，<strong>有时去执行一个错误的决定总比优柔寡断或者没有决定要好得多。</strong>因为在执行过程中你可以有更多的时间和机会去发现并改正错误。</p></li><li><p>害怕困难和挫折是人的本性。每个人在遇到困难或遭受挫折时都会有一种负面的情绪反应。但是，创业的过程中，困难是非常之多的。<strong>正如只有未出生的婴儿和已经死去的人才不会犯错误一样，</strong>人只要还活着，就会不可避免地遇到困难。尽管在创业中充满了渴望顺利、幸福、成功的祝福之词，而大多数人心里都明白，之所以要这样，正是因为困难是客观存在的，是创业和经营的组成部分。它既会困扰自己又会光顾他人，这才合乎自然。</p></li><li><p>第二，我觉得创业者要知道这样一种境界：痛苦地坚持，快乐地去死。创业的过程是痛苦的，你要不断地克服一个又一个的困难，获得更大的成功；<strong>百年以后，当你死的时候，你会觉得很快乐：人的一生，我奋斗过了，我得到了快乐。</strong>从创业的第一天起，任何一个创业者都要有这个心理准备：每天要思考自己未来的10年、20年要面对什么。<strong>要记住，你碰到的倒霉的事情，在这几十年遇到的困难中，只不过是很小的一部分。</strong></p></li><li><p><strong>“今天很残酷，明天更残酷，后天很美好。但是绝大多数人死在了明天晚上，只有真正的英雄才能见到后天的太阳。”</strong></p></li><li><p><strong>马云费了很大的力气请来了金庸本人主持这次活动，</strong>又力邀新浪的王志东、网易的丁磊、搜狐的张朝阳以及8848的王峻涛这四个在当时IT界声名显赫的新贵。</p></li><li><p>拥抱变化：迎接变化，勇于创新<br>对于行业和公司的变化，认真思考并充分理解，积极接受<br>对于变化对个人产生的影响，理性对待，充分沟通，诚意配<br>面对变化，积极影响和带动同事<br>在工作中具备前瞻意识，不断尝试新方法、新思路<br>即使变化后产生了挫折和失败，也能重新调整，以更积极的<br>心态拥抱下一次变化</p></li><li><p>在阿里巴巴公司的文化里有一条非常重要的价值观：拥抱变化！我们认为，除了我们的梦想之外，唯一不变的是变化！这是个高速变化的世界，我们的产业在变，我们的环境在变，我们自己在变，我们的对手也在变……我们周围的一切全在变化之中！<br>面对各种无法控制的变化，真正的创业者必须懂得用乐观和主动的心态去拥抱变化！当然变化往往是痛苦的，但机会却往往在适应变化的痛苦中获得！<br>我们阿里巴巴在过去的七年里和我本人近十年的创业经验告诉我，懂得去了解变化，适应变化的人很容易成功！<strong>而真正的高手还在于制造变化，在变化来临之前变化自己！</strong><br>任何抵触、抱怨和对抗变化的不理性行为全是不成熟的表现，很多时候还会付出很大的代价。因为你不动，别人在动！这世界成功的人是少数，而这些人一定是能够在别人看来是危险，是灾难，是陷阱，是……中冷静地找到机会！所谓危机，危险之中才有机会！<br>阿里巴巴几乎每天要面对各种各样的挑战和变化……我以<br>前总是强迫自己去笑着面对并立刻准备调整适应（哈哈，当然很多时候也一定会骂骂咧咧的）。而今天，我们不仅仅会乐观应对一切变化，而且还懂得了在事情变坏之前自己制造变化！拿最近的热门话题雅虎和eBay在美国的合作来说，正是因为看到了未来全球互联网的竞争格局和如何让用户和企业利益的最大化，我本人也积极的倡导和参与推进了这次的合作！商场不是战场！商场上是对手不是敌人！商场上没有永久的对手也没有永久的朋友。走向竞争合作的产业才是走向成熟的表现！只有一个成熟的产业才能诞生一批成熟的企业！阿里巴巴有责任推进这样的进程！绝不像外面的专家们（呵呵）说的那样，我们目前处于被动局面！我希望在未来的中国互联网发展中，我们也能参与到这样的竞争和合作中去。<br>我上次和大家的交流中说过，人要成功一定要有永不放弃的精神！人生最大的失败就是放弃！绝大多数人却是在变化中放弃的，其实非常的可惜和遗憾！</p></li><li><p>危机公关是企业和企业家的必修课。所谓危机公关，指的是由于企业的管理不善、同行竞争甚至遭遇恶意破坏或者是外界特殊事件的影响，而给企业或者品牌带来危机，企业针对危机所采取的一系列自救行动，包括消除影响、恢复形象等。<br>有经济学家做过这样一个形象的比喻：<strong>危机之于企业就如同疾病之于人生，是无法避免的。</strong>有的企业会在“疾病”的冲击下轰然倒塌，<strong>而有的企业则会经过“救治”而完好如初，甚至更加强大。</strong>这个过程体现的就是企业应对危机、化解危机的能力。</p></li><li><p>可想而知，马云当时所面对的压力是多么地大。一方面，要向被感染的那名员工家属道歉，一方面，要给总部所在办公大楼的其他公司解释。即使这样，别人还未必领情，有人甚至愤怒地冲到阿里巴巴大吵大闹，甚至砸东西以泄愤，<strong>有人声色俱厉地质问：为什么要派人去广州？为什么让他回来？是你们把“非典”招来的！</strong></p></li><li><p>纵观整个互联网成长史，任何一家网络企业都不可能避免犯错。马云对这一点也是毫不忌讳，他说：“我觉得网络公司一定会犯错误，而且必须犯错误，<strong>网络公司最大的错误就是停在原地不动，最大的错误就是不犯错误。</strong>关键在于<strong>总结我们犯的各种各样的错误，</strong>为了明天跑得更好，错误还得犯，关键是不能犯同样的错误。</p></li><li><p>在各地电视台连夺收视冠军的热播电视剧《亮剑》中有这样一段话：<strong>古代剑客与高手狭路相逢，假定这个对手是天下第一剑客，明知不敌，也要毅然亮剑，哪怕血溅七步，也虽败犹荣。</strong><br>该剧主人公李云龙之所以能打赢许多硬仗，就在于这种面对强敌敢于亮剑的强者心态。该剧最出彩的地方应该是李云龙在军事学院做毕业论文时的一段话：“<strong>作为一名军人，明知不敌，也要敢于亮剑，这是中国军人的军魂！就像武侠小说中所描写的剑客一样，要敢于过招，而且要该出手时就出手。</strong>”这是李云龙戎马生涯的真实写照，也是他作为一名中国军人“宁可战死，不被吓死”精神的写照。这种精神无疑是可贵的。</p></li><li><p>“我们的对手很喜欢以高价格跟我们竞争。你口袋里子弹多的时候，应该让他的子弹往墙上打。<strong>竞争永远是乐趣。</strong>如果你发现竞争是一种痛苦的时候，你的策略一定错了，每个企业在竞争的过程中不要痛苦。<strong>竞争是一种给予，做企业是一种游戏，</strong>这个游戏是你跟公司的员工团结在一起的策略，但是不能做流氓。所以我们在这方面用一点智慧，用一点脑子。谁先生气，谁先输。”</p></li><li><p>竞争者是一个最好的老师。我认为<strong>选择优秀的竞争者非常重要，</strong>但是不要选择流氓当竞争者。·如果你选择一个优秀的竞争者，打着打着，打成流氓的时候你就赢了。<br>所以有人向你叫板的时候，你要首先判断他是一个优秀竞争者，还是一个流氓竞争者，如果是一个流氓竞争者，你就放弃。但是在我们这个领域里我首先自己选择竞争者，我不让竞争者选我，当他还没有觉得我是竞争者，我就盯上了，所以我觉得在我们这个行业里，我自己的心得体会就是<strong>你去选谁是你的竞争者，不要让人家盯着你，</strong>人家盯着你，人家一打你就跟着稀里糊涂的打，所以阿里巴巴这几年人家在跟着我们模仿，但是不知道我们究竟想做什么，我选竞争对手的时候首先要看他们要去干什么，我在那里等着。</p></li><li><p>无招胜有招，商场风清扬。马云的竞争风格如独孤九剑一样，大气、浩然、不骄不躁、不恨不怨、不急不恼。这是因为马云懂得：“<strong>竞争场上是谁先恼羞成怒谁就输掉了，做企业的目的不是为了竞争，做企业的目的是为社会创造价值，然后把自己的企业越做越好。</strong>”</p></li><li><p>事实上，大部分成年男人都有一个武侠梦，而很多成功的男人也都喜欢武侠，喜欢浪漫主义精神。马云在经营阿里巴巴和淘宝网的过程中，经常会有意无意地使用一些武术招数去处理问题。马云的武术招数与他的偶像风清扬相似，追求的是“无招胜有招”以奇制胜。当然马云是一个讲究诚信的商人，他的“奇”也是君子之“奇”，就如同风清扬的“独孤九剑”一样，谨守君子之风，从不用阴险的手段欺骗对手，正像马云自己所说的：“在对抗竞争时，我们会用一些‘古怪’的招数打压对手，但战场肯定不会那么血腥。<strong>商战是一门艺术，只有“艺术’了才能开心。</strong>”</p></li><li><p>我们遵循的最高准则：第一条是“唯一不变的是变化”；第二条是“永远不把赚钱作为第目标”；第三条是“永远赚取公平合理的利润”。</p></li><li><p>除此之外，宽容对手也是马云君子之风的体现。<strong>“不许说竞争对手坏话。”</strong>这是马云为阿里巴巴员工制定的必须遵守的原则。</p></li><li><p>第一，我是技术外行，虽然在搞IT但即不I也不T，到目前为止，我只会在电脑上收发邮件而已，所以我就更懂得尊重专家和技术人员的意见。<strong>许多技术创业者容易犯的通病就是总觉得别人不行，要么指手画脚，要么自己做，结果自己做得很累，也做不好。不过，不懂技术，我刚好可以当公司产品的测试员，要是新产品出来，我马云不懂得使用，那社会上80%的人就不会使用；</strong></p></li><li><p>“客户第一”是阿里巴巴“六脉神剑”的第一支，它的内容有：客户是衣食父母；无论何种状况，微笑面对客户，始终体现尊重和诚意；在坚持原则的基础上，用客户喜欢的方式对待客户；站在客户的立场思考问题，最终达到甚至超越客户期望；平衡好客户需求和公司利益，寻求双赢；关注客户需求，提供建议和资讯，帮助客户成长。</p></li><li><p>企业家、商人和生意人有什么样的区别？<strong>生意人唯利是图、有钱就赚；商人有所为、有所不为；而企业家必须承担社会的责任，创造价值、完善社会。</strong></p></li><li><p>此外，刚才讲到发脾气，<strong>其实男人的胸怀是委屈撑大的，多一点委屈，少一些脾气你会更快乐。</strong></p></li><li><p>赚钱是一个企业家的基本技能，而不是你的所有技能。</p></li><li><p>甚至连公司的价值体系，先后被称为“孤独九剑”和“六脉神剑”。“孤独九剑”是指：群策群力、教学相长、质量、简易、激情、开放、创新、专注、服务与尊重，而“六脉神剑”则是：<strong>客户第一、团队合作、拥抱变化、诚信、激情、敬业。</strong></p></li><li><p><strong>早在上个世纪90年代，马云就曾与偶像近距离接触。</strong>那次，他去香港出差，凑巧碰见了仰慕已久的金庸，并有幸与之共进晚餐。两人一见如故，相谈甚欢，金庸还题字“多年神交，一思如故”送给马云，使马云激动万分。也就是这次见面，使马云和像成了朋友。</p></li><li><p>当你站在第一的位置上，往往不知道该往哪里走？因为第二、第三可以跟着第一走，但是第一没有参照。那时我凭什么作出一系列决定？就是凭着<strong>使命感</strong>。</p></li><li><p>迪斯尼公司的使命是<strong>Make world happy</strong>(让世界快乐起来），所以迪斯尼所有东西都是令人开开心心的，拍的戏也都是喜剧，招的人也全是快乐的人。</p></li><li><p>这个决定很痛苦，我们发现<strong>伟大的决定都是痛苦的</strong>，但痛苦的决定却不一定伟大。</p></li><li><p>任何来得迅猛的激情和狂热，退下去的速度也会同样惊人！</p></li><li><p>If not now, When?! If not me, Who?（此时此刻，非我莫属！)</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 读书 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 读书 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>阿甘正传</title>
+      <link href="/posts/1029/"/>
+      <url>/posts/1029/</url>
+      
+        <content type="html"><![CDATA[<ul><li>我直接一个爆笑</li></ul><p><img src="https://cache.ymjrhk.com/img/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240128214605.jpg" alt="爆笑"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 读书 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 读书 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>一月关键词</title>
+      <link href="/posts/f9eb/"/>
+      <url>/posts/f9eb/</url>
+      
+        <content type="html"><![CDATA[<div class="note primary no-icon flat"><h1 id="击哔你！"><a href="#击哔你！" class="headerlink" title="击哔你！"></a>击哔你！</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">👉</span></span></p></div><div class="note primary no-icon flat"><h1 id="我锤死你！"><a href="#我锤死你！" class="headerlink" title="我锤死你！"></a>我锤死你！</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">👊</span></span></p></div><div class="note info no-icon flat"><h1 id="少点欲望"><a href="#少点欲望" class="headerlink" title="少点欲望"></a>少点欲望</h1></div><div class="note info no-icon flat"><h1 id="尽力就好"><a href="#尽力就好" class="headerlink" title="尽力就好"></a>尽力就好</h1></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 专栏 </category>
+          
+          <category> 关键词 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 关键词 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>小鸡们</title>
+      <link href="/posts/8c24/"/>
+      <url>/posts/8c24/</url>
+      
+        <content type="html"><![CDATA[<h1 id="小鸡1号"><a href="#小鸡1号" class="headerlink" title="小鸡1号"></a>小鸡1号</h1><p><img src="https://cache.ymjrhk.com/img/%E5%B0%8F%E9%B8%A11.jpg" alt="小鸡1"></p><h1 id="小鸡2号"><a href="#小鸡2号" class="headerlink" title="小鸡2号"></a>小鸡2号</h1><p><img src="https://cache.ymjrhk.com/img/%E5%B0%8F%E9%B8%A12.jpg" alt="小鸡2"></p><h1 id="小鸡3号"><a href="#小鸡3号" class="headerlink" title="小鸡3号"></a>小鸡3号</h1><p><img src="https://cache.ymjrhk.com/img/%E5%B0%8F%E9%B8%A13.jpg" alt="小鸡3"></p><h1 id="小鸡头子"><a href="#小鸡头子" class="headerlink" title="小鸡头子"></a>小鸡头子</h1><p><img src="https://cache.ymjrhk.com/img/%E5%B0%8F%E9%B8%A1%E5%A4%B4%E5%AD%90.jpg" alt="小鸡头子"></p><h1 id="小鸡4号"><a href="#小鸡4号" class="headerlink" title="小鸡4号"></a>小鸡4号</h1><p><img src="https://cache.ymjrhk.com/img/%E5%B0%8F%E9%B8%A14.jpg" alt="小鸡4号"></p><h1 id="小鸡5号"><a href="#小鸡5号" class="headerlink" title="小鸡5号"></a>小鸡5号</h1><p><img src="https://cache.ymjrhk.com/img/%E5%B0%8F%E9%B8%A15.jpg" alt="小鸡5"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+            <tag> to be continued </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>走得快与走得远</title>
+      <link href="/posts/41c9/"/>
+      <url>/posts/41c9/</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="6debb38c99e8426685b516941c579b75c437d034a42894eadd5a89480594f3b3">689011e36612bd0ddb82bd0e4ee6472f1598b1421eba8ea48c1f4105661cc3626e6d4b960114218c5e8cab24874b43f8d9d359c773856bfa65f8518be79b5decde03e7dd051cf6b953d3d3effa192085f1ebd3bc1c0a8ccbc7117395e26b15f41685bfbd7530d8cdce3e2f138d98b5a75c2f1df24c1b268ae6f121673338b403148888fc807b1d77900d865bd92ae654ba7d0455e9053ca0267358ee31cc98aea9623c66f2f243071fcbf70a87a89ee9d0e868b414e832a2c03d4d6d8864aaef78f0b34ee3449e63cb197b23425355a05c9dbc82667d4142a76cdc0f3f43a0a85067e3734aab9a583273fbaeaa78a511032f53d2473f468ffee365a47613237234d21fd9ff906c465f39f70988e6b902330baa11516a4eba639f8ec37b60b19a18f9df57cf238fd54039074c76f0a49eb6a53b8c8a911ac9b46006d7a21e7b546eb403a993cc90a8f1b33bddb7c86486c7fdcc398b671066ea60b42f9e1e188664e0680e83777dfc27e590cfc4cb09bf3fcd4c3c985020c27fbeac78cd5a25c843bdd62c7a22f684a9b1aeeac3c2af9a898af44435f30f4e234d9b6f97051f98ac58995d59c56b83456b21d0b15b9169547b0202fff693c15523bfd33b96bd9951304c9c3e42c59e5e43602dab1aeaa6ebe8345f66696c9766d9963fda185657f812bdb2126238aa9e4a25b6f21ed85382844e05cebeba579f4c65ef92f0a8eac6c8d37e2eea57db186fcafce3dc8a2dc24a83275dd85eab0553c5d8cd9b3ad68bd675229d8738042699207a7924e2d9cdeafe7494e900620c8e3535fc66aa7eea998923515457f8506609490f4c7476fd5bcc0b52f348871fdde76136be0a1637978c623edc98082357911fd7c6718e8b35266bbb96a35537e3c17688c586ab25f81c3ae2bfacd5be648d4aa580e691b5a78f7721c34497e8fa629dad3e70668ac8713ca4c86f86c308c0497205097be52989b153604d6eecc17d0fd4c0c872ee83459ae9ebbcd775f4cae5ca85088d5a1165b7ef2f60bc6c9c7ae466e7ce414ea3ed4ef46e9ffa994a2355924368854325771958b7e7d946b216aeb068be9f4c624e3f82e1e5ca2b3f30d51a4d6fd28319018dafc8f9771ca4455ddfb566f3f7150a08b1f35d248a0d27ccb3876114661edaadf5cfd1736b092f628a1da084ff8f63febcea27f1f1d05ad0e9013037cb17bcb1574a985f471eb636c73e152be45de0b7f5b85499cdec3552a98b0fc85c4ecdd0d0511628c35fa309bda99c6ef5268455a44cf43148d2213ed55cb99716e16f408ee66bd2e3e29cc0578dff4dc3c1b7ea21a9ba1e8d63fa59529c8bfc355fa50daa5ad46c7aacfaa98d45379fba61dbdb68824537658bf059ac91d150e92c62bf86b3b5ff3db442b9cc2dad3012dfb77469a819a1814ba64487c09a95f06d343d730c0a77a496aae8ddef04d29944e521fa2c6680878820068fcd713086180356c610f5d7e703bca375625dfce646494c1a7e386ea16050ed6bea770beec0330be43bcb1d731be5576e40367b6ed84b68cf21462c4a7e00784a1e6a2ca97a8da2b249f1da7275e8657633b4838da2fdc021756577835db330f5680b35a971b0d921b9776dedea4c3a8ac912938778657143aaf1299f28259d1f8084d20fe8282f717174da6b2ad187ece6fa5f9afd4408b7a804f86a0b7710f0ce3591d74bb27ba2ce8e4d8b090063d9ae26dd3ce3040115f632e23c3449c51a0db2fca24f3ea499ad9069d1f0023afe0ba2875eb66b957d311587d4f1f86813a15ac3d08337a58beea218f786006e6a1bc6b651ae2f7b6335447b8a5a826275d38b7a70e5e7052a28118eac9ceeeeee453f6f6fc61727e2236a6e289a77936050f8065da851d40caa976de01d1a79bed2dd2d4ad38b94c2f8ffb16bdc45be4a302533ba8eb2138166d1b7681667ebe68d223696fd5a41a8dac2689b9773030e6e64ab1cfbec118193e7a58a0c1c95295419547c4228cd235652d8bfd6acd1252a7432e17aa6e2fb154b9687c9b87ddac00fdd6206af964ed64d46dc67081f474d40fa86f4d2318a256fb1115db4711a0584511e0c0942fa3409747482a85df39d7bb63db2aa74bea0c313e050c929badb9a5e1c14b5eff3c03fee9f6fdc89189cd3bdfcdbd121c57ffe0d1b3e6d14ea1c9ceca6c2e435b4e32c79f5f8179e9e0d32a4b86d3df7f4b8c2d9837a61d4be269efb6e02978b8b181e3b7d09eb79dbdbd5292adb04401668e5674468f0526634cb2ae1f0be6f88975236b43f2abb7d0fc3f3b1b836754c7cce240b3f681575168271d3518a82de0d4e3f311742d3b833320388258375ab1c3796286d889f3676d4a6cd9520b5320250ab55c878c0f0e15e3cb5cf0fbda2e9d56ea4bc1a66b79573e4037541c43c25d73becab8cb66f14f244012bf3eb521383a33b15c9fd5abbc6fc52c71137d93c92c18f1c0eafbc92cb77267f91f7d52b83ddefd3e3226cdbcc569e8ba4be9f24341703a865cb6be5f44b196f7ec81f8b67ed569b4ebe2298de01ca57a3bd2e7903c3d1816a4d3eb1fe4c0f12f2400e21994ce4b74ac3c69c343c8209b3706ef0d38d9a8b69c0d46439af6cf1109f871bcf56d0a7d49f61239d57a56f0b26ed8895c2aaf765cee7758377</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-blink">      <input class="hbe hbe-input-field hbe-input-field-blink" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-blink" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-blink" data-content="您好, 这里需要密码.">您好, 这里需要密码.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> YUAN </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> YUAN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>无声的语言</title>
+      <link href="/posts/384b/"/>
+      <url>/posts/384b/</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="2e5b26c568fcedff26ce07a61c4b87d7e0cf27d8c3f8f87b07372230b04b584a">689011e36612bd0ddb82bd0e4ee6472f1598b1421eba8ea48c1f4105661cc3629f9c411d6030d42f0d6c17a0b6aca11e1871258c5546c41dc1b396676d570bfeee002fa1b337b4050cf88a4982cbd7fa3113746fc1b638d3539acefc678261406df9cb15895f333a95f6534a5c68d4822af3af83f301d15c860d3f00ae51a8e2230c0681b8cb6d33918fa0330b6f631a8464eb5c8d50cefdfe717188f1c0d3e07a94f887daa188e0e4f05e9a3d16d74ef408ffef4b2253adf8a4c6de966fd663aa39426d4290247d11ed4fb2f0057b014cf98a5c38172b238b1d438e6fc6158e848a71efdcc68bebcea8f2ab763c54d30a56bd587204871986eac26e16488269ea25185cb661c29348efc865263c878fbd27d551a077198049eda880383329266558078d639b7b5a12421acb6807ee0aa449298ca7dec321d7b470be8b95dd23afbb5cece2c778d12eb1afdf8e1b270c3c78878cf93f3b6c02215f5e2ec5a2086132e9f8e75012bbd95d004d22bf2b193175f4753ff912685e0e4274efc8d06b141a89ea84160b66a1f227a69d393987fd9fcbec6f4464b57677a6d31903417e8680a30e6efc9d5eec646864b415a2312404f528c7327bbdd100495db2cd18ead782163fe33c05d0a2de984c136dbb171d7edadcced5be2eda4eee308cce738e6a589c2aadec29fc02462a6a92a415cc4b9784ef5cca3f0837d0d00a0f0dea7a6e532fc249f4880a6a238ca2bf93f3a545ba41d359403be6a4b39cefc2f7e37d5464710ae308dd910ada477083c68ae8fac66814fca1df1fb14b2962ca9376cb235c32a654036e250fbbb01540cbcc808d89f37448a04f7962771a12f8ab661f52b86024c61b69860086c1837fa782e20d96c11a73537213d597957846d5d387ffda69d3832ce734988b7cca52a5c7548ea070e8bfc284d559b409a75542d3d951aca3fd76047d11003e4b836ee01ddf8fac85041fbf4dc755853d71bd5ec1a9da208a36f36cb5774b2f6014b480f0a2a1a56cb91a1f40b3e9b0f7b0e51c2aa05be6d4e15d9f244dc522e31a7d33c4f2b8af5c52034a6d2a34931cf05c8bcbd26fde2b1fe4b8be6e26b8b467f626eb87c8b6b8090d10cf9b30e0ce9711316812b81bd5602b8379afe09cb367058a29aa955e41d1217a80edb4ca052a045e15c27c506a1cfec6aedb528e9ac973ba19760fd24fd5a06a9b77a80531aacd553e24dd06e02c3ddd238eac9290a5c898760787a205b54acacfba256e83368049c6933b649c5acb5b946d0efcaa9ff1448fdc2293c03ecee65c32e63b18459ab4da083a5fd853670c653585aab253620fe09f2cedfa22daeb7e4128472ea56d61fee5bff1c42a3b371b3dc6bb56de0c756a7f70ffae7c4aa08fbee9f3a8f394497985ad8f730ba19b657839d0cc39bcad46282d1ea8de91f9e477f1c5260078bc05a89434d420414f4107c39b495d03510d8b1f30bbe0c1be3bee4c22f1add328928052d01d83a60eac6a5af1a17903f6f6ab42aae14ebee51166c602c875d4e2d291d58a81d9150df81190ab97c94e057798ff8679bac7581e5742ae955c9ade9b37bc613ab407dae6d0e1873072040ef77600ca106cbd2b6be7b07ceae9cad00b7070c8d6bf6d9b07a5760c14a2604df4f95dbd493a50dac05187cd89d078ec9f69661a169a063d0cf8e65805eaef02041b1369f5acb1a24b48ca32f57f0255138d1390a038f0d635df8d9efcbf07d2d143cf599a5f8b2f8f1690506586c8f6677d7bfd1e2008bd46d01c73ef6d3504214900037cffe23a4bfc5e55527c2898233060665805ce132a6bff81011be0b32a803bf5367bf42768a6ed64f4bd4d8674e0f8149df703c622054e6e132199ee559ac682369e510d1cba15995ea89b966e88435961ecf95c6ea332be9a85162d000f6e32656753f7a6ac23df21e6533968ae8165fb6fef3dbf2f883232de483f7718842abb753b88fefa0338408e93feb23245f43e798354e448bd59b7cde457db5c696f4bdd1092476b13ec5fde47d144e5cb252f83484a068d1800d9b2ea2d53f10906f69aee13880bbbd93562766ced0f92345311cb0e3228a8e7ee839a21cdf5d8d3fdaf24c6d15fd85de20d24ce1456406447f134bc0e5ddd0882782e1cb753198caef18c0d5b97cb4f6a7cc237d1258ecfe6e9bef54c14d873442c4b3a3087ad7353d3be29fa5d38c331bb78e36871af5d24e1ed75c8acea3e59cb7b5de855b97112d04904c621f9937cd438c72a26b3b938cb44044387cb0aeee79bbd736cbd15935d5cd954e8eeea0d4f956e3b8c8b0bdc0ddd4028d1884def9f17a7f635d9018e32fa623cb568af7aa812588169c8a9a6caa69e2c549dfc3c8b62f3ab64be202e82b36d15eaebe25d30a0831043ca393dc574e0dbbe3caab123d41e9b41dd034752c934ebf5f36f515890df8869f1b2f990e29d08c1b8cd3b92ffe02bb111ea138686947142e57fe2303b8e91f37833869a658b033cd653628a36a68d556b167ecab4ff9881baf1a7604cc0a8eb387ace31ae4d2f68155d42f7c3f8298c0444ef54b9dfb906b57e0436d98d20ce8fa1973e492c3db4fb221779b8867e51ba9bd8b54471812a5a107743e9442c1b852406edfea4aab8a44fc556f781b945f443fcc32f71895dbfef7323ff95315713501615a0356a98cb794178ee60921902135a2b856a4815b6fea5db3d4dababbcca737e3557fb9327c4ef48f78943892c5e05e80a82f6c817ef66800a830f0ed31336b032e87dfbaff3c0311e4e58216f8b40557b5ef73df646090e3199003d5ebfc1b3f639369f0f90cc61ac3088515fabaf420db978dada10ca9d8289d3889abc23d9dc3c2c2a76767ce6ae3a254121f6397c926fba5679efde6293bf65c218b14ba7a52ecf4db4b423661c0f6ca21e81ea132a20d67af6979990b92cb5e889c7c9151bc4f4e033db5b35b5ed39e58e33ba29c81f59c517c2a9295ca224b91c13b485f4c168202ffc44a58fa54c91db1c3b85d9036201315c3f73370d6c1f13ee248c185f0e8467894f27453c714f60325b67edbc0bcd165d198e4f3517e18f58bc5e5ce6bec199d2568d7de21c5b8b3d52a7e146f5b289f6a759b6c2b7416bdb1a78a5e7666bc108c6d5820c7ea52723318d6236b02250ed133cdbb49560af7a0a1dea6e5cf690c562f8694ad20451340f292562e9cab10f1654b8337ffe2113af8a228f903b390eb472805d710c703742efc1c9c329af14046b5b654843acc156edbd640bd26ea83a6f6f2140a3ac12399e99ba8a5503f085fd74f27b741edc8fe4852266664a440ad937a38f7a0c2e78d4565ab1fd4d9a5454f2d04aa67488fc2dffb07ed1c92c46d7e5a63736296d5015df79e1f9f175464f54828bea82d9926d7a1da3bc8ce160a6c991ebde8a04e3bc088e50673f6a6d9e7d4448c00d0352a5b1cc7e67ef2f142eb2f8e55c57f08d44e7a70faa6a170c4e1427dd42d0346f2e3b16c97e257c4ebf8cb8a488fe19e1e7d253ef9e3dc0375a2001c351319b7bf9767e18d5804651b8c8b6d191d94b679b85493a248ac08b5c962b3f465981271db5136ae4c7bdd816b819b3056588414232d91d78deb1049edee69ba5400b2ed3e0bfc3a953c572bed43e986ecd3185739b8170543937c29e7748ce2a4e07caeb52a243f7423aa457316b0ba82206a04e13989990d7bba10f8f492c643637e2f8c49d94eedfcd235e816471d1aa4d2e2874ab5b58e2460f701a6dc5f216b9e19b6245387ea0cf0eb6ea6ac8e644793eea8985b62697558baaae2de19585d74411a081323acb165c57853e8267c3e5a22579d9071e484fa85477869cfa9f64c672da04e622b3c1281bb17090fe085e38c5dbd3ef7e3f367e4a88ae073fc63e17a11efe5f4eea1fb3d6011e8cd381a52feae903cc3100a80951875a2b9f7df4f7a28936a272228ef18a625c6d56610e24e2fe41f7b3eb31189919d3d3f0de38a589a746cd39ba8c005affe30371744668a4aa02adcee7384686399ca3fc9101c7046d9299d685484044524e66e149b380d04a43ad667eb6b5ee83d9cf9b007d000d39897442c3a3ac38fc4e13b97f126748da44b0e9653dee8319801fdbff8e77f5498d97aec6fa2de2b7d2e3fcb8cf30bf4fc6b24260a723dcfed62ce1bef395169bd84f400029e5914ff5f20b61322d52fa335c0e35690624d34eda36307de1288e4166b75a08801a11eb74f3250eac4f15d96052feaf9743ecb3e855386fa8059050f69d14bc3c28345b17d5836a4351728685697e5c653e44c1890238ccf9aa056d604e52ea55a79a2969689d2038e2fa6a7c569994b0e3bdfec3722e029da224f49596ff6b16345afc8d45c749086ed5d7f86daf02a387f195c65e6db90bc8111fadd3c05ca4be5c75d05be83a93f25ac16a961ba16f6698d0277ca8c4aa786c1a450faa72ab061279bddf8964ba2b21490a3e3deaee3b8803d61e211f36e09e65639814a5874e9ab1c1b2b6b6e0e00aea163c146ef398c3e70a5bbdc3c5c83fb61d9b4612df727674ec292b54b36b98b7b7dc46e51425b4c33376a507306e8b6bdb0976d0f5b27f16aa5fe02b8165352e9f238520bbb8bf59c9b0d4232557d15b1910d1a9e6d313e511ecc0145e449afa141545ff54f815e0869722a881cf6cdf6cdd41ef5f4d812164cd71bb7d5464f49b10122784ce93e1e4dfe65c327bb5d2fdb7163bc7ec4ec0369487c895f606898f2f7ab2df417e5f3cc99de340f1a02bd0a0a659fccbbee2387922370c6c044e5b5a0a7dbdf7b216908af3218271bdf4727fea45045b14dbf0c45330b0fe82f9d0fbc734051e9d5a51a710531b63e31ad189ffe50cd9aca4d6a9f677f1c64269a5d04c2cb781e8359c46d2832dc690999132a82b86d01a5758e5e6039185ad40f6ad9feae2186c91ecb22e777fee727f467d22ee76bd8560e8d0fecaaffa61f8e27bcc822dd3cbd3cf4e8781c8dbef14991f87e5bd03e180d056fc576ace9740a5d14d8d99a751792ab7f55af3e811188716efd606a6025e138dce893d76aef3ab2356c364d9f214d537ea24ce8747d65140d9a09519fa93902a0026a08531ee94b95fda23d22de8cea30c705d58a4e23ea4ebab7ce976c45cfe43c55d6f081eb06479abf3a9b412a7dc36d54e52edc64fa12e59b36f43061e02aa2771a5d60845f29a972e5fd6d5603666cc21b6383a80dd2f7bdd55a697c454b49d63996f3285a7447acc5f20c07e8bb70c97b0c37c894582f6fe90bfc694308592d80cfb5e09f1fb970a7a96370a5b3dac0dafdefe02757c3cd7cd7dffff16d4230faf81e3ddd5f6b2120e6cb9f1ddcfb1c9333e8c946a993da9e1747c460e648599d63f84a2010330eed6301482a372cb8c4e7ee46f3425262d254979dfb0c075d8c8688e8dc31bb8777f9a6684da719fc87df1aa2b893e25e7503a094adb45f425e315b5931f725d3d6b36bd63340bc2519aee60c7031afb76d24a6e2c0943a4fa5d37c8faa068a35f5bd295783d033e0d108f1fb5ea9204eeebdeac3be18cd7320ee4be2e24aee330ec044fa4d5963dfff1d7590d6df7e3f91bf713681c272bb2dbd078814d905a68380d6f8d93a445bebb49e5ca070d7037dcd1776c4cafddf12fe1b17c7626e6ecab0b119e0e7800581a7d6b16205d49dd2deb748996b25cc499612d8fb9a7cfedc666c03cfdb14217516ffcaf445bb168b842b69f015b4a5203302bdd27b4cba13eb9e7ef904fb1960d3e8d4df699ba0b4d05492349504e194ee1cea35684443175f6c2d94844661a180bd686e8c917b9aa9979140749fe16351de8de06bb59429fd7c6c1f564d7e96b74dfdf3e782f0f1bb7fb9695bb08b00ea4531ae66db3101060a782e1922b88f45a1d722dacab48603950d086431681e16cc4ca761818735d5a245a2496e18a7f82a45d64536ed02acb406b09e0ec829ed84c9d47f449a51250a5ff5b97824325a9f20e55d653be7428e2b9a594799a0a53067134d58f037428e76cfca5b1fd4a12574c60b2add4d4a1646d1af4243ad7ba697f6e71f743791d71d093110227ae92bf616144f2b657e6811a5ca0e037683aa5c96f2551d1be5906e3ad01d2f23fbe47acf56bedd7e4e9d93f92964faf08e64bea48e0f3f08f738c9f51f0081cca5791aabb69744512999cc23cbb0f8e16b7d595a0aca7ac6c220780878934f753f063791fd73225e20c29f7f298353e8c517552d6cdf4aad9a584d744f12fe0f50479e82ec7809bd12b9aaeadfde6cacea9bb1ee1ed3e237b2dd98d074d5cd63d270821fe1ec5c466afc5410e540062c247859da16f3b38bb1b735e1e6cc65e687f758cefc0eb623fa6ea49ed8577c2bd6a8e82aa02118a643f4bacc4043d92a98ed78a2951747261c128b00530f2f8887c34820ca29188891350042a0174f861feb1888fd55b6b2335d4520036ab72033df7cf53a7918ca5e5235765b2bb3af1b5ed1b501b6ac79a104f692b5213308c36fd833857f8f88238fe8ecb8a0a7f4201a430122167c7716b7ce83314cf61c361fb51b730c9dcf0b117201bf0a87c5c8dfddf502d94431a4c36b8abbfb9ff9882415b2d89d03be26853d17a2c5c77cdc5f949c482c5a32a1c99a9efbc6e2f0e3157a7f7b03f92c83df92cbf4d2d213cf753e6fcb7740dfe571b6b0ab43b19cb4df7052f3957a99280786a13fd1c2ee8415b46ec3026f8e99a9bf8326fec1451f8b014262164aaa701f9e5f0d465931848da2e8a0f976b8964a4b090054d69c988831ff1ce48440adb682994d5add077a361d33d5d0fab04eea08e078dcebec083670ee601d7cf6d203b497821956383bcf889866a65db2506ee91749e936fb78fe1444b7a0a81b2386cd537f1437c64e1eb5e17a18e5c51da5b4eafe54d889b083e4aa374a76d71fa6fc728ad0645b20c3f6d959a2f0707f2e8766782b05e102b380d4727cf47a67ffbdb7eb8d50116afd8f59e36c5de28a317685cb931e5c6b8cc75da0e81d199c49128abaa3d539c1128b1549ab6ac443e49aaf5c6304a99b49dfbf940d3eb3997cb79294f5a308b0514ec744ce81a37ea2e0a440e5e7b1d8bfe48c045c66776a2518104d01721d25eca033f6579d984b8076fea8124a9ce795f109ed182b07c09cd9a2937891b101faa741ca29c50c12ad771070f6cc892b556eb2a33ffa0ef8b9c9093ccfaa04e11c919ad9b5bd21b4f1d4d9f1a7fa2b2ecc4cc4d29d1818fc9fb96a7f17070c53d0acf05082b6560420fd554403f74b4ba58c4b5c127cd82a51fb23616d199e10ca28bc7451e243c6ac9837af6ba97a3dafb09c67a02174f64a3575099d5c82d81571df4c365c9fc98b6b2abfc25ecf4428c73b3b579294e8ac799b8c283d49999cc26afe92ced43beefabfbaeacb320951cfa71bbff47177086f7008657f1b35fd7f765e62db9d50e061009fe7001864213da9a478e90ece5f8febbfa5dbe5200ea39cc848749565487e06fda22dd274d0c3a4f45872e9922d92c24346b4cca9b16ac3f906d28d7026d2a57d73826d02d13f240dd515b2385f97fecab923f619d01091790819bb697e9f60b17cbc61cdf53b74d6196cf2c85963041bdb60dc9dd79d16ac889b5ac46fd4bfb848a91557756b5db7b68fd116608ab4b3ac4e73c006839fecd0a95482555776f99b0f3ffbdb96424e4ae243b8168670fa807e16d3a2b4ae01ab74888c1b9004a66db22da5c9d9bffc53b81343f1cff139caba0b4bd588bd977730a5ba39302fb301ecfde97b7fd445c5955c32aa3d70e873b5a036f3306f938cdaba35feeb22868c11eff7071cedad748b71deee74c0d5aa8742fa401a6b154379edf0fd03eef9705373952578a5057357ad77209a6ca25d04c132a9ac5cd6a73a0c5fbc55ed0b7c07d2615a683077d511e5b84cf460f2e43e970fb2154a05d0cfc677ae54529560648946c22e5dd144a5933a143109bceebb5b20a4c8823a045e4f16e8573643d21dec207d3aaae3e1b8f563cf5afe20ca0e88f08853ed936749fb2432f617ca6edba877c866f9cb49fadc910d584aa9de68888e584bd293618a6c4ecfc27b8d36ca004ac868791971f23f9525aace94c5ef5bb955b080dc0063d9f30c5f3a9989320bc23a817cfe7644a9723bc520810f48c96a08f2ec2f5e56eb7d718676655da2d9f00a9c84bffcd429c5e9515dde3b13a70d53c1c437059783419abafb59ec862c97cfa8429df06d54ec09b6c8615dbf7392f3f9dc1a44326c51daf3055d98610cb447dc9ebfcc8cab9b44d1952acf412374eda458ba023878b5198523aaf3f0dfc124d317917b8391876ec7dab00a8dd545ca71b17ebe5b286db2026e29914ac6641e22563008009e2810bd99b0fbbba2db1337c8426bfcdcb030e5e69c49de7ab10ef40710b1b6028d7aaba6bcdeb4e570c43e88eeb19bdc86cd226bd08a3776bf104bd11cc7a4d3e6c109a479b5fb78b0c67406607425c712a764bd027a9a29ac955b0ca080f1a8dfd0ec89ad147007e86de65507535ccd676005c76a0ab2ff4bcaf175c979ff56fc8c7408b510022bf5cf92f87d18854385db5baf5f8f65c2ccf1b5c881e959e47966446d0c57626244e218ff34a07d3f67b6d6dca9e03b178843f2c3fc94879bee0d6ffcdfd838335cff698cb6b0d9f5b5d9c06719352ec0348b9335682d4cdc07dbc083cc942b2b56493b9387eceac040ecdde2ccec13186b5115d5fb29f2dee0715a47b</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-blink">      <input class="hbe hbe-input-field hbe-input-field-blink" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-blink" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-blink" data-content="您好, 这里需要密码.">您好, 这里需要密码.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> YUAN </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> YUAN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>奇思妙想的发明</title>
+      <link href="/posts/a436/"/>
+      <url>/posts/a436/</url>
+      
+        <content type="html"><![CDATA[<h1 id="甲壳虫"><a href="#甲壳虫" class="headerlink" title="甲壳虫"></a>甲壳虫</h1><p>自动识别白头发并剪除</p><p><img src="https://cache.ymjrhk.com/img/%E7%94%B2%E5%A3%B3%E8%99%AB.jpg" alt="甲壳虫"></p><h1 id="宏文字图片"><a href="#宏文字图片" class="headerlink" title="宏文字图片"></a>宏文字图片</h1><p>既然扫描二维码图片可以出来文字，比如这两个：</p><p><img src="https://cache.ymjrhk.com/img/%E4%BA%8C%E7%BB%B4%E7%A0%811.jpg" alt="二维码1"></p><p><img src="https://cache.ymjrhk.com/img/%E4%BA%8C%E7%BB%B4%E7%A0%812.jpg" alt="二维码2"></p><p>那么可不可以设计一种宏文字，文本编辑器通过读取它自动还原出图片。（不是base64，那个太长了）</p><h1 id="迷你定位器"><a href="#迷你定位器" class="headerlink" title="迷你定位器"></a>迷你定位器</h1><p>老是需要的东西找不到，可不可以设计一种又小又隐形的东西贴在重要的东西上面。等找不到东西时就拿出手机可以实时显示那件东西的方位和距离。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+            <tag> to be continued </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>奇奇怪怪的类比</title>
+      <link href="/posts/fe0e/"/>
+      <url>/posts/fe0e/</url>
+      
+        <content type="html"><![CDATA[<ul><li>冬天空调肆无忌惮地朝室外吹着冷风，更加深了室外的寒冷。<br>VS<br>宇宙中各个文明肆无忌惮地使用二向箔和光速飞船，导致维度和光速越来越低，黑雾越来越多。</li><li>两小时的马原考试会提前交卷<br>VS<br>拉屎拉到后面还能拉出来吗</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+            <tag> to be continued </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于图床的一二三事</title>
+      <link href="/posts/872e/"/>
+      <url>/posts/872e/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>事情的起因是“西厢月”中的图片越来越大，担心以后部署的时间会越来越长，且Hexo的相对路径引用不能同时在本地和网站上看到图片，所以早用图床早超生。</p></blockquote><h1 id="下载PicGo"><a href="#下载PicGo" class="headerlink" title="下载PicGo"></a>下载PicGo</h1><p>PicGo: 一个用于快速上传图片并获取图片 URL 链接的工具</p><h1 id="改为PicList"><a href="#改为PicList" class="headerlink" title="改为PicList"></a>改为PicList</h1><p>偶然看到了PicList，发现功能比PicGo更多，界面更美观，并且还有手机版的PicHoro，真的非常好用</p><h1 id="与Typora结合"><a href="#与Typora结合" class="headerlink" title="与Typora结合"></a>与Typora结合</h1><p>在Typora的图像设置里设置上传服务，实现Typora一插入本地图片就自动上传到网络并改为URL链接</p><h1 id="选择合适的图床"><a href="#选择合适的图床" class="headerlink" title="选择合适的图床"></a>选择合适的图床</h1><h2 id="SM-MS"><a href="#SM-MS" class="headerlink" title="SM.MS"></a>SM.MS</h2><p><del>loli控</del></p><p>胜在方便易用，但速度和稳定性略差</p><h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><p>如果在国外很友好，但在国内速度很慢，只能使用jsDeliver加速，而jsDeliver加速Github有一个仓库最大30M的限制，且仓库设置为公开图片容易被人打包下载，遂作罢</p><h2 id="阿里云OSS"><a href="#阿里云OSS" class="headerlink" title="阿里云OSS"></a>阿里云OSS</h2><p>最后还是使用了大名鼎鼎的阿里云OSS，花点钱图一个快速稳定，不过我有300元的学生优惠券，因此一分没花</p><h1 id="关于CDN"><a href="#关于CDN" class="headerlink" title="关于CDN"></a>关于CDN</h1><p>本来已经大功告成，奈何看到CDN加速OSS比单纯OSS价格更便宜，抱着试试新东西的心态就研究了一下CDN，这一研究就又是两天😭</p><h2 id="一些名词"><a href="#一些名词" class="headerlink" title="一些名词"></a>一些名词</h2><ul><li><p>OSS（Object Storage Service）：对象存储服务</p></li><li><p>CDN（Content Delivery Network）：内容分发网络</p></li><li><p>源站：OSS创建的Bucket的地址，可以理解为你的图床的域名</p></li><li><p>加速域名：字面意思，就是你要加速的域名。把源站上的资源放在加速域名上，这样别人访问加速域名上的资源时自然被加速了</p></li></ul><p>然后把你自己的网站上的静态资源（图片、视频、js、css）的链接都换成加速域名，于是网站得到加速</p><blockquote><p>OSS设置加速域名的好处：</p><ul><li>让域名更短，美观，方便记忆</li><li>加速域名是主域名的子域名，更加整洁规则</li><li>不暴露源站的Bucket名和地理位置</li><li>可以有品牌效应</li><li>在直接输入URL时可以预览图片而不触发下载</li></ul></blockquote><h2 id="一些痛点"><a href="#一些痛点" class="headerlink" title="一些痛点"></a>一些痛点</h2><p>一开始不懂，直接把我的网站设置成加速域名，最后造成的结果就是我的网站无法访问，提示The bucket doesn’t belong to you，具体原因仍未知（猜测是把我的网站设置成加速域名后，访问加速域名上的内容和访问我自身的网站由于用的是相同的地址导致冲突）</p><p>实际上应该用一个不用的三级域名作为加速域名，来起到专门作缓存文件的作用，原因在上面已经说过了</p><h1 id="发现"><a href="#发现" class="headerlink" title="发现"></a>发现</h1><ul><li><p>好用的图片压缩网站 <a href="https://docsmall.com/image-compress">https://docsmall.com/image-compress</a></p></li><li><p><a href="https://ping.chinaz.com/">https://ping.chinaz.com/</a> 快速看CDN是否部署成功（通过不同位置的IP Ping网站）</p></li><li><p><code>nslookup -qt=cname ymjrhk.com</code> 查CDN</p><blockquote><p> 非权威应答:<br>ymjrhk.com      canonical name &#x3D; ymjrhk.com.w.cdngslb.com</p></blockquote></li><li><p>快速更改图片链接：Typora 全局搜索 huangkai12358.oss-cn-shanghai.aliyuncs.com 改为 cache.ymjrhk.com</p></li><li><p>更多大佬的博客</p></li></ul><h1 id="未来"><a href="#未来" class="headerlink" title="未来"></a>未来</h1><ul><li>OSS和CDN可以搭建私人云盘，可以尝试一下，不过没什么大用</li><li>AList，可以白嫖各大网盘的空间</li><li>尝试将Hexo托管到阿里云OSS上（但还是夸夸Github Page是真好用、良心）</li></ul><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>花了三天时间研究这玩意，算是一劳永逸了，真好~</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客搭建 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Flipped</title>
+      <link href="/posts/143/"/>
+      <url>/posts/143/</url>
+      
+        <content type="html"><![CDATA[<ul><li><p>The first day I met Bryce Loski, I <strong>flipped</strong>. Honestly, one look at him and I became a <strong>lunatic</strong>.</p></li><li><p>My heart stopped. It just stopped beating. And for the first time in my life, I had that feeling. You know, like the world is moving all <strong>around</strong> you, all <strong>beneath</strong> you, all <strong>inside</strong> you, and you’re <strong>floating</strong>. Floating in midair. And the only thing keeping you from drifting away is the other person’s eyes. They’re connected to yours by some invisible physical force, and they hold you fast while the rest of the world swirls and twirls and falls completely away.</p></li><li><p>So maybe I should go over there and thank him for the tree. Maybe we could sit on the porch and talk. It just occurred to me that in all the years we’ve known each other, we’ve never done that. <strong>Never really talked</strong>.</p></li><li><blockquote><p>I left it open-ended because I want my readers to think about the character’s future—what do you think should happen? I mean, if it were you, what would you do? Basically, I want you to <strong>make your life the sequel to the story</strong>. I want you to think about the steps you take and the people you know, and see beneath the surface—or beyond the moment. Then take the steps that you believe will make your life a happy one. Sometimes those steps will be harder or more painful than the easy ones, but in the end you’ll have risen farther in your life and have accomplished more for having taken the time to consider what you’re doing and why you’re doing it.</p></blockquote></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 读书 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 读书 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>十二月关键词</title>
+      <link href="/posts/878b/"/>
+      <url>/posts/878b/</url>
+      
+        <content type="html"><![CDATA[<div class="note info no-icon flat"><h1 id="稳稳的幸福"><a href="#稳稳的幸福" class="headerlink" title="稳稳的幸福"></a>稳稳的幸福</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">每天都被<strong>幸福</strong>充斥</span></span></p></div><div class="note info no-icon flat"><h1 id="相信"><a href="#相信" class="headerlink" title="相信"></a>相信</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content"><strong>相信</strong>真的很重要</span></span></p></div><div class="note primary no-icon flat"><h1 id="宝宝"><a href="#宝宝" class="headerlink" title="宝宝"></a>宝宝</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">有段时间只会说<strong>宝宝</strong>和<strong>抱抱</strong>这两个词</span></span></p></div><div class="note primary no-icon flat"><h1 id="爱是付出"><a href="#爱是付出" class="headerlink" title="爱是付出"></a>爱是付出</h1><div class="hide-block"><button type="button" class="hide-button" style="">Click    </button><div class="hide-content"><p>我愿意为你付出💖<br>我想让你开心😀<br>我希望你每天开心🥰</p></div></div></div><div class="note success no-icon flat"><h1 id="平衡"><a href="#平衡" class="headerlink" title="平衡"></a>平衡</h1><div class="hide-block"><button type="button" class="hide-button" style="">Click    </button><div class="hide-content"><p>现在是平衡<strong>恋爱</strong>和<strong>学习</strong><br>以后是平衡<strong>恋爱</strong>和<strong>生活</strong></p></div></div></div><div class="note success no-icon flat"><h1 id="不说出来别人怎么会知道呢？"><a href="#不说出来别人怎么会知道呢？" class="headerlink" title="不说出来别人怎么会知道呢？"></a>不说出来别人怎么会知道呢？</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">开心与不开心都说出来呀😀</span></span></p></div><div class="note primary no-icon flat"><h1 id="爱是相互的"><a href="#爱是相互的" class="headerlink" title="爱是相互的"></a>爱是相互的</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">相互的爱怎么会结束呢</span></span></p></div><div class="note primary no-icon flat"><h1 id="爱是包容"><a href="#爱是包容" class="headerlink" title="爱是包容"></a>爱是包容</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">包容她的缺点和任性</span></span></p></div><div class="note primary no-icon flat"><h1 id="爱是信任"><a href="#爱是信任" class="headerlink" title="爱是信任"></a>爱是信任</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">by 源源</span></span></p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 专栏 </category>
+          
+          <category> 关键词 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 关键词 </tag>
+            
+            <tag> to be continued </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>恋恋笔记本的前世今生</title>
+      <link href="/posts/778e/"/>
+      <url>/posts/778e/</url>
+      
+        <content type="html"><![CDATA[<div class="timeline undefined"><div class='timeline-item headline'><div class='timeline-item-title'><div class='item-circle'><p>2023</p></div></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>11-28</p></div></div><div class='timeline-item-content'><p>购买二级域名 <em><strong><a href="hkwy.life">hkwy.life</a></strong></em></p><p>增加三级域名 <em><strong><a href="love.ymjrhk.com">love.ymjrhk.com</a></strong></em></p><p>通过<strong>typecho</strong>搭建</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>11-29</p></div></div><div class='timeline-item-content'><p>使用<strong>Brave</strong>主题</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>12-1</p></div></div><div class='timeline-item-content'><p>减少樱花数量</p><p>增加<strong>“那些年，我们一起喜欢的歌词”</strong>到鼠标左键点击效果</p><p>新增<strong>相册</strong>功能</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>12-4</p></div></div><div class='timeline-item-content'><p>To do list新增<strong>帮助文档</strong>，增加了有道云笔记的入口</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>12-7</p></div></div><div class='timeline-item-content'><p><strong>ICP</strong>备案通过</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>12-9</p></div></div><div class='timeline-item-content'><p>更换<strong>国内服务器</strong></p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>12-11</p></div></div><div class='timeline-item-content'><p>部署<strong>SSL</strong>证书</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>12-16</p></div></div><div class='timeline-item-content'><p>To do list增加了只完成一半的图标</p><p>优化了逻辑——当没有图片时点击事件不显示一大片空白区域以免影响观看体验</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>12-17</p></div></div><div class='timeline-item-content'><p>引用<a href="https://busuanzi.ibruce.info/">卜算子</a>js统计网站<strong>访客数</strong>和<strong>总访问量</strong></p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>12-26</p></div></div><div class='timeline-item-content'><p>增加简单的<strong>时间胶囊</strong>（其实就是一篇文章）（未来会改进）</p><p>网站底部增加常用功能直达入口，帮助源源一键傻瓜式操作</p></div></div></div><div class="timeline undefined"><div class='timeline-item headline'><div class='timeline-item-title'><div class='item-circle'><p>2024</p></div></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>4-11</p></div></div><div class='timeline-item-content'><p>网站底部增加<strong>ChatGpt</strong>，实现不魔法就可使用ChatGpt</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>4-16</p></div></div><div class='timeline-item-content'><p>To do list修改了图片比例，现在图片可以完整观看不被裁剪了</p></div></div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客搭建 </tag>
+            
+            <tag> to be continued </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>十一月关键词</title>
+      <link href="/posts/8999/"/>
+      <url>/posts/8999/</url>
+      
+        <content type="html"><![CDATA[<div class="note info no-icon flat"><h1 id="自由且无用"><a href="#自由且无用" class="headerlink" title="自由且无用"></a>自由且无用</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">好喜欢这种状态</span></span></p></div><div class="note success no-icon flat"><h1 id="把心情保持在平均线附近"><a href="#把心情保持在平均线附近" class="headerlink" title="把心情保持在平均线附近"></a>把心情保持在平均线附近</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">若能避开猛烈的狂喜，自然不会有悲痛的来袭</span></span></p></div><div class="note primary no-icon flat"><h1 id="我是被宠爱着的"><a href="#我是被宠爱着的" class="headerlink" title="我是被宠爱着的"></a>我是被宠爱着的</h1><div class="hide-block"><button type="button" class="hide-button" style="">Click    </button><div class="hide-content"><p>老天真的非常宠幸我<br>源源也非常宠爱我</p></div></div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 专栏 </category>
+          
+          <category> 关键词 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 关键词 </tag>
+            
+            <tag> to be continued </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>红楼梦</title>
+      <link href="/posts/5780/"/>
+      <url>/posts/5780/</url>
+      
+        <content type="html"><![CDATA[<ul><li><p>林黛玉天性喜散不喜聚。她想的也有个道理，她说，“人有聚就有散，聚时欢喜，到散时岂不冷清？既清冷则生伤感，所以不如倒是不聚的好。比如那花开时令人爱慕，谢时则增惆怅， 所以倒是不开的好。”故此人以为喜之时，她反以为悲。那宝玉的情性只愿常聚， 生怕一时散了添悲；那花只愿常开，生怕一时谢了没趣；只到筵散花谢，虽有万种悲伤，也就无可如何了。因此，今日之筵，大家无兴散了，林黛玉倒不觉得，倒是宝玉心中闷闷不乐， 回至自己房中长吁短叹。（第三十一回）</p></li><li><p>宝玉忙携手垂泪道：“有什么话留下两句。”秦钟道：“并无别话。以前你我见识自为高过世人，我今日才知自误了。以后还该立志功名，以荣耀显达为是。”说毕，便长叹一声，萧然长逝了。</p></li><li><p>刚说了半句又忙咽住，自悔说的话急了，不觉的就红了脸，低下头来。宝玉听得这话如此亲切稠密，大有深意，忽见他又咽住不往下说，红了脸，低下头只管弄衣带，那一种<strong>娇着怯怯</strong>，非可形容得出者，不觉心中大畅，将疼痛早丢在九霄云外，心中自思：“我不过挨了几下打，他们一个个就有这些怜惜悲感之态露出，令人可玩可观，可怜可敬。假若我一时竟遭殃横死，他们还不知是何等悲感呢！既是他们这样,我便一时死了 ，得他们如此，一生事业纵然尽付东流，亦无足叹惜，冥冥之中若不怡然自得，亦可谓糊涂鬼崇矣。”（第三十三回）</p></li><li><p>只见腮上通红，自羡压倒桃花，却不知病由此萌。（第三十四回）</p></li><li><blockquote><p>很多时候，人们不愿意合群，不是因为孤僻，而是因为懒，懒得经营一段关系，认为孤单就是自由，觉得任何一种关系都可能束缚自己。但是，与人交往是一种入世的姿态，一种胸怀，一种智慧，人生只有在群体生活中才会拥有一道完整的风景。它能使一个人从自卑走向自信，从孤僻走向开朗，从封闭走向快乐。</p></blockquote></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 读书 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 读书 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>To do list</title>
+      <link href="/posts/7bec/"/>
+      <url>/posts/7bec/</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="41611f43e1fc118dd61edaec7fd5787468c4f735008530f9c6be559921970957">689011e36612bd0ddb82bd0e4ee6472fc83f2929128104afee62025d24602d03a13b57af3e31af1fd3df09d7363a5bc298773320d85dfd27d800b2392d6051ab6361ead36034f934a4c7c270080dae55c19754f32babeff14676916c1a7eb724e2799846475d26cf0c9d7ebe67be743587f94c0a02e057ff40955b59b4cf45e933188a718ae53c47f8e2e6d240f744d258ca1873004d7a6a3e39008dd594658fab75efb909da4c943e3fd21fc35898575bddeeb478a2adbc20a27c699f0b6211b1b5c77df6c4c7defee55d27b61a7ffd97399540459a3f8d3df6231c4d3050538d6390b554b8bf52ae571ef8042e501e01ee6ec2f40c3fd0f777bbcdef627d5d670ca50f52ab1c0493072d6d5223b40b795d743b40213e773bcb0427a5167e95701ecaf8e6c9d62c0257a8744b42444edd26c8bbe63aa251923a44a962e9e61a0b2b0a9ee98202ecce37c18c84a223a81e9aa9c1625a96e4205df46f6dd47e2eb8c3169b78960adb61c9bb93d4a4a29e87fa5bdf8528fe03702ac6f7801b0c1afc63db89c79767af29b24d45a939e4baa2a33b362dec58f3949d73da8ef180e3a1cfb1310f871659025df81b58db256bb643f56ecfd696f03ee9b40a8ff19152920d286c4c6a7caae9613369e35b74753a41ab1a41e7e3113bef051269a4bd9102ba4302474b340b977da84694ab144af7005fed43f258dc67ee059a27069a94c9af47b444f274df1b13dd07d0297e825bb679013397a3bd3aba438c4c23c6d552e93d1b4205e680095afd8fc9c5d81a9bbb16e0c3c2a755c2039298bbd3e80b6da58a280b79653bf194c9b63aba68bab442c1eba94d1528a876f170d1b1e75a8840d5471afcbe8d7c3b1e58d4021a02e6f58588fb7ead8c2e9c9ce64d7285e1638d69b056c668bc80f1dea66a3fd1af99cfc0682ad029d653313c0bcab469e24952be7156f34da5bd45392a8d10a98d6228816e4bcc69a61148665c36f7688b606b84552ede8b523af5546cee1c0d6a5252cddaaf724d2ab5ef5a9c927f430800df33f5729bde72cdb237473b2899053e1a4105a491f2afc934b718d329a2fa812efdb7b14fb8b90bd767c4acd2bb002ac19ea4d33bb68a148cf738381c2c67f8cdd69180ac6786ba52c9200c1c1d8b5537e436aa67a5f756214351a27b36b2230e21472dc81911effd066a07c6d71af1824c1919763a7cc36f88630cc0500c59022420c7d15b7e84a6f04af6e1311170253532985a3d07c60a7692bb4b6bb5b9b29c223367c6953b5b69572b9b620e459b9763c33a65ff9f0c6a3201a95c74150201253965469cbf1b2f8b2215c073f0d0ebe49178b245e8a4f391764a79b0a7a45e64e3bbce55c35c4efffdfc49f0d0d6fd0f3b02c202be893af7e6a9100ca8ed0ec3a24dd6209bfae88f5ed14d51323ab91c8485d9733c0356fbb9300c69a8a6c5cc73e19cd4a0f99f7538ed675e1bdf8aedd1bf7dbe0aed3a57367949abac50af84bfa4874abba4c69213fad108e19294848cc97cacde9304a1e23eb3beb2a553a40e0e7f7883c6329b3e9924b6bb672c59ec781b1e63592c47bc0648ded21c2617b3bb0edd84a9d5888132110d731228e7dc353dd7dd3c3342f9dcb63b20ff7aa82e59636413ad14dbe23abde3c45958256e2a23a16a423ce8ca53f3510237edebb1d4ed03d2ff57c0be06bc93a0dde906d6de77d0176c1cfe272dc9aebd7898eb8912920392563fa54808311c948eb087e871598e3675414646d61cb95e0af63f0d7b371445d86fd1e93036ce430d02eab48aa3e191b8de28f98eead56e11c570093353ba419af17713717323aaa91bb1652cc71e5b89e7a9c8c1ab7198d3d10512f4318736fc656bc72e02a24f757861aeb682717eb2616e01d51397691f90f15c3563f854a9b81a197c8434454c628113df2b91a7b7e6e197a6a228f32c62036b223d098b89cd4718082b6877e57cc6590f6fa020d59aaafcd44a58a50afaf0df8ad25c91ecfadb51997980760e048e8c8140f53efc9446a22019c42189b0320f20e5be6b23dd56b2679b7ec41a4fdf4d80b7610fee3812be66ae9cd0258c2feefb46a5c68ba5bf6172585abf871764fca0d95120523240e8ad5068</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-blink">      <input class="hbe hbe-input-field hbe-input-field-blink" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-blink" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-blink" data-content="您好, 这里需要密码.">您好, 这里需要密码.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> YUAN </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> YUAN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>YUAN</title>
+      <link href="/posts/8790/"/>
+      <url>/posts/8790/</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="227fbbe91e002cced25b27e5f7e213b9e6da731a6fdb67aef91099da72b15ded">689011e36612bd0ddb82bd0e4ee6472f1fe951d8b653e23fedc9d3a964ec9f74a3bb3275c17648b096ffc1502cebca62d56ee078c6da20b5a8463fd0051b80f2e937cf0d6d0c46562090339bc8733d1c677ad5447806635ec83041d85b9e68ba1071d99328a1e92e0faf53b78e78cd2944bc05fd0ed5c49fc1291ff79475e0cc5e97914cac7c06263a8204cca9c54e95ab50a75acb46e96bff708331cca6e7a8541b2ad4e8c6a580a2fec236b89295c7065b3b5b0dd3633d04465ae2beb4bfa6148c27f0dbff5d54b05d1172234e8d84b0fd0ee6b2f96ca23b72667b07ac90af64f587288b8864c054784f815c5ebaca83c811885ecf207a5973612015b889225e715bc1cfbec04c068d4416ded113d7acbcde1d871a80d66b64377b534e6bc1f62eac0822f56120a075921c5c54d0bcb4f5e2bac4d9ede40acb69e909d59b3e4ee2d3b4b33922b15189a2129dc14ce525302999561530680b6c616dd21027d7ecc8cc77687cf5a20e93a052188f10aa68671460a7b787ab11d178653497884005e5d661e7244541f027822fb07d218e814c67e8d173e8110b47169500c02ce15675c2eaa114f16cc7a56c7610b409cb89b7aacfa07ecb95842e22de9bb06218ff570781b5f00f63c0f959d3145c29b7121f2aa17cd56d143803fd259718c2d4e34cbece474564e292c1a38b5079ebe538eef085ec30f2a88388caf7b807697e943ec05609a0d8a427ef9929d8ba197e4eb17a8322583090367a5efe9d1eb2fc28620c802a699dd59db7039ff36676d523c21de8c5eefd1ad8229dc6f9fe3ee1795cce373ef0f15cf190dae413cc049d6c5a5de721bba7c587819cee42f58d1b7ae305fe36edaea83171bc8d19a9fc66180b8062aca83ce82d6444f38107fbaa73af8f1b8d27627f0e673e4a43ad3cbd013bc5c375072a1d0d49d902403dd75b88bf1b035295307a018fe3a470eac25f4229c98c74b91f7a5d7355426a8fdda15edfd2314fc0cd40f2045d559d4768987eff5fe72692d37963e68efaefbb4b37c746b9140b95e9e7348f41697b5fa3ea08730387e22d0320d4f39951bae7e8e4d4f5a477956af13a14e07e50303f7e21995daa9897c7a5be906e7655dac214ca</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-blink">      <input class="hbe hbe-input-field hbe-input-field-blink" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-blink" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-blink" data-content="您好, 这里需要密码.">您好, 这里需要密码.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> YUAN </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> YUAN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>菜月昴从新开始</title>
+      <link href="/posts/7764/"/>
+      <url>/posts/7764/</url>
+      
+        <content type="html"><![CDATA[<p>如题</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>鲨了我吧</title>
+      <link href="/posts/9f35/"/>
+      <url>/posts/9f35/</url>
+      
+        <content type="html"><![CDATA[<p>期中……</p><ol><li>数据结构oj</li><li><del>数据结构期中考</del></li><li>数据结构上机考</li><li><del>文献检索期末</del></li><li><del>数电第二章测验</del></li><li><del>离散数学期中</del></li><li><del>概率论期中</del></li><li><del>数电作业</del></li><li><del>信号与系统作业</del></li><li><del>信号与系统期中</del></li><li>六级</li><li>数据结构项目</li><li>日常数电实验</li><li>日常问题求解</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>西厢月</title>
+      <link href="/posts/8bff/"/>
+      <url>/posts/8bff/</url>
+      
+        <content type="html"><![CDATA[<h1 id="2022-11-21"><a href="#2022-11-21" class="headerlink" title="2022-11-21"></a>2022-11-21</h1><p><img src="https://cache.ymjrhk.com/img/2022-11-21.jpg"></p><h1 id="2022-12-1"><a href="#2022-12-1" class="headerlink" title="2022-12-1"></a>2022-12-1</h1><p><img src="https://cache.ymjrhk.com/img/2022-12-1.jpg"></p><h1 id="2023-10-25"><a href="#2023-10-25" class="headerlink" title="2023-10-25"></a>2023-10-25</h1><p><img src="https://cache.ymjrhk.com/img/2023-10-25.jpg"></p><h1 id="2023-10-26"><a href="#2023-10-26" class="headerlink" title="2023-10-26"></a>2023-10-26</h1><p><img src="https://cache.ymjrhk.com/img/2023-10-26.jpg"></p><h1 id="2023-10-30"><a href="#2023-10-30" class="headerlink" title="2023-10-30"></a>2023-10-30</h1><p><img src="https://cache.ymjrhk.com/img/2023-10-30.jpg"></p><h1 id="2023-11-7"><a href="#2023-11-7" class="headerlink" title="2023-11-7"></a>2023-11-7</h1><p><img src="https://cache.ymjrhk.com/img/2023-11-7.jpg"></p><h1 id="2023-11-9"><a href="#2023-11-9" class="headerlink" title="2023-11-9"></a>2023-11-9</h1><p><img src="https://cache.ymjrhk.com/img/2023-11-9.jpg"></p><h1 id="2023-11-17"><a href="#2023-11-17" class="headerlink" title="2023-11-17"></a>2023-11-17</h1><p><img src="https://cache.ymjrhk.com/img/2023-11-17.jpg"></p><h1 id="2023-11-20"><a href="#2023-11-20" class="headerlink" title="2023-11-20"></a>2023-11-20</h1><p><img src="https://cache.ymjrhk.com/img/2023-11-20.jpg"></p><h1 id="2023-11-21"><a href="#2023-11-21" class="headerlink" title="2023-11-21"></a>2023-11-21</h1><p><img src="https://cache.ymjrhk.com/img/2023-11-21.jpg"></p><h1 id="2023-11-28"><a href="#2023-11-28" class="headerlink" title="2023-11-28"></a>2023-11-28</h1><p><img src="https://cache.ymjrhk.com/img/2023-11-28.jpg"></p><h1 id="2023-11-30"><a href="#2023-11-30" class="headerlink" title="2023-11-30"></a>2023-11-30</h1><p><img src="https://cache.ymjrhk.com/img/2023-11-30.jpg"></p><h1 id="2023-12-4"><a href="#2023-12-4" class="headerlink" title="2023-12-4"></a>2023-12-4</h1><p><img src="https://cache.ymjrhk.com/img/2023-12-4.jpg" alt="2023-12-4"></p><h1 id="2023-12-7"><a href="#2023-12-7" class="headerlink" title="2023-12-7"></a>2023-12-7</h1><p><img src="https://cache.ymjrhk.com/img/2023-12-7.jpg" alt="2023-12-7"></p><h1 id="2023-12-15"><a href="#2023-12-15" class="headerlink" title="2023-12-15"></a>2023-12-15</h1><p><img src="https://cache.ymjrhk.com/img/2023-12-15.jpg" alt="2023-12-15"></p><h1 id="2023-12-25"><a href="#2023-12-25" class="headerlink" title="2023-12-25"></a>2023-12-25</h1><p><img src="https://cache.ymjrhk.com/img/2023-12-25.jpg" alt="2023-12-25"></p><h1 id="2023-12-30"><a href="#2023-12-30" class="headerlink" title="2023-12-30"></a>2023-12-30</h1><p><img src="https://cache.ymjrhk.com/img/2023-12-30.jpg" alt="2023-12-30"></p><h1 id="2024-1-3"><a href="#2024-1-3" class="headerlink" title="2024-1-3"></a>2024-1-3</h1><p><img src="https://cache.ymjrhk.com/img/2024-1-3.jpg" alt="2024-1-3"></p><h1 id="2024-1-4"><a href="#2024-1-4" class="headerlink" title="2024-1-4"></a>2024-1-4</h1><p><img src="https://cache.ymjrhk.com/img/2024-1-4.jpg" alt="2024-1-4"></p><h1 id="2024-1-10"><a href="#2024-1-10" class="headerlink" title="2024-1-10"></a>2024-1-10</h1><p><img src="https://cache.ymjrhk.com/img/2024-1-10.jpg" alt="2024-1-10"></p><h1 id="2024-1-12"><a href="#2024-1-12" class="headerlink" title="2024-1-12"></a>2024-1-12</h1><p><img src="https://cache.ymjrhk.com/img/2024-1-12.jpg" alt="2024-1-12"></p><h1 id="2024-1-26"><a href="#2024-1-26" class="headerlink" title="2024-1-26"></a>2024-1-26</h1><p><img src="https://cache.ymjrhk.com/img/2024-1-26.jpg" alt="2024-1-26"></p><h1 id="2024-2-28"><a href="#2024-2-28" class="headerlink" title="2024-2-28"></a>2024-2-28</h1><p><img src="https://cache.ymjrhk.com/img/2024-2-28.jpg" alt="2024-2-28"></p><h1 id="2024-3-2"><a href="#2024-3-2" class="headerlink" title="2024-3-2"></a>2024-3-2</h1><p><img src="https://cache.ymjrhk.com/img/2024-3-2.jpg" alt="2024-3-2"></p><h1 id="2024-3-9"><a href="#2024-3-9" class="headerlink" title="2024-3-9"></a>2024-3-9</h1><p><img src="https://cache.ymjrhk.com/img/2024-3-9.jpg" alt="2024-3-9"></p><h1 id="2024-3-13"><a href="#2024-3-13" class="headerlink" title="2024-3-13"></a>2024-3-13</h1><p><img src="https://cache.ymjrhk.com/img/2024-3-13.jpg" alt="2024-3-13"></p><h1 id="2024-3-14"><a href="#2024-3-14" class="headerlink" title="2024-3-14"></a>2024-3-14</h1><p><img src="https://cache.ymjrhk.com/img/2024-3-14.jpg" alt="2024-3-14"></p><h1 id="2024-3-19"><a href="#2024-3-19" class="headerlink" title="2024-3-19"></a>2024-3-19</h1><p><img src="https://cache.ymjrhk.com/img/2024-3-19.jpg" alt="2024-3-19"></p><h1 id="2024-3-22"><a href="#2024-3-22" class="headerlink" title="2024-3-22"></a>2024-3-22</h1><p><img src="https://cache.ymjrhk.com/img/2024-3-22.jpg" alt="2024-3-22"></p><h1 id="2024-3-24"><a href="#2024-3-24" class="headerlink" title="2024-3-24"></a>2024-3-24</h1><p><img src="https://cache.ymjrhk.com/img/2024-3-24.jpg" alt="2024-3-24"></p><h1 id="2024-3-29"><a href="#2024-3-29" class="headerlink" title="2024-3-29"></a>2024-3-29</h1><p><img src="https://cache.ymjrhk.com/img/2024-3-29.jpg" alt="2024-3-29"></p><h1 id="2024-4-1"><a href="#2024-4-1" class="headerlink" title="2024-4-1"></a>2024-4-1</h1><p><img src="https://cache.ymjrhk.com/img/2024-4-1.jpg" alt="2024-4-1"></p><h1 id="2024-4-10"><a href="#2024-4-10" class="headerlink" title="2024-4-10"></a>2024-4-10</h1><p><img src="https://cache.ymjrhk.com/img/2024-4-10.jpg" alt="2024-4-10"></p><h1 id="2024-4-16"><a href="#2024-4-16" class="headerlink" title="2024-4-16"></a>2024-4-16</h1><p><img src="https://cache.ymjrhk.com/img/2024-4-16.jpg" alt="2024-4-16"></p><h1 id="2024-4-21"><a href="#2024-4-21" class="headerlink" title="2024-4-21"></a>2024-4-21</h1><p><img src="https://cache.ymjrhk.com/img/2024-4-21.jpg" alt="2024-4-21"></p><h1 id="2024-4-27"><a href="#2024-4-27" class="headerlink" title="2024-4-27"></a>2024-4-27</h1><p><img src="https://cache.ymjrhk.com/img/2024-4-27.jpg" alt="2024-4-27"></p><h1 id="2024-5-12"><a href="#2024-5-12" class="headerlink" title="2024-5-12"></a>2024-5-12</h1><p><img src="https://cache.ymjrhk.com/img/2024-5-12.jpg" alt="2024-5-12"></p><h1 id="2024-5-17"><a href="#2024-5-17" class="headerlink" title="2024-5-17"></a>2024-5-17</h1><p><img src="https://cache.ymjrhk.com/img/2024-5-17.jpg" alt="2024-5-17"></p><h1 id="2024-5-21"><a href="#2024-5-21" class="headerlink" title="2024-5-21"></a>2024-5-21</h1><p><img src="https://cache.ymjrhk.com/img/2024-5-21.jpg" alt="2024-5-21"></p><h1 id="2024-5-31"><a href="#2024-5-31" class="headerlink" title="2024-5-31"></a>2024-5-31</h1><p><img src="https://cache.ymjrhk.com/img/2024-5-31.jpg" alt="2024-5-31"></p><h1 id="2024-6-1"><a href="#2024-6-1" class="headerlink" title="2024-6-1"></a>2024-6-1</h1><p><img src="https://cache.ymjrhk.com/img/2024-6-1.jpg" alt="2024-6-1"></p><h1 id="2024-6-4"><a href="#2024-6-4" class="headerlink" title="2024-6-4"></a>2024-6-4</h1><p><img src="https://cache.ymjrhk.com/img/2024-6-4.jpg" alt="2024-6-4"></p><h1 id="2024-6-9"><a href="#2024-6-9" class="headerlink" title="2024-6-9"></a>2024-6-9</h1><p><img src="https://cache.ymjrhk.com/img/2024-6-9.jpg" alt="2024-6-9"></p><h1 id="2024-6-13"><a href="#2024-6-13" class="headerlink" title="2024-6-13"></a>2024-6-13</h1><p><img src="https://cache.ymjrhk.com/img/2024-6-13.jpg" alt="2024-6-13"></p><h1 id="2024-6-17"><a href="#2024-6-17" class="headerlink" title="2024-6-17"></a>2024-6-17</h1><p><img src="https://cache.ymjrhk.com/img/2024-6-17.jpg" alt="2024-6-17"></p><h1 id="2024-6-20"><a href="#2024-6-20" class="headerlink" title="2024-6-20"></a>2024-6-20</h1><p><img src="https://cache.ymjrhk.com/img/2024-6-20.jpg" alt="2024-6-20"></p><h1 id="2024-6-24"><a href="#2024-6-24" class="headerlink" title="2024-6-24"></a>2024-6-24</h1><p><img src="https://cache.ymjrhk.com/img/2024-6-24.jpg" alt="2024-6-24"></p><h1 id="2024-6-27"><a href="#2024-6-27" class="headerlink" title="2024-6-27"></a>2024-6-27</h1><p><img src="https://cache.ymjrhk.com/img/2024-6-27.jpg" alt="2024-6-27"></p><h1 id="2024-7-3"><a href="#2024-7-3" class="headerlink" title="2024-7-3"></a>2024-7-3</h1><p><img src="https://cache.ymjrhk.com/img/2024-7-3.jpg" alt="2024-7-3"></p><h1 id="2024-7-8"><a href="#2024-7-8" class="headerlink" title="2024-7-8"></a>2024-7-8</h1><p><img src="https://cache.ymjrhk.com/img/2024-7-8.jpg" alt="2024-7-8"></p><h1 id="2024-9-9"><a href="#2024-9-9" class="headerlink" title="2024-9-9"></a>2024-9-9</h1><p><img src="https://cache.ymjrhk.com/img/2024-9-9.jpg" alt="2024-9-9"></p><h1 id="2024-9-27"><a href="#2024-9-27" class="headerlink" title="2024-9-27"></a>2024-9-27</h1><p><img src="https://cache.ymjrhk.com/img/2024-9-27.jpg" alt="2024-9-27"></p><h1 id="2024-10-8"><a href="#2024-10-8" class="headerlink" title="2024-10-8"></a>2024-10-8</h1><p><img src="https://cache.ymjrhk.com/img/2024-10-8.jpg" alt="2024-10-8"></p><h1 id="2024-10-10"><a href="#2024-10-10" class="headerlink" title="2024-10-10"></a>2024-10-10</h1><p><img src="https://cache.ymjrhk.com/img/2024-10-10.jpg" alt="2024-10-10"></p><h1 id="2024-10-11"><a href="#2024-10-11" class="headerlink" title="2024-10-11"></a>2024-10-11</h1><p><img src="https://cache.ymjrhk.com/img/2024-10-11.jpg" alt="2024-10-11"></p><h1 id="2024-10-15"><a href="#2024-10-15" class="headerlink" title="2024-10-15"></a>2024-10-15</h1><p><img src="https://cache.ymjrhk.com/img/2024-10-15.jpg" alt="2024-10-15"></p><h1 id="2024-10-21"><a href="#2024-10-21" class="headerlink" title="2024-10-21"></a>2024-10-21</h1><p><img src="https://cache.ymjrhk.com/img/2024-10-21.jpg" alt="2024-10-21"></p><h1 id="2024-10-28"><a href="#2024-10-28" class="headerlink" title="2024-10-28"></a>2024-10-28</h1><p><img src="https://cache.ymjrhk.com/img/2024-10-28.jpg" alt="2024-10-28"></p><h1 id="2024-10-31"><a href="#2024-10-31" class="headerlink" title="2024-10-31"></a>2024-10-31</h1><p><img src="https://cache.ymjrhk.com/img/2024-10-31.jpg" alt="2024-10-31"></p><h1 id="2024-11-8"><a href="#2024-11-8" class="headerlink" title="2024-11-8"></a>2024-11-8</h1><p><img src="https://cache.ymjrhk.com/img/2024-11-8.jpg" alt="2024-11-8"></p><h1 id="2024-11-11"><a href="#2024-11-11" class="headerlink" title="2024-11-11"></a>2024-11-11</h1><p><img src="https://cache.ymjrhk.com/img/2024-11-11.jpg" alt="2024-11-11"></p><h1 id="2024-11-13"><a href="#2024-11-13" class="headerlink" title="2024-11-13"></a>2024-11-13</h1><p><img src="https://cache.ymjrhk.com/img/2024-11-13.jpg" alt="2024-11-13"></p><h1 id="2024-11-14"><a href="#2024-11-14" class="headerlink" title="2024-11-14"></a>2024-11-14</h1><p><img src="https://cache.ymjrhk.com/img/2024-11-14.jpg" alt="2024-11-14"></p><h1 id="2024-11-19"><a href="#2024-11-19" class="headerlink" title="2024-11-19"></a>2024-11-19</h1><p><img src="https://cache.ymjrhk.com/img/2024-11-19.jpg" alt="2024-11-19"></p><h1 id="2024-11-25"><a href="#2024-11-25" class="headerlink" title="2024-11-25"></a>2024-11-25</h1><p><img src="https://cache.ymjrhk.com/img/2024-11-25.jpg" alt="2024-11-25"></p><h1 id="2024-11-28"><a href="#2024-11-28" class="headerlink" title="2024-11-28"></a>2024-11-28</h1><p><img src="https://cache.ymjrhk.com/img/2024-11-28.jpg" alt="2024-11-28"></p><h1 id="2024-12-3"><a href="#2024-12-3" class="headerlink" title="2024-12-3"></a>2024-12-3</h1><p><img src="https://cache.ymjrhk.com/img/2024-12-3.jpg" alt="2024-12-3"></p><h1 id="2024-12-6"><a href="#2024-12-6" class="headerlink" title="2024-12-6"></a>2024-12-6</h1><p><img src="https://cache.ymjrhk.com/img/2024-12-6.jpg" alt="2024-12-6"></p><h1 id="2024-12-12"><a href="#2024-12-12" class="headerlink" title="2024-12-12"></a>2024-12-12</h1><p><img src="https://cache.ymjrhk.com/img/2024-12-12.jpg" alt="2024-12-12"></p><h1 id="2024-12-17"><a href="#2024-12-17" class="headerlink" title="2024-12-17"></a>2024-12-17</h1><p><img src="https://cache.ymjrhk.com/img/2024-12-17.jpg" alt="2024-12-17"></p><h1 id="2024-12-19"><a href="#2024-12-19" class="headerlink" title="2024-12-19"></a>2024-12-19</h1><p><img src="https://cache.ymjrhk.com/img/2024-12-19.jpg" alt="2024-12-19"></p><h1 id="2024-12-23"><a href="#2024-12-23" class="headerlink" title="2024-12-23"></a>2024-12-23</h1><p><img src="https://cache.ymjrhk.com/img/2024-12-23.jpg" alt="2024-12-23"></p><h1 id="2024-12-26"><a href="#2024-12-26" class="headerlink" title="2024-12-26"></a>2024-12-26</h1><p><img src="https://cache.ymjrhk.com/img/2024-12-26.jpg" alt="2024-12-26"></p><h1 id="2025-1-4"><a href="#2025-1-4" class="headerlink" title="2025-1-4"></a>2025-1-4</h1><p><img src="https://cache.ymjrhk.com/img/2025-1-4.jpg" alt="2025-1-4"></p><h1 id="2025-1-7"><a href="#2025-1-7" class="headerlink" title="2025-1-7"></a>2025-1-7</h1><p><img src="https://cache.ymjrhk.com/img/2025-1-7.jpg" alt="2025-1-7"></p><h1 id="2025-1-9"><a href="#2025-1-9" class="headerlink" title="2025-1-9"></a>2025-1-9</h1><p><img src="https://cache.ymjrhk.com/img/2025-1-9.jpg" alt="2025-1-9"></p><h1 id="2025-1-16"><a href="#2025-1-16" class="headerlink" title="2025-1-16"></a>2025-1-16</h1><p><img src="https://cache.ymjrhk.com/img/2025-1-16.jpg" alt="2025-1-16"></p><h1 id="2025-2-17"><a href="#2025-2-17" class="headerlink" title="2025-2-17"></a>2025-2-17</h1><p><img src="https://cache.ymjrhk.com/img/2025-2-17.jpg" alt="2025-2-17"></p><h1 id="2025-2-20"><a href="#2025-2-20" class="headerlink" title="2025-2-20"></a>2025-2-20</h1><p><img src="https://cache.ymjrhk.com/img/2025-2-20.jpg" alt="2025-2-20"></p><h1 id="2025-2-22"><a href="#2025-2-22" class="headerlink" title="2025-2-22"></a>2025-2-22</h1><p><img src="https://cache.ymjrhk.com/img/2025-2-22.jpg" alt="2025-2-22"></p><h1 id="2025-3-3"><a href="#2025-3-3" class="headerlink" title="2025-3-3"></a>2025-3-3</h1><p><img src="https://cache.ymjrhk.com/img/2025-3-3.jpg" alt="2025-3-3"></p><h1 id="2025-3-6"><a href="#2025-3-6" class="headerlink" title="2025-3-6"></a>2025-3-6</h1><p><img src="https://cache.ymjrhk.com/img/2025-3-6.jpg" alt="2025-3-6"></p><h1 id="2025-3-11"><a href="#2025-3-11" class="headerlink" title="2025-3-11"></a>2025-3-11</h1><p><img src="https://cache.ymjrhk.com/img/2025-3-11.jpg" alt="2025-3-11"></p><h1 id="2025-3-14"><a href="#2025-3-14" class="headerlink" title="2025-3-14"></a>2025-3-14</h1><p><img src="https://cache.ymjrhk.com/img/2025-3-14.jpg" alt="2025-3-14"></p><h1 id="2025-3-18"><a href="#2025-3-18" class="headerlink" title="2025-3-18"></a>2025-3-18</h1><p><img src="https://cache.ymjrhk.com/img/2025-3-18.jpg" alt="2025-3-18"></p><h1 id="2025-3-20"><a href="#2025-3-20" class="headerlink" title="2025-3-20"></a>2025-3-20</h1><p><img src="https://cache.ymjrhk.com/img/2025-3-20.jpg" alt="2025-3-20"></p><h1 id="2025-3-22"><a href="#2025-3-22" class="headerlink" title="2025-3-22"></a>2025-3-22</h1><p><img src="https://cache.ymjrhk.com/img/2025-3-22.jpg" alt="2025-3-22"></p><h1 id="2025-3-31"><a href="#2025-3-31" class="headerlink" title="2025-3-31"></a>2025-3-31</h1><p><img src="https://cache.ymjrhk.com/img/2025-3-31.jpg" alt="2025-3-31"></p><h1 id="2025-4-3"><a href="#2025-4-3" class="headerlink" title="2025-4-3"></a>2025-4-3</h1><p><img src="https://cache.ymjrhk.com/img/2025-4-3.jpg" alt="2025-4-3"></p><h1 id="2025-4-13"><a href="#2025-4-13" class="headerlink" title="2025-4-13"></a>2025-4-13</h1><p><img src="https://cache.ymjrhk.com/img/2025-4-13.jpg" alt="2025-4-13"></p><h1 id="2025-4-14"><a href="#2025-4-14" class="headerlink" title="2025-4-14"></a>2025-4-14</h1><p><img src="https://cache.ymjrhk.com/img/2025-4-14.jpg" alt="2025-4-14"></p><h1 id="2025-4-17"><a href="#2025-4-17" class="headerlink" title="2025-4-17"></a>2025-4-17</h1><p><img src="https://cache.ymjrhk.com/img/2025-4-17.jpg" alt="2025-4-17"></p><h1 id="2025-4-23"><a href="#2025-4-23" class="headerlink" title="2025-4-23"></a>2025-4-23</h1><p><img src="https://cache.ymjrhk.com/img/2025-4-23.jpg" alt="2025-4-23"></p><h1 id="2025-4-29"><a href="#2025-4-29" class="headerlink" title="2025-4-29"></a>2025-4-29</h1><p><img src="https://cache.ymjrhk.com/img/2025-4-29.jpg" alt="2025-4-29"></p><h1 id="2025-5-6"><a href="#2025-5-6" class="headerlink" title="2025-5-6"></a>2025-5-6</h1><p><img src="https://cache.ymjrhk.com/img/2025-5-6.jpg" alt="2025-5-6"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 专栏 </category>
+          
+          <category> 西厢月 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> to be continued </tag>
+            
+            <tag> 西厢月 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Lab4</title>
+      <link href="/posts/f96f/"/>
+      <url>/posts/f96f/</url>
+      
+        <content type="html"><![CDATA[<h1 id="题目要求"><a href="#题目要求" class="headerlink" title="题目要求"></a>题目要求</h1><p>验证好的散列函数能将关键字均匀地散布在0~M-1之间：</p><ol><li>编写程序将《双城记》中的10000+个单词，散列到 0~M-1之间。</li><li>统计每个单词的散列值的出现频率，并按条形图的格式输出。</li><li>分别取不同的M，直观看看哪个M比较合适。例如， M 可以取97，997，1997等。</li><li>查找某单词是否在《双城记》中出现？随机查找100个单词，估算一次查找的平均比较次数。</li></ol><h1 id="实现的功能"><a href="#实现的功能" class="headerlink" title="实现的功能"></a>实现的功能</h1><ol><li>将《双城记》中的10000+个单词，散列到 0~M-1之间，并统计每个单词的散列值的出现频率，按条形图的格式输出。</li><li>查找用户指定的单词是否在《双城记》中出现</li><li>一键导入用户给定文本中的单词，查询其中每个单词是否出现，并计算一次查找的平均比较次数</li><li>以上功能均可以自定义M的值以实现最佳效果</li></ol><h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="构造哈希函数"><a href="#构造哈希函数" class="headerlink" title="构造哈希函数"></a>构造哈希函数</h2><p>使用<em><strong>BKDRHash</strong></em></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">unsigned</span> <span class="type">int</span> <span class="title">BKDRHash</span><span class="params">(<span class="type">const</span> <span class="type">char</span> *str, <span class="type">int</span> M)</span> </span>&#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> hash = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (*str) &#123;</span><br><span class="line">        hash = (hash * <span class="number">131</span>) + (*str++);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> hash % M;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="预处理文本"><a href="#预处理文本" class="headerlink" title="预处理文本"></a>预处理文本</h2><p>去除《双城记》中的重复单词，存到指定文件<code>output.txt</code>中</p><h2 id="散列处理"><a href="#散列处理" class="headerlink" title="散列处理"></a>散列处理</h2><p>对<code>output.txt</code>中每个单词，计算hash值，统计频率</p><h2 id="绘制频率分布图"><a href="#绘制频率分布图" class="headerlink" title="绘制频率分布图"></a>绘制频率分布图</h2><p>使用<code>QtCharts</code>库进行绘图</p><h2 id="查找单词"><a href="#查找单词" class="headerlink" title="查找单词"></a>查找单词</h2><p>计算所查单词的hash值，在该hash值下的vector里逐一比较，输出查询结果和比较次数</p><p>查找多个单词同理，再在最后输出平均比较次数</p><h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p><img src="/posts/f96f/image-20231101163906549-1698937480618-1.png" alt="image-20231101163906549"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 大学课程 </category>
+          
+          <category> 问题求解与程序设计 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 作业 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>目前编程存在的问题</title>
+      <link href="/posts/f83c/"/>
+      <url>/posts/f83c/</url>
+      
+        <content type="html"><![CDATA[<ol><li><del>g++, gcc到底是怎么编译和构建的，尝试手动输入指令来运行一个程序 <code>30min</code></del></li><li><del>VSCode中4个json文件含义 <code>1h</code></del></li><li>练习使用多个.cpp和.h文件运行一个程序 <code>30min</code></li><li>c++中类的简单使用 <code>30min</code></li><li>qt如何组织代码，修改与不修改main.cpp <code>2h</code></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> to be deleted </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> to be deleted </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>多人合作</title>
+      <link href="/posts/df18/"/>
+      <url>/posts/df18/</url>
+      
+        <content type="html"><![CDATA[<p>今天问题求解作业闷头做了一晚上都没什么进展，主要卡在了画图。先是以为用不到Qt就用VSCode写，但一个简单的<code>\#include &lt;SFML/Graphics.hpp&gt;</code>怎么也引入不成功。最后还是改成Qt写。</p><p>我现在的问题：</p><ol><li>不熟练组织多个<code>.cpp</code>和<code>.h</code>文件</li><li>不熟悉C++语法格式</li><li>不熟悉Qt怎么组织和架构的</li></ol><p>感想：</p><ol><li>还是得多人合作，自己一个人干太慢了</li><li>问人问最源头或最接近源头的人，找一手资源</li><li>设置<strong>anticipated time</strong>和<strong>ddl</strong></li></ol><blockquote><p>我写的什么垃圾</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>十月关键词</title>
+      <link href="/posts/4d1d/"/>
+      <url>/posts/4d1d/</url>
+      
+        <content type="html"><![CDATA[<div class="note info no-icon flat"><h1 id="长期主义"><a href="#长期主义" class="headerlink" title="长期主义"></a>长期主义</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">我终身坚持贯彻的目标</span></span></p></div><div class="note warning no-icon flat"><h1 id="三年之约"><a href="#三年之约" class="headerlink" title="三年之约"></a>三年之约</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">三年，我究竟能成为怎样的人？</span></span></p></div><div class="note danger no-icon flat"><h1 id="提醒"><a href="#提醒" class="headerlink" title="提醒"></a>提醒</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">树林说最重要的事情是<strong>提醒</strong></span></span></p></div><div class="note primary no-icon flat"><h1 id="爱蜜莉雅的笑容是最棒的！"><a href="#爱蜜莉雅的笑容是最棒的！" class="headerlink" title="爱蜜莉雅的笑容是最棒的！"></a><em><strong>爱蜜莉雅的笑容是最棒的！</strong></em></h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">好喜欢她的笑🥰</span></span></p></div><div class="note success no-icon flat"><h1 id="越是绝境，越要冷静"><a href="#越是绝境，越要冷静" class="headerlink" title="越是绝境，越要冷静"></a>越是绝境，越要冷静</h1><p><span class="hide-inline"><button type="button" class="hide-button" style="">Click<br>  </button><span class="hide-content">最早是几年前在王者视频上看到的一句话</span></span></p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 专栏 </category>
+          
+          <category> 关键词 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 关键词 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>网站的前世今生</title>
+      <link href="/posts/2b17/"/>
+      <url>/posts/2b17/</url>
+      
+        <content type="html"><![CDATA[<div class="timeline undefined"><div class='timeline-item headline'><div class='timeline-item-title'><div class='item-circle'><p>2023</p></div></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>10-13</p></div></div><div class='timeline-item-content'><p>购买二级域名 <em><strong><a href="ymjrhk.com">ymjrhk.com</a></strong></em></p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>10-18</p></div></div><div class='timeline-item-content'><p>正式发表第一篇博客</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>10-25</p></div></div><div class='timeline-item-content'><p>完成大部分设置和美化工作</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>10-27</p></div></div><div class='timeline-item-content'><p>增加<strong>评论</strong>系统</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>10-29</p></div></div><div class='timeline-item-content'><p>增加<strong>说说</strong>页面</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>12-13</p></div></div><div class='timeline-item-content'><p>使用<strong>阿里云OSS</strong>作为图床</p></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>12-15</p></div></div><div class='timeline-item-content'><p>学会使用<strong>CDN</strong>加速</p></div></div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客搭建 </tag>
+            
+            <tag> to be continued </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>感冒了</title>
+      <link href="/posts/5885/"/>
+      <url>/posts/5885/</url>
+      
+        <content type="html"><![CDATA[<p>今天严重感冒，好难受</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Blog大成功</title>
+      <link href="/posts/50d3/"/>
+      <url>/posts/50d3/</url>
+      
+        <content type="html"><![CDATA[<p>今天研究了一天的Blog，真给我累的够呛。昨晚睡觉梦中全是<code>#</code></p><p>到目前为止，完成了大部分的美化工作，恶补了n多前端的知识</p><p>剩下的就是布局和往里塞东西了</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客搭建 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Lab3</title>
+      <link href="/posts/3b2e/"/>
+      <url>/posts/3b2e/</url>
+      
+        <content type="html"><![CDATA[<h1 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h1><p>渗透模型用<strong>Monto Carlo模拟法</strong>计算出概率阈值p，并用图形化显示形象展现这一结果</p><h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="计算"><a href="#计算" class="headerlink" title="计算"></a>计算</h2><ol><li><p>使用<strong>加权快速联合算法（加权quick-union）</strong>快速判断两个节点是否连通</p><p>所用的函数：</p><ul><li><code>void init()</code></li><li><code>int find(int p)</code></li><li><code>void weighted_QU(int p, int q)</code></li><li><code>bool isUnion(int p, int q)</code></li></ul></li><li><p>构造<strong>渗透类（<code>Percolation</code>）</strong>，建立n*n网格</p><blockquote><p>使用并查集来维护每个格子的连通性。我们可以将每个格子看作一个节点，并将相邻的格子连接起来。如果一个格子与顶部相连，则它是满的。我们可以使用一个虚拟节点来表示顶部，将所有顶部的节点连接到这个虚拟节点上。如果虚拟节点与底部相连，则整个系统渗透。</p></blockquote><p>所用的函数：</p><ul><li><code>void open(int row, int col)</code></li><li><code>bool isOpen(int row, int col)</code></li><li><code>bool isFull(int row, int col)</code></li><li><code>int numberOfOpenSites()</code></li><li><code>bool percolates()</code></li></ul></li><li><p>开始模拟，随机打开格子，直到渗透为止，则此时打开的格子数&#x2F;总格子数即为p</p><p>所用的函数：</p><ul><li><code>rand()</code></li></ul></li></ol><h2 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h2><ol><li><p>在<code>gridLayout</code>里绘制n*n的<code>label</code>，根据该格子的状态给<code>label</code>绘制不同的颜色，黑色表示未连通，白色表示连通，蓝色表示<code>full</code></p><p>所用的函数：</p><ul><li><code>void setAlignment(Qt::Alignment)</code>    &#x2F;&#x2F;设置对齐方式</li><li><code>void setStyleSheet(const QString&amp; styleSheet)</code>    &#x2F;&#x2F;设置标签样式</li><li><code>inline void addWidget(QWidget *w)</code></li><li><code>void setLayout(QLayout *)</code></li></ul></li><li><p>清除所有<code>label</code>以便下次模拟</p></li></ol><h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><h2 id="不勾选图形化显示时"><a href="#不勾选图形化显示时" class="headerlink" title="不勾选图形化显示时"></a>不勾选图形化显示时</h2><p><img src="/posts/3b2e/1.png" alt="不勾选图形化显示时"></p><hr><h2 id="勾选图形化显示时"><a href="#勾选图形化显示时" class="headerlink" title="勾选图形化显示时"></a>勾选图形化显示时</h2><p><img src="/posts/3b2e/2.png" alt="勾选图形化显示时"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 大学课程 </category>
+          
+          <category> 问题求解与程序设计 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 作业 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>缓缓推进</title>
+      <link href="/posts/df40/"/>
+      <url>/posts/df40/</url>
+      
+        <content type="html"><![CDATA[<p>今天终于开始正式布置和美化博客了  </p><p>干巴爹！</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于我的25000步</title>
+      <link href="/posts/f56e/"/>
+      <url>/posts/f56e/</url>
+      
+        <content type="html"><![CDATA[<p>今天走了25000步，很充实的一个周末  </p><p>希望养成每日一更的习惯  </p><p>你们都是我重视的朋友</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/posts/3eeb/"/>
+      <url>/posts/3eeb/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>加密2</title>
+      <link href="/posts/341e/"/>
+      <url>/posts/341e/</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="98cea4ba3a8d234b6b32d548c5778d5981a4212bbde20726d85250b9e3532c8f">f1773c3a6ba33dc5010d70e509771f653aa63d5cd6d3e1bf3eefdf32d37e55b87782270ae30f6c947baae54d4737f73740485852d728cf8cef9de0f5d5c45512aa59121a1154a2fd61a58f006b3e61e70020d14597361e92c4b7967617bfccf64d41f759a374d7ac74f8cfc5b9fe1e88fa488dc7aad4f3e5e3e7e7a19a7006586ec94bbb93f66d8013955bf1c23e8bdf5681ad61e8d4697fca6095d140088b48bd5b193ac324ab56fa93dd723fb2228d3837e0c377216c13ea3d71951a66abdd57b0abb8e96bbfed0512e6765b687bd3adb2cc0d83adfcdc5030f93d285e83550b1e64689775ac375a71195d3798a9b5090f26b56a58eaa395cc9dfe225a38dc5ca2a6d57856bfbe3b6fd62ea7224344c965e43841bc9246038f92bf3190c551afcec4fceeb286ff4558167a15b5a810514c4e960cbc23f43d374eec54c41b822d7a3ccf67bfc870a2762c182cd0041da7e47940e79acb44e37c1551ceb5bee7c3c1b839fc42e9f180cb82d26c971c4aac479cd296541a49c1930c7903384524b494630912ced631a930a29071eb16d5</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-blink">      <input class="hbe hbe-input-field hbe-input-field-blink" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-blink" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-blink" data-content="您好, 这里需要密码.">您好, 这里需要密码.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 加密 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>加密1</title>
+      <link href="/posts/4019/"/>
+      <url>/posts/4019/</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="d9030b91b698c2ba0b04a764d284738c8a37971c8dbe7688bd0c1cb5106adcb5">f1773c3a6ba33dc5010d70e509771f653aa63d5cd6d3e1bf3eefdf32d37e55b897aefca663731fe0e937e4568d016e88cea30735e3d9f8403711f0bddb8ac366f81efb0e9f448394b5d286359c301dac588f0ae43a1b8c566f8c3fe494bcdf747f5f2b06e54764025804eec1eb3db415be02222aca706af184be9845069dfa780a7318fdb5fea44be922536f8a3a75c2ace26702bff67961485a4cc9017f5477b9b2b2b0966ff90220d604678ab91901fb792de091c57e0fe9c9d8341ab89d042a6553a3567a0157fc90fc00110e32e64b544bfbd034c4c0a5509dac33e1593d7bfbfeb02edf046056d08242a3206c2487053fafc2b9421fff0e3c2845d43025ba1613c64750a40fc8019923cc62b9c3ddd83f6ada053f36a6d1a013c2527218452b3fac8277478f6423601fc12b46cf0ba1897cb52618f538820253ded27332</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-blink">      <input class="hbe hbe-input-field hbe-input-field-blink" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-blink" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-blink" data-content="您好, 这里需要密码.">您好, 这里需要密码.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 加密 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>长期主义时间表</title>
+      <link href="/posts/e3fd/"/>
+      <url>/posts/e3fd/</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="5bfa84d042893e9957e3ea6a88b7d0d6a5f8713d43d2944c487d83d54ad15f3b">689011e36612bd0ddb82bd0e4ee6472f415c9661ffddd75cda080032bf069accb1043e3c0cd9c5ec202f659a0c700ab7ca22d01c765ccbbf426dbc3944adf92ed4b371a96af6c0e20d3710221f19d61a0d025e305d3d54e25381ed1978a07d2f40eefd533057a7dba221123ade241f304eede5c7ffc53fc4ec74c874a78233c77356c695c9726fde06d6e587c9f4ba3aa08a333eed6dbb1cd5fb4486bec8ade73c09f426e118e2dc438412c1f26c223840dff8a90cb0a494ddaefda34327bebb228ffb342804da8c72f873ced59ec91b604a2e6ef3104b637350650d9bc4540df182188a70c4e8b82445d325c241a15879bd2df04fccc7f4eaee54f60c26eb1db447c73732a5ffbe8766b66880c199a9</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-blink">      <input class="hbe hbe-input-field hbe-input-field-blink" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-blink" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-blink" data-content="您好, 这里需要密码.">您好, 这里需要密码.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 加密 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
